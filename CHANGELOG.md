@@ -1,3 +1,5 @@
+- 2017-10-26 - v3.2.4
+- 2017-10-26 - MemoryHandler supports autoincrement
 - 2017-10-26 - v3.2.3
 - 2017-10-26 - Use integer autoincrement ID instead of UUID
 - 2017-10-26 - Forked from holidayextras to coding-blocks
