@@ -1,3 +1,5 @@
+- 2017-10-26 - v3.2.5
+- 2017-10-26 - remove uuid dependency
 - 2017-10-26 - v3.2.4
 - 2017-10-26 - MemoryHandler supports autoincrement
 - 2017-10-26 - v3.2.3
