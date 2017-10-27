@@ -48,7 +48,7 @@ describe('Testing jsonapi-server', () => {
           'Content-Type': 'application/vnd.api+json'
         },
         body: JSON.stringify({
-          'data': { 'type': 'tags', 'id': 'foobar' }
+          'data': { 'type': 'tags', 'id': 20 }
         })
       }
       helpers.request(data, (err, res, json) => {
