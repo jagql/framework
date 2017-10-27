@@ -36,7 +36,7 @@ jsonApi.define({
   },
   examples: [
     {
-      id: "1",
+      id: 1,
       type: "photos",
       title: "Matrix Code",
       url: "http://www.example.com/foobar",
@@ -45,6 +45,7 @@ jsonApi.define({
   ]
 });
 ```
+The examples defined are seeded into the database/memory handler when the server starts. 
 
 ### SearchParams
 
