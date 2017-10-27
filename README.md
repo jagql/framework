@@ -1,11 +1,20 @@
-[![Build Status](https://travis-ci.org/holidayextras/jsonapi-server.svg?branch=master)](https://travis-ci.org/holidayextras/jsonapi-server)
-[![Coverage Status](https://coveralls.io/repos/github/holidayextras/jsonapi-server/badge.svg?branch=master)](https://coveralls.io/github/holidayextras/jsonapi-server?branch=master)
-[![npm version](https://badge.fury.io/js/jsonapi-server.svg)](http://badge.fury.io/js/jsonapi-server)
-[![Dependencies Status](https://david-dm.org/holidayextras/jsonapi-server.svg)](https://david-dm.org/holidayextras/jsonapi-server)
+[![Build Status](https://travis-ci.org/coding-blocks/jsonapi-server.svg?branch=master)](https://travis-ci.org/coding-blocks/jsonapi-server)
+[![Coverage Status](https://coveralls.io/repos/github/coding-blocks/jsonapi-server/badge.svg?branch=master)](https://coveralls.io/github/coding-blocks/jsonapi-server?branch=master)
+[![npm version](https://badge.fury.io/js/%40coding-blocks%2Fjsonapi-server.svg)](https://badge.fury.io/js/%40coding-blocks%2Fjsonapi-server)
+[![Dependencies Status](https://david-dm.org/coding-blocks/jsonapi-server.svg)](https://david-dm.org/coding-blocks/jsonapi-server)
 
 # jsonapi-server
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/holidayextras/jsonapi-server.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/coding-blocks/jsonapi-server.svg)](https://greenkeeper.io/)
+
+**NOTE: This is a fork of holidayextra's [jsonapi-server](https://github.com/holidayextras/jsonapi-server)
+The difference being our fork uses integer autoincrement ids instead of UUIDs.
+Apart from that, it is exactly the same implementation**
+
+_**You'd want to use our version of jsonapi-store-\[\*\] plugins with this
+as the original versions will not be compatible with this**_
+
+_The rest of the readme is verbatim copy of the original project_
 
 A config driven NodeJS framework implementing [`json:api`](http://jsonapi.org/) and [`GraphQL`](http://graphql.org/). You define the resources, it provides the api.
 
@@ -34,12 +43,12 @@ Ultimately, the only things you as a user of this framework need to care about a
    * `update`ing a specific resource
 
 We've created `handler`s to automatically map our config over to database solutions help people get off the ground:
- * [jsonapi-store-memoryhandler](https://github.com/holidayextras/jsonapi-server/blob/master/lib/MemoryHandler.js) - an in-memory data store to enable rapid prototyping. This ships as a part of `jsonapi-server` and powers the core test suite.
- * [jsonapi-handler-chain](https://github.com/holidayextras/jsonapi-server/blob/master/lib/ChainHandler.js) - a handler to chain custom behaviour around an existing handler. This ships as a part of `jsonapi-server`. More info can be found [here](https://github.com/holidayextras/jsonapi-server/blob/master/documentation/chain-handler.md)
+ * [jsonapi-store-memoryhandler](https://github.com/coding-blocks/jsonapi-server/blob/master/lib/MemoryHandler.js) - an in-memory data store to enable rapid prototyping. This ships as a part of `jsonapi-server` and powers the core test suite.
+ * [jsonapi-handler-chain](https://github.com/coding-blocks/jsonapi-server/blob/master/lib/ChainHandler.js) - a handler to chain custom behaviour around an existing handler. This ships as a part of `jsonapi-server`. More info can be found [here](https://github.com/coding-blocks/jsonapi-server/blob/master/documentation/chain-handler.md)
  * [jsonapi-store-relationaldb](https://github.com/holidayextras/jsonapi-store-relationaldb) - using `sequelize` to support PostgreSQL, MySQL, MSSQL, MariaDB and SQLite.
  * [jsonapi-store-mongodb](https://github.com/holidayextras/jsonapi-store-mongodb) - for MongoDB.
  * [jsonapi-store-elasticsearch](https://github.com/holidayextras/jsonapi-store-elasticsearch) - for Elasticsearch.
- * [jsonapi-store-dynamodb](https://github.com/holidayextras/jsonapi-server/compare/dynamodb?expand=1) - *!SIGNIFICANT WIP!* for AWS DynamoDB.
+ * [jsonapi-store-dynamodb](https://github.com/coding-blocks/jsonapi-server/compare/dynamodb?expand=1) - *!SIGNIFICANT WIP!* for AWS DynamoDB.
 
 We've also written a library to ease the consumption of a json:api compliant service, if GraphQL isn't your thing:
  * [jsonapi-client](https://github.com/holidayextras/jsonapi-client) - for NodeJS and Browsers
@@ -89,7 +98,7 @@ Your new API will be alive at `http://localhost:16006/` and your `photos` resour
 
 Fire up an example `json:api` server using the resources mentioned in the official spec via:
 ```
-$ git clone https://github.com/holidayextras/jsonapi-server.git
+$ git clone https://github.com/coding-blocks/jsonapi-server.git
 $ npm install
 $ npm start
 ```
