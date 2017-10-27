@@ -9,7 +9,8 @@ before_install:
 - npm install -g greenkeeper-lockfile@latest
 before_script: greenkeeper-lockfile-update
 script: npm run ci
-after_script: greenkeeper-lockfile-upload
-after_success: npm run coverage
+after_script:
+ - greenkeeper-lockfile-upload
+ - npm run coverage
 notifications:
   email: false
