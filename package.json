@@ -1,5 +1,5 @@
 {
-  "name": "jsonapi-server",
+  "name": "@coding-blocks/jsonapi-server",
   "version": "3.2.2",
   "description": "A config driven NodeJS framework implementing json:api",
   "keywords": [
@@ -16,7 +16,7 @@
     "url": "https://github.com/holidayextras/jsonapi-server"
   },
   "engines": {
-    "node": ">=4.5"
+    "node": ">=6"
   },
   "greenkeeper": {
     "ignore": [
