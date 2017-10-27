@@ -28,7 +28,7 @@ describe('Testing jsonapi-server', () => {
           'Content-Type': 'application/vnd.api+json'
         },
         body: JSON.stringify({
-          'data': { 'type': 'people', 'id': 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587' }
+          'data': { 'type': 'people', 'id': 4 }
         })
       }
       helpers.request(data, (err, res, json) => {
@@ -43,12 +43,12 @@ describe('Testing jsonapi-server', () => {
     it('errors with invalid type', done => {
       const data = {
         method: 'post',
-        url: 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/comments',
+        url: 'http://localhost:16006/rest/articles/4/relationships/comments',
         headers: {
           'Content-Type': 'application/vnd.api+json'
         },
         body: JSON.stringify({
-          'data': { 'type': 'people', 'id': '6b017640-827c-4d50-8dcc-79d766abb408' }
+          'data': { 'type': 'people', 'id': 1 }
         })
       }
       helpers.request(data, (err, res, json) => {
@@ -64,12 +64,12 @@ describe('Testing jsonapi-server', () => {
       it('updates the resource', done => {
         const data = {
           method: 'post',
-          url: 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/relationships/comments',
+          url: 'http://localhost:16006/rest/articles/1/relationships/comments',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
           body: JSON.stringify({
-            'data': { 'type': 'comments', 'id': '6b017640-827c-4d50-8dcc-79d766abb408', meta: { 'updated': '2016-01-01' } }
+            'data': { 'type': 'comments', 'id': 1, meta: { 'updated': '2016-01-01' } }
           })
         }
         helpers.request(data, (err, res, json) => {
@@ -83,7 +83,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource has changed', done => {
-        const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/relationships/comments'
+        const url = 'http://localhost:16006/rest/articles/1/relationships/comments'
         helpers.request({
           method: 'GET',
           url
@@ -96,11 +96,11 @@ describe('Testing jsonapi-server', () => {
           assert.deepEqual(json.data, [
             {
               'type': 'comments',
-              'id': '3f1a89c2-eb85-4799-a048-6735db24b7eb'
+              'id': 2
             },
             {
               'type': 'comments',
-              'id': '6b017640-827c-4d50-8dcc-79d766abb408',
+              'id': 1,
               'meta': {
                 'updated': '2016-01-01'
               }
@@ -116,12 +116,12 @@ describe('Testing jsonapi-server', () => {
       it('updates the resource', done => {
         const data = {
           method: 'post',
-          url: 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/author',
+          url: 'http://localhost:16006/rest/articles/4/relationships/author',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
           body: JSON.stringify({
-            'data': { 'type': 'people', 'id': 'cc5cca2e-0dd8-4b95-8cfc-a11230e73116' }
+            'data': { 'type': 'people', 'id': 1 }
           })
         }
         helpers.request(data, (err, res, json) => {
@@ -135,7 +135,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource has changed', done => {
-        const url = 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/author'
+        const url = 'http://localhost:16006/rest/articles/4/relationships/author'
         helpers.request({
           method: 'GET',
           url
@@ -147,7 +147,7 @@ describe('Testing jsonapi-server', () => {
 
           assert.deepEqual(json.data, {
             'type': 'people',
-            'id': 'cc5cca2e-0dd8-4b95-8cfc-a11230e73116'
+            'id': 1
           })
 
           done()

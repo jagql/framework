@@ -21,7 +21,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('valid lookup', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014'
+      const url = 'http://localhost:16006/rest/articles/1'
       helpers.request({
         method: 'GET',
         url
@@ -38,7 +38,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('with fields', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014?fields[articles]=title'
+      const url = 'http://localhost:16006/rest/articles/1?fields[articles]=title'
       request({
         method: 'GET',
         url
@@ -56,7 +56,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('with filter', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014?filter[title]=title'
+      const url = 'http://localhost:16006/rest/articles/1?filter[title]=title'
       helpers.request({
         method: 'GET',
         url
@@ -73,7 +73,7 @@ describe('Testing jsonapi-server', () => {
 
     describe('with includes', () => {
       it('basic include', done => {
-        const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014?include=author'
+        const url = 'http://localhost:16006/rest/articles/1?include=author'
         helpers.request({
           method: 'GET',
           url
@@ -92,7 +92,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('including over a null relation', done => {
-        const url = 'http://localhost:16006/rest/tags/8d196606-134c-4504-a93a-0d372f78d6c5?include=parent'
+        const url = 'http://localhost:16006/rest/tags/5?include=parent'
         helpers.request({
           method: 'GET',
           url
@@ -109,7 +109,7 @@ describe('Testing jsonapi-server', () => {
 
     describe('with recursive includes', () => {
       it('works with a manually expanded string', done => {
-        const url = 'http://localhost:16006/rest/tags/7541a4de-4986-4597-81b9-cf31b6762486?include=parent.parent.parent.parent.articles'
+        const url = 'http://localhost:16006/rest/tags/1?include=parent.parent.parent.parent.articles'
         helpers.request({
           method: 'GET',
           url

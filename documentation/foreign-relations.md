@@ -153,13 +153,13 @@ relationships: {
     },
     links: {
       // get information about the linkage - list of ids and types
-      self: "http://localhost:16006/rest/comments/6b017640-827c-4d50-8dcc-79d766abb408/relationships/author",
+      self: "http://localhost:16006/rest/comments/1/relationships/author",
       // get full details of all linked resources
-      related: "http://localhost:16006/rest/comments/6b017640-827c-4d50-8dcc-79d766abb408/author"
+      related: "http://localhost:16006/rest/comments/1/author"
     },
     data: {
       type: "people",
-      id: "ad3aa89e-9c5b-4ac9-a652-6670f9f27587"
+      id: "4"
     }
   },
   article: {
@@ -172,9 +172,9 @@ relationships: {
     },
     links: {
       // get information about the linkage - list of ids and types
-      self: "http://localhost:16006/rest/articles/relationships/?comments=6b017640-827c-4d50-8dcc-79d766abb408",
+      self: "http://localhost:16006/rest/articles/relationships/?comments=1",
       // get full details of all linked resources (perform a search against the foreign key)
-      related: "http://localhost:16006/rest/articles/?filter[comments]=6b017640-827c-4d50-8dcc-79d766abb408"
+      related: "http://localhost:16006/rest/articles/?filter[comments]=1"
     }
   }
 }

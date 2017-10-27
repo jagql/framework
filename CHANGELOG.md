@@ -1,3 +1,6 @@
+- 2017-10-26 - v3.2.3
+- 2017-10-26 - Use integer autoincrement ID instead of UUID
+- 2017-10-26 - Forked from holidayextras to coding-blocks
 - 2017-10-21 - v3.2.2
 - 2017-10-21 - Report coverage with Coveralls.
 - 2017-10-21 - Modernise script.

@@ -25,21 +25,21 @@ jsonApi.define({
   },
   examples: [
     {
-      id: '6b017640-827c-4d50-8dcc-79d766abb408',
+      id: 1,
       type: 'comments',
       body: 'First!',
       timestamp: '2017-01-02',
-      author: { type: 'people', id: 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587' }
+      author: { type: 'people', id: 4 }
     },
     {
-      id: '3f1a89c2-eb85-4799-a048-6735db24b7eb',
+      id: 2,
       type: 'comments',
       body: 'I like XML better',
       timestamp: '2017-06-20',
-      author: { type: 'people', id: '32fb0105-acaa-4adb-9ec4-8b49633695e1', meta: { created: '2010-01-01' } }
+      author: { type: 'people', id: 2, meta: { created: '2010-01-01' } }
     },
     {
-      id: '2f716574-cef6-4238-8285-520911af86c1',
+      id: 3,
       type: 'comments',
       body: 'Wibble wibble.',
       timestamp: '2017-12-31',

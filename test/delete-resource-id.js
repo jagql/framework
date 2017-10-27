@@ -39,7 +39,7 @@ describe('Testing jsonapi-server', () => {
       it('deletes the resource', done => {
         const data = {
           method: 'delete',
-          url: 'http://localhost:16006/rest/comments/6b017640-827c-4d50-8dcc-79d766abb408'
+          url: 'http://localhost:16006/rest/comments/1'
         }
         request(data, (err, res, json) => {
           assert.equal(err, null)
@@ -53,7 +53,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource is gone', done => {
-        const url = 'http://localhost:16006/rest/comments/6b017640-827c-4d50-8dcc-79d766abb408'
+        const url = 'http://localhost:16006/rest/comments/1'
         helpers.request({
           method: 'GET',
           url

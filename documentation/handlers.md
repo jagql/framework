@@ -20,11 +20,11 @@ Failure to provide the above handler functions will result in `EFORBIDDEN` HTTP 
 All data stored behind handlers should be stored in a developer-friendly format with both attributes and relations mingled together:
 ```javascript
 {
-  id: "aab14844-97e7-401c-98c8-0bd5ec922d93",
+  id: "1",
   type: "photos",
   title: "Matrix Code",
   url: "http://www.example.com/foobar",
-  photographer: { type: "people", id: "ad3aa89e-9c5b-4ac9-a652-6670f9f27587" }
+  photographer: { type: "people", id: "4" }
 }
 ```
 In the above example the `photographer` attribute is defined as relation to a resource of type `people`. jsonapi-server will deal with shuffling around and separating those attributes and relations when it needs to. Keep It Simple.
@@ -98,10 +98,10 @@ the `callback` should be invoked with with an `error` or `null, [ rawResource ]`
 `search` needs to watch for any `request.params.relationships` parameters, they represent foreign key lookups. An example of this:
 ```
 request.params.relationships = {
-  user: "ad3aa89e-9c5b-4ac9-a652-6670f9f27587"
+  user: "4"
 }
 ```
-translates to "Find me all of the resources whose user attribute is a link to a resource with id == ad3aa89e-9c5b-4ac9-a652-6670f9f27587".
+translates to "Find me all of the resources whose user attribute is a link to a resource with id == 4".
 
 #### find
 `find` is invoked with a `request` object (see above).

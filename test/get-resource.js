@@ -349,7 +349,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('allows filtering by id', done => {
-        const url = 'http://localhost:16006/rest/articles?filter[id]=1be0913c-3c25-4261-98f1-e41174025ed5&filter[id]=de305d54-75b4-431b-adb2-eb6b9e546014'
+        const url = 'http://localhost:16006/rest/articles?filter[id]=2&filter[id]=1'
         helpers.request({
           method: 'GET',
           url
@@ -365,7 +365,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('allows for multiple filter values to be combined in a comma-separated list', done => {
-        const url = 'http://localhost:16006/rest/articles?filter[tags]=6ec62f6d-9f82-40c5-b4f4-279ed1765492,7541a4de-4986-4597-81b9-cf31b6762486,2a3bdea4-a889-480d-b886-104498c86f69'
+        const url = 'http://localhost:16006/rest/articles?filter[tags]=3,1,2'
         helpers.request({
           method: 'GET',
           url
@@ -381,7 +381,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('allows for a compound of comma-separated list filters', done => {
-        const url = 'http://localhost:16006/rest/articles?filter[tags]=6ec62f6d-9f82-40c5-b4f4-279ed1765492,7541a4de-4986-4597-81b9-cf31b6762486,2a3bdea4-a889-480d-b886-104498c86f69&filter[id]=de305d54-75b4-431b-adb2-eb6b9e546014,1be0913c-3c25-4261-98f1-e41174025ed5'
+        const url = 'http://localhost:16006/rest/articles?filter[tags]=3,1,2&filter[id]=1,2'
         helpers.request({
           method: 'GET',
           url
@@ -397,7 +397,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('allows deep filtering', done => {
-        const url = 'http://localhost:16006/rest/articles?include=author&filter[author]=d850ea75-4427-4f81-8595-039990aeede5&filter[author][firstname]=Mark'
+        const url = 'http://localhost:16006/rest/articles?include=author&filter[author]=3&filter[author][firstname]=Mark'
         helpers.request({
           method: 'GET',
           url
@@ -655,7 +655,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('include author.photos with multiple filters', done => {
-        const url = 'http://localhost:16006/rest/articles?include=author.photos&filter[author]=ad3aa89e-9c5b-4ac9-a652-6670f9f27587&filter[author]=cc5cca2e-0dd8-4b95-8cfc-a11230e73116'
+        const url = 'http://localhost:16006/rest/articles?include=author.photos&filter[author]=4&filter[author]=1'
         helpers.request({
           method: 'GET',
           url
@@ -701,7 +701,7 @@ describe('Testing jsonapi-server', () => {
 
     describe('by foreign key', () => {
       it('should find resources by a relation', done => {
-        const url = 'http://localhost:16006/rest/articles/?filter[photos]=aab14844-97e7-401c-98c8-0bd5ec922d93'
+        const url = 'http://localhost:16006/rest/articles/?filter[photos]=1'
         helpers.request({
           method: 'GET',
           url
@@ -716,7 +716,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('should find resources by many relations', done => {
-        const url = 'http://localhost:16006/rest/articles/?filter[photos]=aab14844-97e7-401c-98c8-0bd5ec922d93&filter[photos]=4a8acd65-78bb-4020-b9eb-2d058a86a2a0'
+        const url = 'http://localhost:16006/rest/articles/?filter[photos]=1&filter[photos]=3'
         helpers.request({
           method: 'GET',
           url
@@ -731,7 +731,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('should error with incorrectly named relations', done => {
-        const url = 'http://localhost:16006/rest/articles/?filter[photo]=aab14844-97e7-401c-98c8-0bd5ec922d93'
+        const url = 'http://localhost:16006/rest/articles/?filter[photo]=1'
         helpers.request({
           method: 'GET',
           url
@@ -749,7 +749,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('should error when querying the foreign end of a relationship', done => {
-        const url = 'http://localhost:16006/rest/comments/?filter[article]=aab14844-97e7-401c-98c8-0bd5ec922d93'
+        const url = 'http://localhost:16006/rest/comments/?filter[article]=1'
         helpers.request({
           method: 'GET',
           url

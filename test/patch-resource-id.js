@@ -49,7 +49,7 @@ describe('Testing jsonapi-server', () => {
       it('errors with invalid attributes', done => {
         const data = {
           method: 'patch',
-          url: 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb',
+          url: 'http://localhost:16006/rest/comments/2',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
@@ -73,7 +73,7 @@ describe('Testing jsonapi-server', () => {
       it('errors with invalid one relations', done => {
         const data = {
           method: 'patch',
-          url: 'http://localhost:16006/rest/articles/d850ea75-4427-4f81-8595-039990aeede5',
+          url: 'http://localhost:16006/rest/articles/3',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
@@ -99,7 +99,7 @@ describe('Testing jsonapi-server', () => {
       it('errors with invalid many relations 1', done => {
         const data = {
           method: 'patch',
-          url: 'http://localhost:16006/rest/articles/d850ea75-4427-4f81-8595-039990aeede5',
+          url: 'http://localhost:16006/rest/articles/3',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
@@ -125,7 +125,7 @@ describe('Testing jsonapi-server', () => {
       it('errors with invalid many relations 2', done => {
         const data = {
           method: 'patch',
-          url: 'http://localhost:16006/rest/articles/d850ea75-4427-4f81-8595-039990aeede5',
+          url: 'http://localhost:16006/rest/articles/3',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
@@ -133,7 +133,7 @@ describe('Testing jsonapi-server', () => {
             'data': {
               'relationships': {
                 'tags': {
-                  'data': [ { 'type': 'tags', 'id': '2a3bdea4-a889-480d-b886-104498c86f69' }, undefined ]
+                  'data': [ { 'type': 'tags', 'id': 2 }, undefined ]
                 }
               }
             }
@@ -152,7 +152,7 @@ describe('Testing jsonapi-server', () => {
     it('only validates named attributes', done => {
       const data = {
         method: 'patch',
-        url: 'http://localhost:16006/rest/articles/d850ea75-4427-4f81-8595-039990aeede5',
+        url: 'http://localhost:16006/rest/articles/3',
         headers: {
           'Content-Type': 'application/vnd.api+json'
         },
@@ -179,7 +179,7 @@ describe('Testing jsonapi-server', () => {
       it('updates the resource', done => {
         const data = {
           method: 'patch',
-          url: 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb',
+          url: 'http://localhost:16006/rest/comments/2',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
@@ -190,7 +190,7 @@ describe('Testing jsonapi-server', () => {
               },
               'relationships': {
                 'author': {
-                  'data': { 'type': 'people', 'id': 'd850ea75-4427-4f81-8595-039990aeede5' }
+                  'data': { 'type': 'people', 'id': 3 }
                 }
               },
               'meta': {
@@ -210,7 +210,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource has changed', done => {
-        const url = 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb'
+        const url = 'http://localhost:16006/rest/comments/2'
         helpers.request({
           method: 'GET',
           url
@@ -222,13 +222,13 @@ describe('Testing jsonapi-server', () => {
 
           assert.deepEqual(json.data, {
             'type': 'comments',
-            'id': '3f1a89c2-eb85-4799-a048-6735db24b7eb',
+            'id': 2,
             'attributes': {
               'body': 'I like XML better',
               'timestamp': '2017-06-29'
             },
             'links': {
-              'self': 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb'
+              'self': 'http://localhost:16006/rest/comments/2'
             },
             'relationships': {
               'author': {
@@ -237,12 +237,12 @@ describe('Testing jsonapi-server', () => {
                   'readOnly': false
                 },
                 'links': {
-                  'self': 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb/relationships/author',
-                  'related': 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb/author'
+                  'self': 'http://localhost:16006/rest/comments/2/relationships/author',
+                  'related': 'http://localhost:16006/rest/comments/2/author'
                 },
                 'data': {
                   'type': 'people',
-                  'id': 'd850ea75-4427-4f81-8595-039990aeede5'
+                  'id': 3
                 }
               },
               'article': {
@@ -254,8 +254,8 @@ describe('Testing jsonapi-server', () => {
                   'many': false
                 },
                 'links': {
-                  'self': 'http://localhost:16006/rest/articles/relationships/?comments=3f1a89c2-eb85-4799-a048-6735db24b7eb',
-                  'related': 'http://localhost:16006/rest/articles/?filter[comments]=3f1a89c2-eb85-4799-a048-6735db24b7eb'
+                  'self': 'http://localhost:16006/rest/articles/relationships/?comments=2',
+                  'related': 'http://localhost:16006/rest/articles/?filter[comments]=2'
                 }
               }
             },
@@ -271,7 +271,7 @@ describe('Testing jsonapi-server', () => {
       it('deletes a relationship', done => {
         const data = {
           method: 'patch',
-          url: 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb',
+          url: 'http://localhost:16006/rest/comments/2',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
@@ -302,7 +302,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource has changed', done => {
-        const url = 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb'
+        const url = 'http://localhost:16006/rest/comments/2'
         helpers.request({
           method: 'GET',
           url
@@ -314,13 +314,13 @@ describe('Testing jsonapi-server', () => {
 
           assert.deepEqual(json.data, {
             'type': 'comments',
-            'id': '3f1a89c2-eb85-4799-a048-6735db24b7eb',
+            'id': 2,
             'attributes': {
               'body': 'I like XML better',
               'timestamp': '2017-06-29'
             },
             'links': {
-              'self': 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb'
+              'self': 'http://localhost:16006/rest/comments/2'
             },
             'relationships': {
               'author': {
@@ -329,8 +329,8 @@ describe('Testing jsonapi-server', () => {
                   'readOnly': false
                 },
                 'links': {
-                  'self': 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb/relationships/author',
-                  'related': 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb/author'
+                  'self': 'http://localhost:16006/rest/comments/2/relationships/author',
+                  'related': 'http://localhost:16006/rest/comments/2/author'
                 },
                 'data': null
               },
@@ -343,8 +343,8 @@ describe('Testing jsonapi-server', () => {
                   'many': false
                 },
                 'links': {
-                  'self': 'http://localhost:16006/rest/articles/relationships/?comments=3f1a89c2-eb85-4799-a048-6735db24b7eb',
-                  'related': 'http://localhost:16006/rest/articles/?filter[comments]=3f1a89c2-eb85-4799-a048-6735db24b7eb'
+                  'self': 'http://localhost:16006/rest/articles/relationships/?comments=2',
+                  'related': 'http://localhost:16006/rest/articles/?filter[comments]=2'
                 }
               }
             },

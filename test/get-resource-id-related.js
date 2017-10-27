@@ -21,7 +21,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('unknown relation should error', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/foobar'
+      const url = 'http://localhost:16006/rest/articles/1/foobar'
       helpers.request({
         method: 'GET',
         url
@@ -35,7 +35,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('foreign relation should error', done => {
-      const url = 'http://localhost:16006/rest/people/cc5cca2e-0dd8-4b95-8cfc-a11230e73116/articles'
+      const url = 'http://localhost:16006/rest/people/1/articles'
       helpers.request({
         method: 'GET',
         url
@@ -50,7 +50,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('Lookup by id', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/author'
+      const url = 'http://localhost:16006/rest/articles/1/author'
       helpers.request({
         method: 'GET',
         url
@@ -67,7 +67,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('with null data', done => {
-      const url = 'http://localhost:16006/rest/comments/2f716574-cef6-4238-8285-520911af86c1/author'
+      const url = 'http://localhost:16006/rest/comments/3/author'
       helpers.request({
         method: 'GET',
         url
@@ -83,7 +83,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('with fields', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/author?fields[people]=email'
+      const url = 'http://localhost:16006/rest/articles/1/author?fields[people]=email'
       helpers.request({
         method: 'GET',
         url
@@ -101,7 +101,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('with filter', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/author?filter[email]=email@example.com'
+      const url = 'http://localhost:16006/rest/articles/1/author?filter[email]=email@example.com'
       helpers.request({
         method: 'GET',
         url
@@ -117,7 +117,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('with includes', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/author?include=articles'
+      const url = 'http://localhost:16006/rest/articles/1/author?include=articles'
       helpers.request({
         method: 'GET',
         url

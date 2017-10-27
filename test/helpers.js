@@ -100,7 +100,7 @@ testHelpers.validateRelationship = relationship => {
   if (!(someDataBlock instanceof Array)) someDataBlock = [ someDataBlock ]
   someDataBlock.forEach(dataBlock => {
     assert.ok(dataBlock.id, 'Relationship block should have an id')
-    assert.equal(typeof dataBlock.id, 'string', 'Relationship data blocks id should be string')
+    assert.equal(typeof dataBlock.id, 'number', 'Relationship data blocks id should be number')
     assert.ok(dataBlock.type, 'Relationship block should have a type')
     assert.equal(typeof dataBlock.type, 'string', 'Relationship data blocks type should be string')
   })

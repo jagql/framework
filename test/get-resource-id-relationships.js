@@ -8,7 +8,7 @@ const jsonApiTestServer = require('../example/server.js')
 describe('Testing jsonapi-server', () => {
   describe('foreign lookup', () => {
     it('unknown id should error', done => {
-      const url = 'http://localhost:16006/rest/foobar/relationships?author=cc5cca2e-0dd8-4b95-8cfc-a11230e73116'
+      const url = 'http://localhost:16006/rest/foobar/relationships?author=1'
       request({
         method: 'GET',
         url
@@ -22,7 +22,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('unknown relation should error', done => {
-      const url = 'http://localhost:16006/rest/articles/relationships?title=cc5cca2e-0dd8-4b95-8cfc-a11230e73116'
+      const url = 'http://localhost:16006/rest/articles/relationships?title=1'
       request({
         method: 'GET',
         url
@@ -36,7 +36,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('Lookup by id', done => {
-      const url = 'http://localhost:16006/rest/articles/relationships?author=cc5cca2e-0dd8-4b95-8cfc-a11230e73116'
+      const url = 'http://localhost:16006/rest/articles/relationships?author=1'
       request({
         method: 'GET',
         url
@@ -57,7 +57,7 @@ describe('Testing jsonapi-server', () => {
         someDataBlock.forEach(dataBlock => {
           const keys = Object.keys(dataBlock)
           assert.deepEqual(keys, [ 'id', 'type' ], 'Relationship data blocks should have specific properties')
-          assert.equal(typeof dataBlock.id, 'string', 'Relationship data blocks id should be string')
+          assert.equal(typeof dataBlock.id, 'number', 'Relationship data blocks id should be string')
           assert.equal(typeof dataBlock.type, 'string', 'Relationship data blocks type should be string')
         })
 

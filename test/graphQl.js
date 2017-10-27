@@ -78,7 +78,7 @@ describe('Testing jsonapi-server graphql', () => {
         createTags(tags: {
           name: "test1"
           parent: {
-            id: "7541a4de-4986-4597-81b9-cf31b6762486"
+            id: 1
           }
         }) {
           id
@@ -91,7 +91,7 @@ describe('Testing jsonapi-server graphql', () => {
       }
     `).then(result => {
       assert.equal(result.createTags.name, 'test1')
-      assert.equal(result.createTags.parent.id, '7541a4de-4986-4597-81b9-cf31b6762486')
+      assert.equal(result.createTags.parent.id, 1)
       assert.equal(result.createTags.parent.name, 'live')
       tagId = result.createTags.id
     }))
@@ -102,7 +102,7 @@ describe('Testing jsonapi-server graphql', () => {
           id: "${tagId}"
           name: "test2"
           parent: {
-            id: "68538177-7a62-4752-bc4e-8f971d253b42"
+            id: 4
           }
         }) {
           id
@@ -119,7 +119,7 @@ describe('Testing jsonapi-server graphql', () => {
           id: tagId,
           name: 'test2',
           parent: {
-            id: '68538177-7a62-4752-bc4e-8f971d253b42',
+            id: 4,
             name: 'development'
           }
         }

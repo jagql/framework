@@ -28,7 +28,7 @@ describe('Testing jsonapi-server', () => {
           'Content-Type': 'application/vnd.api+json'
         },
         body: JSON.stringify({
-          'data': { 'type': 'people', 'id': 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587' }
+          'data': { 'type': 'people', 'id': 4 }
         })
       }
       helpers.request(data, (err, res, json) => {
@@ -43,12 +43,12 @@ describe('Testing jsonapi-server', () => {
     it('errors with a foreign relation', done => {
       const data = {
         method: 'patch',
-        url: 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb/relationships/article',
+        url: 'http://localhost:16006/rest/comments/2/relationships/article',
         headers: {
           'Content-Type': 'application/vnd.api+json'
         },
         body: JSON.stringify({
-          'data': { 'type': 'articles', 'id': 'de305d54-75b4-431b-adb2-eb6b9e546014' }
+          'data': { 'type': 'articles', 'id': 1 }
         })
       }
       helpers.request(data, (err, res, json) => {
@@ -64,12 +64,12 @@ describe('Testing jsonapi-server', () => {
       it('updates the resource', done => {
         const data = {
           method: 'patch',
-          url: 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb/relationships/author',
+          url: 'http://localhost:16006/rest/comments/2/relationships/author',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
           body: JSON.stringify({
-            'data': { 'type': 'people', 'id': 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587', meta: { updated: '2012-01-01' } }
+            'data': { 'type': 'people', 'id': 4, meta: { updated: '2012-01-01' } }
           })
         }
         helpers.request(data, (err, res, json) => {
@@ -83,7 +83,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource has changed', done => {
-        const url = 'http://localhost:16006/rest/comments/3f1a89c2-eb85-4799-a048-6735db24b7eb/relationships/author'
+        const url = 'http://localhost:16006/rest/comments/2/relationships/author'
         helpers.request({
           method: 'GET',
           url
@@ -95,7 +95,7 @@ describe('Testing jsonapi-server', () => {
 
           assert.deepEqual(json.data, {
             'type': 'people',
-            'id': 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587',
+            'id': 4,
             'meta': {
               'updated': '2012-01-01'
             }

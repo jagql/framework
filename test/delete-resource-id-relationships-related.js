@@ -28,7 +28,7 @@ describe('Testing jsonapi-server', () => {
           'Content-Type': 'application/vnd.api+json'
         },
         body: JSON.stringify({
-          'data': { 'type': 'people', 'id': 'fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5' }
+          'data': { 'type': 'people', 'id': 4 }
         })
       }
       helpers.request(data, (err, res, json) => {
@@ -43,7 +43,7 @@ describe('Testing jsonapi-server', () => {
     it('errors with unknown key', done => {
       const data = {
         method: 'delete',
-        url: 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/tags',
+        url: 'http://localhost:16006/rest/articles/4/relationships/tags',
         headers: {
           'Content-Type': 'application/vnd.api+json'
         },
@@ -63,12 +63,12 @@ describe('Testing jsonapi-server', () => {
     it('errors with invalid type', done => {
       const data = {
         method: 'delete',
-        url: 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/tags',
+        url: 'http://localhost:16006/rest/articles/4/relationships/tags',
         headers: {
           'Content-Type': 'application/vnd.api+json'
         },
         body: JSON.stringify({
-          'data': { 'type': 'people', 'id': '7541a4de-4986-4597-81b9-cf31b6762486' }
+          'data': { 'type': 'people', 'id': 1 }
         })
       }
       helpers.request(data, (err, res, json) => {
@@ -84,12 +84,12 @@ describe('Testing jsonapi-server', () => {
       it('deletes the resource on many()', done => {
         const data = {
           method: 'delete',
-          url: 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/tags',
+          url: 'http://localhost:16006/rest/articles/4/relationships/tags',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
           body: JSON.stringify({
-            'data': { 'type': 'tags', 'id': '7541a4de-4986-4597-81b9-cf31b6762486' }
+            'data': { 'type': 'tags', 'id': 1 }
           })
         }
         helpers.request(data, (err, res, json) => {
@@ -103,7 +103,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource has changed', done => {
-        const url = 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/tags'
+        const url = 'http://localhost:16006/rest/articles/4/relationships/tags'
         helpers.request({
           method: 'GET',
           url
@@ -116,7 +116,7 @@ describe('Testing jsonapi-server', () => {
           assert.deepEqual(json.data, [
             {
               'type': 'tags',
-              'id': '6ec62f6d-9f82-40c5-b4f4-279ed1765492'
+              'id': 3
             }
           ])
 
@@ -129,12 +129,12 @@ describe('Testing jsonapi-server', () => {
       it('deletes the resource on one()', done => {
         const data = {
           method: 'delete',
-          url: 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/author',
+          url: 'http://localhost:16006/rest/articles/4/relationships/author',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
           body: JSON.stringify({
-            'data': { 'type': 'people', 'id': 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587' }
+            'data': { 'type': 'people', 'id': 4 }
           })
         }
         helpers.request(data, (err, res, json) => {
@@ -148,7 +148,7 @@ describe('Testing jsonapi-server', () => {
       })
 
       it('new resource has changed', done => {
-        const url = 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/author'
+        const url = 'http://localhost:16006/rest/articles/4/relationships/author'
         helpers.request({
           method: 'GET',
           url
@@ -166,12 +166,12 @@ describe('Testing jsonapi-server', () => {
       it('restore relation', done => {
         const data = {
           method: 'post',
-          url: 'http://localhost:16006/rest/articles/fa2a073f-8c64-4cbb-9158-b8f67a4ab9f5/relationships/author',
+          url: 'http://localhost:16006/rest/articles/4/relationships/author',
           headers: {
             'Content-Type': 'application/vnd.api+json'
           },
           body: JSON.stringify({
-            'data': { 'type': 'people', 'id': 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587' }
+            'data': { 'type': 'people', 'id': 4 }
           })
         }
         helpers.request(data, (err, res, json) => {

@@ -9,7 +9,7 @@ const jsonApiTestServer = require('../example/server.js')
 describe('Testing jsonapi-server', () => {
   describe('Creating a new resource with client-generated ID', () => {
     describe('creates a resource', () => {
-      let id = 'e4a1a34f-151b-41ca-a0d9-21726068ba8b'
+      let id = 10
 
       it('works', done => {
         const data = {

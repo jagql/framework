@@ -37,7 +37,7 @@ jsonApi.define({
   },
   examples: [
     {
-      id: 'aab14844-97e7-401c-98c8-0bd5ec922d93',
+      id: 1,
       type: 'photos',
       title: 'Matrix Code',
       url: 'http://www.example.com/foobar',
@@ -45,30 +45,30 @@ jsonApi.define({
       width: 1920,
       raw: true,
       tags: ['neo', 'morpheus'],
-      photographer: { type: 'people', id: 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587' }
+      photographer: { type: 'people', id: 4 }
     },
     {
-      id: '72695cbd-e9ef-44f6-85e0-0dbc06a269e8',
+      id: 2,
       type: 'photos',
       title: 'Penguins',
       url: 'http://www.example.com/penguins',
       height: 220,
       width: 60,
       tags: ['galapagos', 'emperor'],
-      photographer: { type: 'people', id: 'd850ea75-4427-4f81-8595-039990aeede5' }
+      photographer: { type: 'people', id: 3 }
     },
     {
-      id: '4a8acd65-78bb-4020-b9eb-2d058a86a2a0',
+      id: 3,
       type: 'photos',
       title: 'Cup of Tea',
       url: 'http://www.example.com/treat',
       height: 350,
       width: 350,
       tags: ['black', 'green'],
-      photographer: { type: 'people', id: 'ad3aa89e-9c5b-4ac9-a652-6670f9f27587' }
+      photographer: { type: 'people', id: 4 }
     },
     {
-      id: 'ed45eba1-15fe-41c7-93da-1df3dfa5289f',
+      id: 4,
       type: 'photos',
       title: 'Sunset Horizon',
       url: 'http://www.example.com/sunset',
@@ -76,7 +76,7 @@ jsonApi.define({
       width: 1050,
       raw: true,
       tags: ['orange', 'sky', 'sun'],
-      photographer: { type: 'people', id: 'cc5cca2e-0dd8-4b95-8cfc-a11230e73116' }
+      photographer: { type: 'people', id: 1 }
     }
 
   ]

@@ -161,7 +161,7 @@ describe('Testing jsonapi-server', () => {
               },
               'relationships': {
                 'photographer': {
-                  'data': { 'type': 'people', 'id': 'cc5cca2e-0dd8-4b95-8cfc-a11230e73116' }
+                  'data': { 'type': 'people', 'id': 1 }
                 }
               },
               'meta': {

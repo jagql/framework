@@ -21,7 +21,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('unknown relation should error', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/relationships/foobar'
+      const url = 'http://localhost:16006/rest/articles/1/relationships/foobar'
       helpers.request({
         method: 'GET',
         url
@@ -35,7 +35,7 @@ describe('Testing jsonapi-server', () => {
     })
 
     it('Lookup by id', done => {
-      const url = 'http://localhost:16006/rest/articles/de305d54-75b4-431b-adb2-eb6b9e546014/relationships/author'
+      const url = 'http://localhost:16006/rest/articles/1/relationships/author'
       helpers.request({
         method: 'GET',
         url
@@ -56,7 +56,7 @@ describe('Testing jsonapi-server', () => {
         someDataBlock.forEach(dataBlock => {
           const keys = Object.keys(dataBlock)
           assert.deepEqual(keys, [ 'type', 'id', 'meta' ], 'Relationship data blocks should have specific properties')
-          assert.equal(typeof dataBlock.id, 'string', 'Relationship data blocks id should be string')
+          assert.equal(typeof dataBlock.id, 'number', 'Relationship data blocks id should be string')
           assert.equal(typeof dataBlock.type, 'string', 'Relationship data blocks type should be string')
         })
 

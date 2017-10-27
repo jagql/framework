@@ -36,11 +36,11 @@ jsonApi.define({
   },
   examples: [
     {
-      id: "aab14844-97e7-401c-98c8-0bd5ec922d93",
+      id: "1",
       type: "photos",
       title: "Matrix Code",
       url: "http://www.example.com/foobar",
-      photographer: { type: "people", id: "ad3aa89e-9c5b-4ac9-a652-6670f9f27587" }
+      photographer: { type: "people", id: "4" }
     }
   ]
 });
