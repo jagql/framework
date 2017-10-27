@@ -71,11 +71,12 @@ describe('Testing jsonapi-server graphql', () => {
   })
 
   describe('write operations', () => {
-    let tagId = null
+    let tagId = 10
 
     it('create a tag', () => client.mutate(`
       {
         createTags(tags: {
+          id: ${tagId}
           name: "test1"
           parent: {
             id: 1
@@ -99,7 +100,7 @@ describe('Testing jsonapi-server graphql', () => {
     it('update the new tag', () => client.mutate(`
       {
         updateTags(tags: {
-          id: "${tagId}"
+          id: ${tagId}
           name: "test2"
           parent: {
             id: 4
@@ -128,7 +129,7 @@ describe('Testing jsonapi-server graphql', () => {
 
     it('deletes the tag', () => client.mutate(`
       {
-        deleteTags(id: "${tagId}") {
+        deleteTags(id: ${tagId}) {
           name
         }
       }
@@ -142,7 +143,7 @@ describe('Testing jsonapi-server graphql', () => {
 
     it('really is gone', () => client.query(`
       {
-        tags(id: "${tagId}") {
+        tags(id: ${tagId}) {
           name
         }
       }
