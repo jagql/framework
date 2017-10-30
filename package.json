@@ -9,11 +9,16 @@
     "api"
   ],
   "main": "lib/jsonApi.js",
-  "author": "Oliver Rumbelow",
+  "author": "Coding Blocks <dev@codingblocks.com>",
+  "contributors": [
+    "Oliver Rumbelow",
+    "Pedro Romano",
+    "Arnav Gupta <arnav@codingblocks.com>"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/holidayextras/jsonapi-server"
+    "url": "https://github.com/coding-blocks/jsonapi-server"
   },
   "engines": {
     "node": ">=6"
