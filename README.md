@@ -18,6 +18,10 @@ as the original versions will not be compatible with this**_
 
 _The rest of the readme is verbatim copy of the original project_
 
+------
+
+
+## About
 A config driven NodeJS framework implementing [`json:api`](http://jsonapi.org/) and [`GraphQL`](http://graphql.org/). You define the resources, it provides the api.
 
 ### Motivation / Justification / Rationale
