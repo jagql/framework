@@ -23,7 +23,7 @@ describe('Testing jsonapi-server', () => {
     it('errors with invalid id', done => {
       const data = {
         method: 'patch',
-        url: 'http://localhost:16006/rest/comments/foobar/relationships/author',
+        url: 'http://localhost:16006/rest/comments/131/relationships/author',
         headers: {
           'Content-Type': 'application/vnd.api+json'
         },
