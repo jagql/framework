@@ -7,6 +7,8 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/coding-blocks/jsonapi-server.svg)](https://greenkeeper.io/)
 
+## About this fork of `jsonapi-server`
+
 **NOTE: This is a fork of holidayextra's [jsonapi-server](https://github.com/holidayextras/jsonapi-server)
 The difference being our fork uses integer autoincrement ids instead of UUIDs.
 Apart from that, it is exactly the same implementation**
