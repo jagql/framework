@@ -1,3 +1,5 @@
+- 2017-10-30 - v3.2.6
+- 2017-10-30 - Fix type of "filter" in GraphQL
 - 2017-10-26 - v3.2.5
 - 2017-10-26 - remove uuid dependency
 - 2017-10-26 - v3.2.4
