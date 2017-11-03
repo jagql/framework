@@ -1,3 +1,5 @@
+- 2017-11-03 - v4.1.1
+- 2017-11-03 - use latest graphql and joi
 - 2017-11-03 - v4.1.0
 - 2017-11-03 - Show error of validation in response
 - 2017-11-03 - v4.0.0
