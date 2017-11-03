@@ -1,3 +1,5 @@
+- 2017-11-03 - v4.1.0
+- 2017-11-03 - Show error of validation in response
 - 2017-11-03 - v4.0.0
 - 2017-11-03 - Remove Node.js 4 support.
 - 2017-10-21 - v3.2.2
