@@ -1,6 +1,6 @@
 {
   "name": "@coding-blocks/jsonapi-server",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "description": "A config driven NodeJS framework implementing json:api",
   "keywords": [
     "jsonapi",
@@ -16,7 +16,7 @@
     "url": "https://github.com/coding-blocks/jsonapi-server#old"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "greenkeeper": {
     "ignore": [
