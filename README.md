@@ -1,13 +1,28 @@
-[![Build Status](https://travis-ci.org/holidayextras/jsonapi-server.svg?branch=master)](https://travis-ci.org/holidayextras/jsonapi-server)
-[![Coverage Status](https://coveralls.io/repos/github/holidayextras/jsonapi-server/badge.svg?branch=master)](https://coveralls.io/github/holidayextras/jsonapi-server?branch=master)
-[![npm version](https://badge.fury.io/js/jsonapi-server.svg)](http://badge.fury.io/js/jsonapi-server)
-[![Dependencies Status](https://david-dm.org/holidayextras/jsonapi-server.svg)](https://david-dm.org/holidayextras/jsonapi-server)
+[![Build Status](https://travis-ci.org/coding-blocks/jsonapi-server.svg?branch=master)](https://travis-ci.org/coding-blocks/jsonapi-server)
+[![Coverage Status](https://coveralls.io/repos/github/coding-blocks/jsonapi-server/badge.svg?branch=master)](https://coveralls.io/github/coding-blocks/jsonapi-server?branch=master)
+[![npm version](https://badge.fury.io/js/%40coding-blocks%2Fjsonapi-server.svg)](https://badge.fury.io/js/%40coding-blocks%2Fjsonapi-server)
+[![Dependencies Status](https://david-dm.org/coding-blocks/jsonapi-server.svg)](https://david-dm.org/coding-blocks/jsonapi-server)
 
 # jsonapi-server
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/holidayextras/jsonapi-server.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/coding-blocks/jsonapi-server.svg)](https://greenkeeper.io/)
+
+
+## About this Fork
+**NOTE: This is a fork of holidayextra's [jsonapi-server](https://github.com/holidayextras/jsonapi-server)
+We have merged a lot of pending PRs on the original repo that we felt we would gain advantage from. The original project
+was coing a bit too slowly for our needs.**
+
+_**You'd want to use our version of jsonapi-store-\[\*\] plugins with this
+as the original versions will not be compatible with this**_
+
+_The rest of the readme is verbatim copy of the original project_
+------------
+
+## About
 
 A config driven NodeJS framework implementing [`json:api`](http://jsonapi.org/) and [`GraphQL`](http://graphql.org/). You define the resources, it provides the api.
+
 
 ### Motivation / Justification / Rationale
 
