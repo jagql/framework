@@ -1,5 +1,7 @@
 - 2017-11-03 - v5.1.0
-- 2017-11-03 - add pagination count to relations
+- 2017-11-03 - [pr-335] generateId flag
+- 2017-11-03 - [pr-332] return error when not validated
+- 2017-11-03 - [pr-311] add pagination count to relations
 - 2017-11-03 - v5.0.0
 - 2017-11-03 - use node >= 8
 - 2017-11-03 - v4.1.1

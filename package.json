@@ -9,11 +9,11 @@
     "api"
   ],
   "main": "lib/jsonApi.js",
-  "author": "Coding Blocks <dev@codingblocks.com>",
+  "author": "Arnav Gupta <arnav@codingblocks.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coding-blocks/jsonapi-server#old"
+    "url": "https://github.com/coding-blocks/jsonapi-server"
   },
   "engines": {
     "node": ">=8"
