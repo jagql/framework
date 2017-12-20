@@ -9,6 +9,7 @@ jsonApi.define({
   description: 'Used to group resources together, useful for finding related resources.',
   handlers: tagHandler,
   searchParams: { },
+  primaryKey: 'uuid',
   attributes: {
     name: jsonApi.Joi.string()
       .description('The tag name')

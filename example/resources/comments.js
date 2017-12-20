@@ -9,6 +9,7 @@ jsonApi.define({
   description: 'Allow people to attach short messages to articles',
   handlers: commentHandler,
   searchParams: { },
+  primaryKey: 'uuid',
   attributes: {
     body: jsonApi.Joi.string().required()
       .description('The tag name')

@@ -9,6 +9,7 @@ jsonApi.define({
   description: 'A demonstration of a polymorphic relationship',
   handlers: tupleHandler,
   searchParams: { },
+  primaryKey: 'uuid',
   attributes: {
     media: jsonApi.Joi.many('articles', 'photos'),
     preferred: jsonApi.Joi.one('articles', 'photos')

@@ -8,6 +8,7 @@ jsonApi.define({
   resource: 'people',
   description: 'Used to attribute work to specific people.',
   handlers: peopleHandler,
+  primaryKey: 'uuid',
   searchParams: { },
   attributes: {
     firstname: jsonApi.Joi.string().alphanum()

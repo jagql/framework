@@ -10,6 +10,7 @@ jsonApi.define({
   resource: 'articles',
   description: 'Represents the core content, people love to read articles.',
   handlers: authenticationHandler.chain(timestampHandler).chain(articleHandler),
+  primaryKey: 'uuid',
   searchParams: {
     query: jsonApi.Joi.number()
       .description('Fuzzy text match against titles')

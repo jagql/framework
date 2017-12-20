@@ -9,7 +9,7 @@ jsonApi.define({
   description: 'Demonstration of a resource with an auto-incrementing ID',
   handlers: autoincrementHandler,
   searchParams: { },
-  generateId: false,
+  primaryKey: 'autoincrement',
   attributes: {
     id: jsonApi.Joi.string(),
     name: jsonApi.Joi.string()

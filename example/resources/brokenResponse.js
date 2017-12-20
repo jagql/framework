@@ -8,6 +8,7 @@ jsonApi.define({
   resource: 'brokenResponse',
   description: 'Example demonstrating error handling of broken responses',
   handlers: brokenResponseHandler,
+  primaryKey: 'uuid',
   searchParams: { },
   attributes: {
     boolean: jsonApi.Joi.boolean(),

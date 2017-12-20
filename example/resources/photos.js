@@ -9,6 +9,7 @@ jsonApi.define({
   description: 'Used to represent all the images in the system.',
   handlers: photoHandler,
   searchParams: { },
+  primaryKey: 'uuid',
   attributes: {
     title: jsonApi.Joi.string()
       .description('The photos title')
