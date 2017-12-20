@@ -13,6 +13,17 @@
 We have merged a lot of pending PRs on the original repo that we felt we would gain advantage from. The original project
 was coing a bit too slowly for our needs.**
 
+### Differences from upstream
+
+#### `primaryKey` is configurable
+In upstream, keys are by default `uuid` and are taken from DB, if `generateId` = `true`
+We instead use a different property `primaryKey`, whose possible values are
+
+ - `uuid` : Uses UUID v4 (generated from the client)
+ - `autoincrement` : Uses AUTOINCREMENT integers
+
+\*In future there might be other types of primaryKeys if required.
+
 _**You'd want to use our version of jsonapi-store-\[\*\] plugins with this
 as the original versions will not be compatible with this**_
 
