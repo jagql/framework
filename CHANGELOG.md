@@ -5,6 +5,17 @@
 - 2017-11-03 - [pr-311] add pagination count to relations
 - 2017-11-03 - v5.0.0
 - 2017-11-03 - use node >= 8
+- 2017-12-11 - v4.1.2
+- 2017-12-11 - Fix broken response test resource to enable integration with data store handlers.
+- 2017-11-15 - v4.1.1
+- 2017-11-15 - Downgrade Joi to a version supported by Node.js v6.
+- 2017-11-15 - Force `engine-strict=true` when running npm.
+- 2017-11-14 - v4.1.0
+- 2017-11-14 - New configuration option to disable automatic id generation.
+- 2017-11-14 - Update GraphQL dependencies to latest versions.
+- 2017-11-14 - Remove yarn lockfile.
+- 2017-11-03 - v4.0.0
+- 2017-11-03 - Return error when a response item does not validate.
 - 2017-11-03 - v4.1.1
 - 2017-11-03 - use latest graphql and joi
 - 2017-11-03 - v4.1.0
