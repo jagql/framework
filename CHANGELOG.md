@@ -1,3 +1,6 @@
+- 2018-01-27 - v5.3.1
+- 2018-01-27 - updated joi to v13
+- 2018-01-27 - let user state foreign key type
 - 2017-12-18 - v5.1.1
 - 2017-11-03 - [pr-335] generateId flag
 - 2017-11-03 - [pr-332] return error when not validated

@@ -24,6 +24,20 @@ We instead use a different property `primaryKey`, whose possible values are
 
 \*In future there might be other types of primaryKeys if required.
 
+#### relationship key type is configurable
+When creating a field, you can state how to relate it
+
+```javascript
+jsonApi.define({
+  ... 
+  attributes: {
+    ... 
+    author: jsonApi.Joi.one('people').uidType('uuid')
+    ...
+  }
+})
+```
+
 _**You'd want to use our version of jsonapi-store-\[\*\] plugins with this
 as the original versions will not be compatible with this**_
 
