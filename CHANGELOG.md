@@ -1,4 +1,8 @@
-- 2018-01-27 - v5.3.1
+- 2018-01-27 - [pr-277] run validation within setImmediate (async)
+- 2018-01-27 - expose express req res to handlers
+- 2018-01-27 - [pr-367] fix crud operation detection
+- 2018-01-27 - [pr-366] add bodyParserOptions
+- 2018-01-27 - v5.3.0
 - 2018-01-27 - updated joi to v13
 - 2018-01-27 - let user state foreign key type
 - 2017-12-18 - v5.1.1
