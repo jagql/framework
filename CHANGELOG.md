@@ -1,3 +1,5 @@
+- 2018-01-27 - v5.4.0
+- 2018-01-27 - [pr-275] handlesSort & handlesFilter support
 - 2018-01-27 - [pr-277] run validation within setImmediate (async)
 - 2018-01-27 - expose express req res to handlers
 - 2018-01-27 - [pr-367] fix crud operation detection
