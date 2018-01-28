@@ -1,4 +1,4 @@
-const jsonApiTestServer = require('./example/server.js')
+const jsonApiTestServer = require('../example/server.js')
 const request = require('request')
 const assert = require('assert')
 
