@@ -61,6 +61,7 @@
     "mocha-performance": "0.1.1",
     "nyc": "11.3.0",
     "swagger-tools": "0.10.3",
+    "swagger2openapi": "^2.11.14",
     "v8-profiler": "5.7.0"
   },
   "scripts": {
