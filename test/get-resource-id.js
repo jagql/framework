@@ -79,10 +79,10 @@ describe('Testing jsonapi-server', () => {
         url
       }, (err, res, json) => {
         assert.equal(err, null)
-        json = helpers.validateJson(json)
+        json = helpers.validateError(json)
 
-        assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-        assert.deepEqual(json.data, null)
+        assert.equal(res.statusCode, '404', 'Expecting 404 NOT FOUND')
+        // assert.deepEqual(json.data, null)
 
         done()
       })
