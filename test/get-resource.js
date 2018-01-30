@@ -76,9 +76,10 @@ describe('Testing jsonapi-server', () => {
           assert.equal(res.statusCode, '200', 'Expecting 200 OK')
           assert.equal(json.data.length, 4, 'Response should contain exactly 4 resources')
 
-          const previous = json.data[0]
+          let previous
           let current
           for (let i = 1; i < json.data.length; i++) {
+            previous = json.data[i - 1]
             current = json.data[i]
             assert.ok(previous.attributes.title > current.attributes.title, 'Resources should be ordered')
           }
