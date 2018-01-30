@@ -1,6 +1,6 @@
 {
   "name": "@coding-blocks/jsonapi-server",
-  "version": "5.4.2",
+  "version": "5.4.3",
   "description": "A config driven NodeJS framework implementing json:api",
   "keywords": [
     "jsonapi",
