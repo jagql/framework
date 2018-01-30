@@ -1,3 +1,6 @@
+- 2018-01-30 - v5.4.2
+- 2018-01-30 - bubble up handlesSort and handlesFilter to root handler
+- 2018-01-30 - fix pagniation in resource relations
 - 2018-01-27 - v5.4.0
 - 2018-01-27 - [pr-275] handlesSort & handlesFilter support
 - 2018-01-27 - [pr-277] run validation within setImmediate (async)
