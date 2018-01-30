@@ -78,9 +78,7 @@ describe('Testing jsonapi-server', () => {
 
         assert.equal(res.statusCode, '200', 'Expecting 200 OK')
         json.data.forEach(resource => helpers.validateResource(resource))
-        // technically, this should be 2... but it seems that the postProcess filtering does not correctly update the "total" as it filters records.
-        // wondering if that should be fixed... (i.e. shouldn't totals be calculated AFTER filtering).
-        assert.equal(json.meta.page && json.meta.page.total, 4, 'should include pagination')
+        assert.equal(json.meta.page && json.meta.page.total, 2, 'should include pagination')
         helpers.validatePagination(json)
 
         done()
@@ -98,10 +96,7 @@ describe('Testing jsonapi-server', () => {
 
         assert.equal(res.statusCode, '200', 'Expecting 200 OK')
         json.data.forEach(resource => helpers.validateResource(resource))
-        // technically, this should be 2... but it seems that the MemoryHandler is not set up to filter correctly for these tests.
-        // wondering if the postProcess filter should be updating the total as it applies its filters...
-        // see "WARNING: Pagination count doesn't match resource count." in unit test output.
-        assert.equal(json.meta.page && json.meta.page.total, 4, 'should include pagination')
+        assert.equal(json.meta.page && json.meta.page.total, 2, 'should include pagination')
         assert.equal(json.data.length, 1, 'only one record should be returned')
         helpers.validatePagination(json)
 
