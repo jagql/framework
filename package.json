@@ -1,5 +1,5 @@
 {
-  "name": "@coding-blocks/jsonapi-server",
+  "name": "jagapi",
   "version": "5.4.4",
   "description": "A config driven NodeJS framework implementing json:api",
   "keywords": [
@@ -16,14 +16,14 @@
     "url": "https://github.com/coding-blocks/jsonapi-server"
   },
   "engines": {
-    "node": ">=8"
+    "node": "8",
+    "npm": "5",
+    "yarn": "1"
   },
   "greenkeeper": {
     "ignore": [
       "express-graphql",
-      "graphql",
-      "joi",
-      "swagger-tools"
+      "graphql"
     ]
   },
   "dependencies": {
