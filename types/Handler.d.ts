@@ -49,7 +49,7 @@ interface UpdateFunction {
 }
 
 declare class Handler {
-  initialise: (resConfig: ResourceConfig) => any
+  initialise: (resConfig: ResourceConfig<any>) => any
   create: CreateFunction
   search: SearchFunction
   find: FindFunction
