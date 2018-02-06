@@ -29,7 +29,7 @@ export interface ResourceConfig {
   attributes: ResourceAttributes
   examples: [{type: string, id?: string, [x: string]: any}]
 }
-export const Joi: typeof OurJoi
+export const Joi = OurJoi
 export const setConfig: (apiConfig: ApiConfig) => void
 export const define: (resConfig: ResourceConfig) => void
 export const authenticate: (req: Request, callback: () => void) => void
