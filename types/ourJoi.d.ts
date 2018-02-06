@@ -1,9 +1,9 @@
 import {Schema} from 'joi'
-import * as OurJoi from 'joi'
+import Joi = require('joi')
 
-declare namespace OurJoi {
-  export const one: (resources: string[]) => Schema
-  export const many: (resources: string[]) => Schema
+interface OurJoi extends Joi.Root {
+  one: (...model: string[]) => Schema
+  many: (...model: string[]) => Schema
 }
 
 export = OurJoi

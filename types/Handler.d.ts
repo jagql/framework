@@ -37,7 +37,7 @@ interface FindFunction {
 }
 
 interface CreateFunction {
-  (request: JsonApiRequest, newResource: any, callback: HandlerErrorCallback): void
+  (request: JsonApiRequest, newResource: any, callback: HandlerErrorCallback<any>): void
 }
 
 interface DeleteFunction {
@@ -45,10 +45,10 @@ interface DeleteFunction {
 }
 
 interface UpdateFunction {
-  (request: JsonApiRequest, newPartialResource: any, callback: HandlerErrorCallback): void
+  (request: JsonApiRequest, newPartialResource: any, callback: HandlerErrorCallback<any>): void
 }
 
-declare type Handler = {
+declare class Handler {
   initialise: (resConfig: ResourceConfig) => any
   create: CreateFunction
   search: SearchFunction

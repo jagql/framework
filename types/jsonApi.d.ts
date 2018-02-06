@@ -34,13 +34,13 @@ export interface ResourceConfig {
   attributes: ResourceAttributes
   examples: ExampleObject[]
 }
-export const Joi = OurJoi
+export const Joi: OurJoi
 export const setConfig: (apiConfig: ApiConfig) => void
 export const define: (resConfig: ResourceConfig) => void
 export const authenticate: (authenticator: (req: Request, cb: () => void ) => void) => void
 export const getExpressServer: () => Application
-export const ChainHandler = ChainHandler
-export const MemoryHandler = MemoryHandler
+export type ChainHandler = ChainHandler
+export type MemoryHandler = MemoryHandler
 export const onUncaughtException: (err: Error) => void
 export const start: () => void
 export const close: () => void
