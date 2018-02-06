@@ -1,9 +1,10 @@
 import {Application, Request} from 'express'
 import {Schema} from 'joi'
 import OurJoi = require('./ourJoi')
-import ChainHandler = require('./ChainHandler')
+import ChainHandlerType = require('./ChainHandler')
 import Handler = require('./Handler')
-import MemoryHandler = require('./MemoryHandler')
+import MemoryHandlerType = require('./MemoryHandler')
+import {ResourceConfig} from './ResourceConfig'
 
 
 export type JsonApiProtocols = 'http' | 'https'
@@ -18,29 +19,19 @@ export interface ApiConfig {
   meta: any
   swagger?: any
 }
-interface ResourceAttributes {
-  [x: string]: Schema
-}
 export type ExampleObject = {
   type: string
   id?: string
   [x: string]: any
 }
-export interface ResourceConfig {
-  namespace: string,
-  resource: string,
-  handlers: Handler
-  primaryKey: string,
-  attributes: ResourceAttributes
-  examples: ExampleObject[]
-}
+
 export const Joi: OurJoi
 export const setConfig: (apiConfig: ApiConfig) => void
-export const define: (resConfig: ResourceConfig) => void
+export const define: <T>(resConfig: ResourceConfig<T>) => void
 export const authenticate: (authenticator: (req: Request, cb: () => void ) => void) => void
 export const getExpressServer: () => Application
-export type ChainHandler = ChainHandler
-export type MemoryHandler = MemoryHandler
+export type ChainHandler = ChainHandlerType
+export type MemoryHandler = MemoryHandlerType
 export const onUncaughtException: (err: Error) => void
 export const start: () => void
 export const close: () => void
