@@ -1,5 +1,5 @@
 import {EventEmitter} from 'events'
-import HttpVerbs = require('./Handler')
+import {HttpVerbs} from './Handler'
 
 export interface MetricsData {
   route: string
@@ -14,6 +14,6 @@ export interface MetricsListener {
 }
 
 
-export class Metrics extends EventEmitter {
-  on: (event: 'data', listener: MetricsListener) => this
+export declare class Metrics extends EventEmitter {
+  on(event: 'data', listener: MetricsListener): this
 }

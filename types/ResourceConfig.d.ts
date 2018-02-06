@@ -1,5 +1,5 @@
 import {Schema} from 'joi'
-import Handler = require('./Handler')
+import {Handler} from './Handler'
 
 export type BaseType = {
   id?: string
@@ -7,7 +7,7 @@ export type BaseType = {
 }
 export type ResourceAttributes<Item> = {
   [x in keyof Item]: Schema
-}
+  }
 
 export interface ResourceConfig<Item> {
   namespace: string,

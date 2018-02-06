@@ -1,6 +1,6 @@
-import {ResourceConfig} from './jsonApi'
 import {PathParams} from 'express-serve-static-core'
 import {Request, Response} from 'express'
+import {ResourceConfig} from './ResourceConfig'
 
 type HttpVerbs = 'GET' | 'POST' | 'DELETE' | 'PUT' | 'PATCH'
 
@@ -55,7 +55,7 @@ interface UpdateFunction {
   (request: JsonApiRequest, newPartialResource: any, callback: HandlerCallback<any>): void
 }
 
-declare class Handler {
+export declare class Handler {
   constructor(o?: any)
   initialise: (resConfig: ResourceConfig<any>) => any
   create: CreateFunction
@@ -68,5 +68,3 @@ declare class Handler {
   handlesSort: boolean
   handlesFilter: boolean
 }
-
-export = Handler

@@ -1,4 +1,4 @@
-import Handler from './Handler'
+import {Handler} from './Handler'
 
 declare class ChainHandler extends Handler{
   constructor()
