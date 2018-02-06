@@ -21,13 +21,18 @@ export interface ApiConfig {
 interface ResourceAttributes {
   [x: string]: Schema
 }
+export type ExampleObject = {
+  type: string
+  id?: string
+  [x: string]: any
+}
 export interface ResourceConfig {
   namespace: string,
   resource: string,
   handlers: Handler
   primaryKey: string,
   attributes: ResourceAttributes
-  examples: [{type: string, id?: string, [x: string]: any}]
+  examples: ExampleObject[]
 }
 export const Joi = OurJoi
 export const setConfig: (apiConfig: ApiConfig) => void
