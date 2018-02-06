@@ -134,7 +134,7 @@ the `callback` should be invoked with with an `error` or `null, rawResource`.
 ```
 function(request, newResource, callback) { };
 ```
-the `callback` should be invoked with with an `error` or `newResource`.
+the `callback` should be invoked with with an `error` or `null, newResource`.
 
 #### delete
 `delete` is invoked with a `request` object (see above). It should delete the resource of type `request.params.type` and id `request.params.id`.

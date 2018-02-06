@@ -1,13 +1,10 @@
 import {ResourceConfig} from './jsonApi'
 import {PathParams} from 'express-serve-static-core'
 import {Request, Response} from 'express'
-interface HandlerErrorCallback<T> {
-  (err?: Error, result?: T): any
-}
 
 type HttpVerbs = 'GET' | 'POST' | 'DELETE' | 'PUT' | 'PATCH'
 
-interface JsonApiRequest {
+export interface JsonApiRequest {
   params: any
   headers: any
   safeHeaders: any
@@ -27,28 +24,39 @@ interface JsonApiRequest {
   }
 }
 
+export interface JsonApiError {
+  status: string
+  code: string
+  title: string
+  detail: string
+}
+
+export interface HandlerCallback<T> {
+  (err?: JsonApiError, result?: T): any
+}
+
+
 interface SearchFunction {
-  // TODO: Define Request
-  (request: JsonApiRequest, callback: HandlerErrorCallback<any[]>): void
+  (request: JsonApiRequest, callback: HandlerCallback<any[]>): void
 }
 interface FindFunction {
-  // TODO: Define Request
-  (request: JsonApiRequest, callback: HandlerErrorCallback<any>): void
+  (request: JsonApiRequest, callback: HandlerCallback<any>): void
 }
 
 interface CreateFunction {
-  (request: JsonApiRequest, newResource: any, callback: HandlerErrorCallback<any>): void
+  (request: JsonApiRequest, newResource: any, callback: HandlerCallback<any>): void
 }
 
 interface DeleteFunction {
-  (request: JsonApiRequest, callback: HandlerErrorCallback<void>): void
+  (request: JsonApiRequest, callback: HandlerCallback<void>): void
 }
 
 interface UpdateFunction {
-  (request: JsonApiRequest, newPartialResource: any, callback: HandlerErrorCallback<any>): void
+  (request: JsonApiRequest, newPartialResource: any, callback: HandlerCallback<any>): void
 }
 
 declare class Handler {
+  constructor(o?: any)
   initialise: (resConfig: ResourceConfig<any>) => any
   create: CreateFunction
   search: SearchFunction

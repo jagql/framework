@@ -5,6 +5,8 @@ import ChainHandlerType = require('./ChainHandler')
 import HandlerType = require('./Handler')
 import MemoryHandlerType = require('./MemoryHandler')
 import {ResourceConfig} from './ResourceConfig'
+import {Metrics} from './metrics'
+export * from './metrics'
 export * from './ResourceConfig'
 
 
@@ -26,14 +28,20 @@ export type ExampleObject = {
   [x: string]: any
 }
 
-export const Joi: OurJoi
-export const setConfig: (apiConfig: ApiConfig) => void
-export const define: <T>(resConfig: ResourceConfig<T>) => void
-export const authenticate: (authenticator: (req: Request, cb: () => void ) => void) => void
-export const getExpressServer: () => Application
-export type ChainHandler = ChainHandlerType
-export type MemoryHandler = MemoryHandlerType
-export type Handler = HandlerType
-export const onUncaughtException: (err: Error) => void
-export const start: () => void
-export const close: () => void
+declare namespace jsonApi {
+  export const Joi: OurJoi
+  export const setConfig: (apiConfig: ApiConfig) => void
+  export const define: <T>(resConfig: ResourceConfig<T>) => void
+  export const authenticate: (authenticator: (req: Request, cb: () => void ) => void) => void
+  export const metrics = Metrics
+  export const getExpressServer: () => Application
+  export type ChainHandler = ChainHandlerType
+  export type MemoryHandler = MemoryHandlerType
+  export type Handler = HandlerType
+  export const onUncaughtException: (err: Error) => void
+  export const start: () => void
+  export const close: () => void
+}
+
+export = jsonApi
+
