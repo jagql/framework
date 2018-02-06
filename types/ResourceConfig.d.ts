@@ -1,6 +1,10 @@
 import {Schema} from 'joi'
 import Handler = require('./Handler')
 
+type BaseType = {
+  id?: string
+  type: string
+}
 type ResourceAttributes<Item> = {
   [x in keyof Item]: Schema
 }
@@ -11,5 +15,5 @@ export interface ResourceConfig<Item> {
   handlers: Handler
   primaryKey: string,
   attributes: ResourceAttributes<Item>
-  examples: Item[]
+  examples: (BaseType & Item)[]
 }
