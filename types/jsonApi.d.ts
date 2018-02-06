@@ -2,9 +2,10 @@ import {Application, Request} from 'express'
 import {Schema} from 'joi'
 import OurJoi = require('./ourJoi')
 import ChainHandlerType = require('./ChainHandler')
-import Handler = require('./Handler')
+import HandlerType = require('./Handler')
 import MemoryHandlerType = require('./MemoryHandler')
 import {ResourceConfig} from './ResourceConfig'
+export * from './ResourceConfig'
 
 
 export type JsonApiProtocols = 'http' | 'https'
@@ -32,6 +33,7 @@ export const authenticate: (authenticator: (req: Request, cb: () => void ) => vo
 export const getExpressServer: () => Application
 export type ChainHandler = ChainHandlerType
 export type MemoryHandler = MemoryHandlerType
+export type Handler = HandlerType
 export const onUncaughtException: (err: Error) => void
 export const start: () => void
 export const close: () => void
