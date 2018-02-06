@@ -1,11 +1,11 @@
 import {Schema} from 'joi'
 import Handler = require('./Handler')
 
-type BaseType = {
+export type BaseType = {
   id?: string
   type: string
 }
-type ResourceAttributes<Item> = {
+export type ResourceAttributes<Item> = {
   [x in keyof Item]: Schema
 }
 
