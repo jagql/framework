@@ -43,6 +43,10 @@ All requests are presented to handlers in the following format:
     host: "localhost:16006",
     connection: "keep-alive"
   },
+  express: {
+    req, // Express req and res objects
+    res
+  }
   route: {
     // Routing information
     host: "localhost:16006",
@@ -79,10 +83,10 @@ The `ready` property should be set to a _truthy_ value once the handler is ready
 
 #### handles<Sort|Filter>
 
-Some post-process steps can be handled within the handler itself.  For instance, some handlers may be capable of 
-returning data that is already sorted in the correct order.  If the `handlesSort` or `handlesFilter` property is set to 
+Some post-process steps can be handled within the handler itself.  For instance, some handlers may be capable of
+returning data that is already sorted in the correct order.  If the `handlesSort` or `handlesFilter` property is set to
 a _truthy_ value on the custom handler instance, then the corresponding post-processing step will be skipped.
- 
+
 The following flags can be set:
 ```javascript
 {
