@@ -1,3 +1,6 @@
+- 2018-02-06 - v5.4.5
+- 2018-02-06 - Typescript definitions
+- 2018-02-05 - DEFAULT for autoincrement fixed
 - 2018-01-30 - v5.4.2
 - 2018-01-30 - bubble up handlesSort and handlesFilter to root handler
 - 2018-01-30 - fix pagniation in resource relations
