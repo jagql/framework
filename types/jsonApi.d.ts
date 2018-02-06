@@ -32,7 +32,7 @@ export interface ResourceConfig {
 export const Joi = OurJoi
 export const setConfig: (apiConfig: ApiConfig) => void
 export const define: (resConfig: ResourceConfig) => void
-export const authenticate: (req: Request, callback: () => void) => void
+export const authenticate: (authenticator: (req: Request, cb: () => void ) => void) => void
 export const getExpressServer: () => Application
 export const ChainHandler = ChainHandler
 export const MemoryHandler = MemoryHandler
