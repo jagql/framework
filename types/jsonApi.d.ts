@@ -38,5 +38,5 @@ export const getExpressServer: () => Application
 export const ChainHandler: typeof ChainHandlerType
 export const MemoryHandler: typeof MemoryHandlerType
 export function onUncaughtException(err: Error): void
-export function start(): void
+export function start(cb: () => void): void
 export function close(): void
