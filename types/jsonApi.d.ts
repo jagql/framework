@@ -12,6 +12,7 @@ export * from './Handler'
 
 export type JsonApiProtocols = 'http' | 'https'
 
+
 export interface ApiConfig {
   graphiql?: boolean
   jsonapi?: boolean
@@ -29,13 +30,13 @@ export type ExampleObject = {
 }
 
 export const Joi: OurJoi
-export const setConfig: (apiConfig: ApiConfig) => void
-export const define: <T>(resConfig: ResourceConfig<T>) => void
-export const authenticate: (authenticator: (req: Request, cb: () => void ) => void) => void
+export function setConfig(apiConfig: ApiConfig): void
+export function define<T>(resConfig: ResourceConfig<T>): void
+export function authenticate(authenticator: (req: Request, cb: () => void ) => void): void
 export const metrics: Metrics
 export const getExpressServer: () => Application
-export type ChainHandler = ChainHandlerType
-export type MemoryHandler = MemoryHandlerType
-export const onUncaughtException: (err: Error) => void
-export const start: () => void
-export const close: () => void
+export const ChainHandler: typeof ChainHandlerType
+export const MemoryHandler: typeof MemoryHandlerType
+export function onUncaughtException(err: Error): void
+export function start(): void
+export function close(): void

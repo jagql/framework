@@ -4,12 +4,14 @@ import Joi = require('joi')
 type UidType = 'uuid' | 'autoincrement'
 
 interface OurJoiSchema extends AnySchema {
-  uidType: (type: UidType) => this
+  uidType(type: UidType): this
 }
 
 interface OurJoi extends Joi.Root {
-  one: (...model: string[]) => OurJoiSchema
-  many: (...model: string[]) => OurJoiSchema
+  one(...model: string[]): OurJoiSchema
+  many(...model: string[]): OurJoiSchema
+  belongsToOne(model: string): OurJoiSchema
+  belongsToMany(model: string): OurJoiSchema
 }
 
 export = OurJoi

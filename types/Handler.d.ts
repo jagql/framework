@@ -57,7 +57,7 @@ interface UpdateFunction {
 
 export declare class Handler {
   constructor(o?: any)
-  initialise: (resConfig: ResourceConfig<any>) => any
+  initialise(resConfig: ResourceConfig<any>): any
   create: CreateFunction
   search: SearchFunction
   find: FindFunction
