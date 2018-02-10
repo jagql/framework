@@ -73,7 +73,9 @@ jsonApi.metrics.on('data', data => {
 // If we're using the example server for the test suite,
 // wait for the tests to call .start();
 if (typeof describe === 'undefined') {
-  jsonApi.start()
+  jsonApi.start(() => {
+    console.log('Server running')
+  })
 }
 server.start = jsonApi.start
 server.close = jsonApi.close
