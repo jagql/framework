@@ -11,7 +11,7 @@ type BeforeUpdateFunction = UpdateFunction
  */
 declare class ChainHandler extends Handler{
   constructor()
-  chain(nextHandler: Handler): ChainHandler
+  chain(nextHandler: Handler): this
   beforeInitialise(...args: any[]): any // TODO
   afterInitialise(...args: any[]): any // TODO
   beforeClose(...args: any[]): any // TODO
