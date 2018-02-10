@@ -1,7 +1,10 @@
 /**
  * @module jagapi/lib/ChainHandler
  */
-import {CreateFunction, DeleteFunction, FindFunction, Handler, SearchFunction, UpdateFunction} from './Handler'
+import {
+  CreateFunction, DeleteFunction, FindFunction, Handler, HandlerCallback, JsonApiError, JsonApiRequest, SearchFunction,
+  UpdateFunction
+} from './Handler'
 
 
 type BeforeSearchFunction = SearchFunction
@@ -10,10 +13,29 @@ type BeforeCreateFunction = CreateFunction
 type BeforeDeleteFunction = DeleteFunction
 type BeforeUpdateFunction = UpdateFunction
 
+interface AfterSearchFunction<R=any> {
+  (request: JsonApiRequest, results: R[], count: number, callback: HandlerCallback<R[], number>): void
+}
+interface AfterFindFunction<R=any> {
+  (request: JsonApiRequest, result: R, callback: HandlerCallback<R>): void
+}
+
+interface AfterCreateFunction<R=any> {
+  (request: JsonApiRequest, createdResource: R, callback: HandlerCallback<R>): void
+}
+
+interface AfterDeleteFunction {
+  (request: JsonApiRequest, callback: HandlerCallback<void>): void
+}
+
+interface AfterUpdateFunction<R=any> {
+  (request: JsonApiRequest, updatedResource: R, callback: HandlerCallback<R>): void
+}
+
 /**
  * [[include:chain-handler.md]]
  */
-declare class ChainHandler extends Handler{
+declare class ChainHandler<R=any> extends Handler<R>{
   constructor()
   chain(nextHandler: Handler): this
   beforeInitialise(...args: any[]): any // TODO
@@ -21,15 +43,15 @@ declare class ChainHandler extends Handler{
   beforeClose(...args: any[]): any // TODO
   afterClose(...args: any[]): any // TODO
   beforeSearch: BeforeSearchFunction
-  afterSearch(): void
+  afterSearch: AfterSearchFunction<R>
   beforeFind: BeforeFindFunction
-  afterFind(): void
+  afterFind: AfterFindFunction<R>
   beforeCreate: BeforeCreateFunction
-  afterCreate(): void
+  afterCreate: AfterFindFunction<R>
   beforeUpdate: BeforeUpdateFunction
-  afterUpdate(): void
+  afterUpdate: AfterUpdateFunction<R>
   beforeDelete: BeforeDeleteFunction
-  afterDelete(): void
+  afterDelete: AfterDeleteFunction
 }
 
 export = ChainHandler

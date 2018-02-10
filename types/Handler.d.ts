@@ -40,31 +40,32 @@ interface HandlerCallback<R, C = undefined> {
 }
 
 
-interface SearchFunction {
-  (request: JsonApiRequest, callback: HandlerCallback<any[], number>): void
+interface SearchFunction<R=any> {
+  (request: JsonApiRequest, callback: HandlerCallback<R[], number>): void
 }
-interface FindFunction {
-  (request: JsonApiRequest, callback: HandlerCallback<any>): void
+interface FindFunction<R=any> {
+  (request: JsonApiRequest, callback: HandlerCallback<R>): void
 }
 
-interface CreateFunction {
-  (request: JsonApiRequest, newResource: any, callback: HandlerCallback<any>): void
+interface CreateFunction<R=any> {
+  (request: JsonApiRequest, newResource: R, callback: HandlerCallback<R>): void
 }
 
 interface DeleteFunction {
   (request: JsonApiRequest, callback: HandlerCallback<void>): void
 }
 
-interface UpdateFunction {
-  (request: JsonApiRequest, newPartialResource: any, callback: HandlerCallback<any>): void
+interface UpdateFunction<R=any> {
+  (request: JsonApiRequest, newPartialResource: Partial<R>, callback: HandlerCallback<R>): void
 }
 
 /**
  * [[include:handlers.md]]
+ * @param R type of resource (if unspecified, `any`)
  */
-export declare class Handler {
+export declare class Handler<R=any> {
   constructor(o?: any)
-  initialise(resConfig: ResourceConfig<any>): any
+  initialise(resConfig: ResourceConfig<R>): any
   create: CreateFunction
   search: SearchFunction
   find: FindFunction
