@@ -47,7 +47,7 @@ export function setConfig(apiConfig: ApiConfig): void
 export function define<T>(resConfig: ResourceConfig<T>): void
 export function authenticate(authenticator: (req: Request, cb: () => void ) => void): void
 export const metrics: Metrics
-export const getExpressServer: () => Application
+export function getExpressServer(): Application
 export const ChainHandler: typeof ChainHandlerType
 export const MemoryHandler: typeof MemoryHandlerType
 export function onUncaughtException(err: Error): void
