@@ -1,4 +1,10 @@
-import {Handler} from './Handler'
+import {CreateFunction, DeleteFunction, FindFunction, Handler, SearchFunction, UpdateFunction} from './Handler'
+
+type BeforeSearchFunction = SearchFunction
+type BeforeFindFunction = FindFunction
+type BeforeCreateFunction = CreateFunction
+type BeforeDeleteFunction = DeleteFunction
+type BeforeUpdateFunction = UpdateFunction
 
 /**
  * [[include:chain-handler.md]]
@@ -6,19 +12,19 @@ import {Handler} from './Handler'
 declare class ChainHandler extends Handler{
   constructor()
   chain(nextHandler: Handler): ChainHandler
-  beforeInitialise(): void
-  afterInitialise(): void
-  beforeClose(): void
-  afterClose(): void
-  beforeSearch(): void
+  beforeInitialise(...args: any[]): any // TODO
+  afterInitialise(...args: any[]): any // TODO
+  beforeClose(...args: any[]): any // TODO
+  afterClose(...args: any[]): any // TODO
+  beforeSearch: BeforeSearchFunction
   afterSearch(): void
-  beforeFind(): void
+  beforeFind: BeforeFindFunction
   afterFind(): void
-  beforeCreate(): void
+  beforeCreate: BeforeCreateFunction
   afterCreate(): void
-  beforeUpdate(): void
+  beforeUpdate: BeforeUpdateFunction
   afterUpdate(): void
-  beforeDelete(): void
+  beforeDelete: BeforeDeleteFunction
   afterDelete(): void
 }
 

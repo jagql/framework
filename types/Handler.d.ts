@@ -32,13 +32,14 @@ export interface JsonApiError {
   detail: string
 }
 
-export interface HandlerCallback<T> {
-  (err?: JsonApiError, result?: T): any
+export interface HandlerCallback<R, C = undefined> {
+  <R,C>(err?: JsonApiError, result?: R, count?: C): any
+  <R>(err?: JsonApiError, result?: R): any
 }
 
 
 interface SearchFunction {
-  (request: JsonApiRequest, callback: HandlerCallback<any[]>): void
+  (request: JsonApiRequest, callback: HandlerCallback<any[], number>): void
 }
 interface FindFunction {
   (request: JsonApiRequest, callback: HandlerCallback<any>): void

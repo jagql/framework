@@ -112,7 +112,7 @@ It should close database connections, file handles, timers, event listeners, etc
 ```javascript
 function(request, callback) { };
 ```
-the `callback` should be invoked with with an `error` or `null, [ rawResource ]`.
+the `callback` should be invoked with with an `error` or `null, [ rawResource ], count`.
 
 `search` needs to watch for any `request.params.relationships` parameters, they represent foreign key lookups. An example of this:
 ```
