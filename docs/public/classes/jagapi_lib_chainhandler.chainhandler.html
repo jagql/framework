@@ -114,7 +114,7 @@ chainHandler1.afterSearch
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="jagapi.handler.html" class="tsd-signature-type">Handler</a>
+						<a href="jagapi.handler.html" class="tsd-signature-type">Handler</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">ChainHandler</span>
@@ -136,6 +136,11 @@ chainHandler1.afterSearch
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#aftercreate" class="tsd-kind-icon">after<wbr>Create</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterdelete" class="tsd-kind-icon">after<wbr>Delete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterfind" class="tsd-kind-icon">after<wbr>Find</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#aftersearch" class="tsd-kind-icon">after<wbr>Search</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterupdate" class="tsd-kind-icon">after<wbr>Update</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#beforecreate" class="tsd-kind-icon">before<wbr>Create</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#beforedelete" class="tsd-kind-icon">before<wbr>Delete</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#beforefind" class="tsd-kind-icon">before<wbr>Find</a></li>
@@ -156,12 +161,7 @@ chainHandler1.afterSearch
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterclose" class="tsd-kind-icon">after<wbr>Close</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#aftercreate" class="tsd-kind-icon">after<wbr>Create</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterdelete" class="tsd-kind-icon">after<wbr>Delete</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterfind" class="tsd-kind-icon">after<wbr>Find</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterinitialise" class="tsd-kind-icon">after<wbr>Initialise</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#aftersearch" class="tsd-kind-icon">after<wbr>Search</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#afterupdate" class="tsd-kind-icon">after<wbr>Update</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#beforeinitialise" class="tsd-kind-icon">before<wbr>Initialise</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="jagapi_lib_chainhandler.chainhandler.html#chain" class="tsd-kind-icon">chain</a></li>
@@ -184,7 +184,7 @@ chainHandler1.afterSearch
 							<aside class="tsd-sources">
 								<p>Overrides <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L19">ChainHandler.d.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L38">ChainHandler.d.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="jagapi_lib_chainhandler.chainhandler.html" class="tsd-signature-type">ChainHandler</a></h4>
@@ -195,12 +195,62 @@ chainHandler1.afterSearch
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="aftercreate" class="tsd-anchor"></a>
+					<h3>after<wbr>Create</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Create<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi_lib_chainhandler.afterfindfunction.html" class="tsd-signature-type">AfterFindFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L50">ChainHandler.d.ts:50</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="afterdelete" class="tsd-anchor"></a>
+					<h3>after<wbr>Delete</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Delete<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi_lib_chainhandler.afterdeletefunction.html" class="tsd-signature-type">AfterDeleteFunction</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L54">ChainHandler.d.ts:54</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="afterfind" class="tsd-anchor"></a>
+					<h3>after<wbr>Find</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Find<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi_lib_chainhandler.afterfindfunction.html" class="tsd-signature-type">AfterFindFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L48">ChainHandler.d.ts:48</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="aftersearch" class="tsd-anchor"></a>
+					<h3>after<wbr>Search</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Search<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi_lib_chainhandler.aftersearchfunction.html" class="tsd-signature-type">AfterSearchFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L46">ChainHandler.d.ts:46</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="afterupdate" class="tsd-anchor"></a>
+					<h3>after<wbr>Update</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Update<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi_lib_chainhandler.afterupdatefunction.html" class="tsd-signature-type">AfterUpdateFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L52">ChainHandler.d.ts:52</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="beforecreate" class="tsd-anchor"></a>
 					<h3>before<wbr>Create</h3>
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Create<span class="tsd-signature-symbol">:</span> <a href="../modules/jagapi_lib_chainhandler.html#beforecreatefunction" class="tsd-signature-type">BeforeCreateFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L30">ChainHandler.d.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L49">ChainHandler.d.ts:49</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -210,7 +260,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Delete<span class="tsd-signature-symbol">:</span> <a href="../modules/jagapi_lib_chainhandler.html#beforedeletefunction" class="tsd-signature-type">BeforeDeleteFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L34">ChainHandler.d.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L53">ChainHandler.d.ts:53</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -220,7 +270,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Find<span class="tsd-signature-symbol">:</span> <a href="../modules/jagapi_lib_chainhandler.html#beforefindfunction" class="tsd-signature-type">BeforeFindFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L28">ChainHandler.d.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L47">ChainHandler.d.ts:47</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -230,7 +280,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Search<span class="tsd-signature-symbol">:</span> <a href="../modules/jagapi_lib_chainhandler.html#beforesearchfunction" class="tsd-signature-type">BeforeSearchFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L26">ChainHandler.d.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L45">ChainHandler.d.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -240,7 +290,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Update<span class="tsd-signature-symbol">:</span> <a href="../modules/jagapi_lib_chainhandler.html#beforeupdatefunction" class="tsd-signature-type">BeforeUpdateFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L32">ChainHandler.d.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L51">ChainHandler.d.ts:51</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -251,7 +301,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#close">close</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L74">Handler.d.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L74">Handler.d.ts:74</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -277,7 +327,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#create">create</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L69">Handler.d.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L69">Handler.d.ts:69</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -288,7 +338,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#delete">delete</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L73">Handler.d.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L73">Handler.d.ts:73</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -299,7 +349,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#find">find</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L71">Handler.d.ts:71</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L71">Handler.d.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -310,7 +360,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#handlesfilter">handlesFilter</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L77">Handler.d.ts:77</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L77">Handler.d.ts:77</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -321,7 +371,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#handlessort">handlesSort</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L76">Handler.d.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L76">Handler.d.ts:76</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -332,7 +382,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#ready">ready</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L75">Handler.d.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L75">Handler.d.ts:75</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -343,7 +393,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#search">search</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L70">Handler.d.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L70">Handler.d.ts:70</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -354,7 +404,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#update">update</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L72">Handler.d.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L72">Handler.d.ts:72</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -371,7 +421,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L25">ChainHandler.d.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L44">ChainHandler.d.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -381,57 +431,6 @@ chainHandler1.afterSearch
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="aftercreate" class="tsd-anchor"></a>
-					<h3>after<wbr>Create</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">after<wbr>Create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L31">ChainHandler.d.ts:31</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="afterdelete" class="tsd-anchor"></a>
-					<h3>after<wbr>Delete</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">after<wbr>Delete<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L35">ChainHandler.d.ts:35</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="afterfind" class="tsd-anchor"></a>
-					<h3>after<wbr>Find</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">after<wbr>Find<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L29">ChainHandler.d.ts:29</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -445,7 +444,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L23">ChainHandler.d.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L42">ChainHandler.d.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -459,40 +458,6 @@ chainHandler1.afterSearch
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="aftersearch" class="tsd-anchor"></a>
-					<h3>after<wbr>Search</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">after<wbr>Search<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L27">ChainHandler.d.ts:27</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="afterupdate" class="tsd-anchor"></a>
-					<h3>after<wbr>Update</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">after<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L33">ChainHandler.d.ts:33</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="beforeclose" class="tsd-anchor"></a>
 					<h3>before<wbr>Close</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -502,7 +467,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L24">ChainHandler.d.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L43">ChainHandler.d.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -525,7 +490,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L22">ChainHandler.d.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L41">ChainHandler.d.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -548,7 +513,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/ChainHandler.d.ts#L21">ChainHandler.d.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/ChainHandler.d.ts#L40">ChainHandler.d.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -565,20 +530,20 @@ chainHandler1.afterSearch
 					<a name="initialise" class="tsd-anchor"></a>
 					<h3>initialise</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">initialise<span class="tsd-signature-symbol">(</span>resConfig<span class="tsd-signature-symbol">: </span><a href="../interfaces/jagapi.resourceconfig.html" class="tsd-signature-type">ResourceConfig</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">initialise<span class="tsd-signature-symbol">(</span>resConfig<span class="tsd-signature-symbol">: </span><a href="../interfaces/jagapi.resourceconfig.html" class="tsd-signature-type">ResourceConfig</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="jagapi.handler.html">Handler</a>.<a href="jagapi.handler.html#initialise">initialise</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/9dee178/types/Handler.d.ts#L68">Handler.d.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/2705008/types/Handler.d.ts#L68">Handler.d.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>resConfig: <a href="../interfaces/jagapi.resourceconfig.html" class="tsd-signature-type">ResourceConfig</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>resConfig: <a href="../interfaces/jagapi.resourceconfig.html" class="tsd-signature-type">ResourceConfig</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -616,6 +581,21 @@ chainHandler1.afterSearch
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="jagapi_lib_chainhandler.chainhandler.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="jagapi_lib_chainhandler.chainhandler.html#aftercreate" class="tsd-kind-icon">after<wbr>Create</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="jagapi_lib_chainhandler.chainhandler.html#afterdelete" class="tsd-kind-icon">after<wbr>Delete</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="jagapi_lib_chainhandler.chainhandler.html#afterfind" class="tsd-kind-icon">after<wbr>Find</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="jagapi_lib_chainhandler.chainhandler.html#aftersearch" class="tsd-kind-icon">after<wbr>Search</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="jagapi_lib_chainhandler.chainhandler.html#afterupdate" class="tsd-kind-icon">after<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="jagapi_lib_chainhandler.chainhandler.html#beforecreate" class="tsd-kind-icon">before<wbr>Create</a>
@@ -663,22 +643,7 @@ chainHandler1.afterSearch
 								<a href="jagapi_lib_chainhandler.chainhandler.html#afterclose" class="tsd-kind-icon">after<wbr>Close</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="jagapi_lib_chainhandler.chainhandler.html#aftercreate" class="tsd-kind-icon">after<wbr>Create</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="jagapi_lib_chainhandler.chainhandler.html#afterdelete" class="tsd-kind-icon">after<wbr>Delete</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="jagapi_lib_chainhandler.chainhandler.html#afterfind" class="tsd-kind-icon">after<wbr>Find</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="jagapi_lib_chainhandler.chainhandler.html#afterinitialise" class="tsd-kind-icon">after<wbr>Initialise</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="jagapi_lib_chainhandler.chainhandler.html#aftersearch" class="tsd-kind-icon">after<wbr>Search</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="jagapi_lib_chainhandler.chainhandler.html#afterupdate" class="tsd-kind-icon">after<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="jagapi_lib_chainhandler.chainhandler.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a>
@@ -696,6 +661,21 @@ chainHandler1.afterSearch
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../interfaces/jagapi_lib_chainhandler.aftercreatefunction.html" class="tsd-kind-icon">After<wbr>Create<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../interfaces/jagapi_lib_chainhandler.afterdeletefunction.html" class="tsd-kind-icon">After<wbr>Delete<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../interfaces/jagapi_lib_chainhandler.afterfindfunction.html" class="tsd-kind-icon">After<wbr>Find<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../interfaces/jagapi_lib_chainhandler.aftersearchfunction.html" class="tsd-kind-icon">After<wbr>Search<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../interfaces/jagapi_lib_chainhandler.afterupdatefunction.html" class="tsd-kind-icon">After<wbr>Update<wbr>Function</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="../modules/jagapi_lib_chainhandler.html#beforecreatefunction" class="tsd-kind-icon">Before<wbr>Create<wbr>Function</a>
 					</li>
