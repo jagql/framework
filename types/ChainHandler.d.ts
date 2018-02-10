@@ -47,7 +47,7 @@ declare class ChainHandler<R=any> extends Handler<R>{
   beforeFind: BeforeFindFunction
   afterFind: AfterFindFunction<R>
   beforeCreate: BeforeCreateFunction
-  afterCreate: AfterFindFunction<R>
+  afterCreate: AfterCreateFunction<R>
   beforeUpdate: BeforeUpdateFunction
   afterUpdate: AfterUpdateFunction<R>
   beforeDelete: BeforeDeleteFunction
