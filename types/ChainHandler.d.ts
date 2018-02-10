@@ -1,4 +1,8 @@
+/**
+ * @module jagapi/lib/ChainHandler
+ */
 import {CreateFunction, DeleteFunction, FindFunction, Handler, SearchFunction, UpdateFunction} from './Handler'
+
 
 type BeforeSearchFunction = SearchFunction
 type BeforeFindFunction = FindFunction

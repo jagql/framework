@@ -1,11 +1,13 @@
-
+/**
+ * @module jagapi
+ */
 import {PathParams} from 'express-serve-static-core'
 import {Request, Response} from 'express'
 import {ResourceConfig} from './ResourceConfig'
 
 type HttpVerbs = 'GET' | 'POST' | 'DELETE' | 'PUT' | 'PATCH'
 
-export interface JsonApiRequest {
+interface JsonApiRequest {
   params: any
   headers: any
   safeHeaders: any
@@ -25,14 +27,14 @@ export interface JsonApiRequest {
   }
 }
 
-export interface JsonApiError {
+interface JsonApiError {
   status: string
   code: string
   title: string
   detail: string
 }
 
-export interface HandlerCallback<R, C = undefined> {
+interface HandlerCallback<R, C = undefined> {
   <R,C>(err?: JsonApiError, result?: R, count?: C): any
   <R>(err?: JsonApiError, result?: R): any
 }

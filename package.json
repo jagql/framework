@@ -65,6 +65,7 @@
     "nyc": "11.3.0",
     "swagger-tools": "0.10.3",
     "typedoc": "^0.10.0",
+    "typedoc-plugin-external-module-name": "^1.1.1",
     "v8-profiler": "5.7.0"
   },
   "scripts": {

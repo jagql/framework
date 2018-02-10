@@ -1,3 +1,6 @@
+/**
+ * @module jagapi
+ */
 import {Schema} from 'joi'
 import {Handler} from './Handler'
 
@@ -8,6 +11,7 @@ export type BaseType = {
 export type ResourceAttributes<Item> = {
   [x in keyof Item]: Schema
   }
+
 
 export interface ResourceConfig<Item> {
   namespace: string,

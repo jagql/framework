@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JsonApiRequest | JagAPI Server</title>
+	<title>MetricsData | JagAPI Server</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_handler_d_.html">&quot;Handler.d&quot;</a>
+					<a href="../modules/jagapi.html">jagapi</a>
 				</li>
 				<li>
-					<a href="_handler_d_.jsonapirequest.html">JsonApiRequest</a>
+					<a href="jagapi.metricsdata.html">MetricsData</a>
 				</li>
 			</ul>
-			<h1>Interface JsonApiRequest</h1>
+			<h1>Interface MetricsData</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">JsonApiRequest</span>
+						<span class="target">MetricsData</span>
 					</li>
 				</ul>
 			</section>
@@ -82,13 +82,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_handler_d_.jsonapirequest.html#cookies" class="tsd-kind-icon">cookies</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_handler_d_.jsonapirequest.html#express" class="tsd-kind-icon">express</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_handler_d_.jsonapirequest.html#headers" class="tsd-kind-icon">headers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_handler_d_.jsonapirequest.html#originalurl" class="tsd-kind-icon">original<wbr>Url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_handler_d_.jsonapirequest.html#params" class="tsd-kind-icon">params</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_handler_d_.jsonapirequest.html#route" class="tsd-kind-icon">route</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_handler_d_.jsonapirequest.html#safeheaders" class="tsd-kind-icon">safe<wbr>Headers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jagapi.metricsdata.html#duration" class="tsd-kind-icon">duration</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jagapi.metricsdata.html#error" class="tsd-kind-icon">error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jagapi.metricsdata.html#httpcode" class="tsd-kind-icon">http<wbr>Code</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jagapi.metricsdata.html#route" class="tsd-kind-icon">route</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jagapi.metricsdata.html#verb" class="tsd-kind-icon">verb</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,106 +95,52 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="cookies" class="tsd-anchor"></a>
-					<h3>cookies</h3>
-					<div class="tsd-signature tsd-kind-icon">cookies<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="duration" class="tsd-anchor"></a>
+					<h3>duration</h3>
+					<div class="tsd-signature tsd-kind-icon">duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L12">Handler.d.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/554fb97/types/metrics.d.ts#L12">metrics.d.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="express" class="tsd-anchor"></a>
-					<h3>express</h3>
-					<div class="tsd-signature tsd-kind-icon">express<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="error" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> error</h3>
+					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L14">Handler.d.ts:14</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Request</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Response</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="headers" class="tsd-anchor"></a>
-					<h3>headers</h3>
-					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L10">Handler.d.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/554fb97/types/metrics.d.ts#L11">metrics.d.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="originalurl" class="tsd-anchor"></a>
-					<h3>original<wbr>Url</h3>
-					<div class="tsd-signature tsd-kind-icon">original<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="httpcode" class="tsd-anchor"></a>
+					<h3>http<wbr>Code</h3>
+					<div class="tsd-signature tsd-kind-icon">http<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L13">Handler.d.ts:13</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="params" class="tsd-anchor"></a>
-					<h3>params</h3>
-					<div class="tsd-signature tsd-kind-icon">params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L9">Handler.d.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/554fb97/types/metrics.d.ts#L10">metrics.d.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="route" class="tsd-anchor"></a>
 					<h3>route</h3>
-					<div class="tsd-signature tsd-kind-icon">route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">route<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L18">Handler.d.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/554fb97/types/metrics.d.ts#L8">metrics.d.ts:8</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>combined<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>host<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>verb<span class="tsd-signature-symbol">: </span><a href="../modules/_handler_d_.html#httpverbs" class="tsd-signature-type">HttpVerbs</a></h5>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="safeheaders" class="tsd-anchor"></a>
-					<h3>safe<wbr>Headers</h3>
-					<div class="tsd-signature tsd-kind-icon">safe<wbr>Headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="verb" class="tsd-anchor"></a>
+					<h3>verb</h3>
+					<div class="tsd-signature tsd-kind-icon">verb<span class="tsd-signature-symbol">:</span> <a href="../modules/jagapi.html#httpverbs" class="tsd-signature-type">HttpVerbs</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L11">Handler.d.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/554fb97/types/metrics.d.ts#L9">metrics.d.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -208,87 +152,132 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_chainhandler_d_.html">"<wbr>Chain<wbr>Handler.d"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_handler_d_.html">"<wbr>Handler.d"</a>
+						<a href="../modules/jagapi.html">jagapi</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_memoryhandler_d_.html">"<wbr>Memory<wbr>Handler.d"</a>
+						<a href="../modules/jagapi_lib_chainhandler.html">jagapi/lib/<wbr>Chain<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_resourceconfig_d_.html">"<wbr>Resource<wbr>Config.d"</a>
+						<a href="../modules/jagapi_lib_memoryhandler.html">jagapi/lib/<wbr>Memory<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_jsonapi_d_.html">"json<wbr>Api.d"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_metrics_d_.html">"metrics.d"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_ourjoi_d_.html">"our<wbr>Joi.d"</a>
+						<a href="../modules/jagapi_lib_ourjoi.html">jagapi/lib/our<wbr>Joi</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_handler_d_.handler.html" class="tsd-kind-icon">Handler</a>
+						<a href="../classes/jagapi.handler.html" class="tsd-kind-icon">Handler</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/jagapi.metrics.html" class="tsd-kind-icon">Metrics</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_handler_d_.createfunction.html" class="tsd-kind-icon">Create<wbr>Function</a>
+						<a href="jagapi.apiconfig.html" class="tsd-kind-icon">Api<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_handler_d_.deletefunction.html" class="tsd-kind-icon">Delete<wbr>Function</a>
+						<a href="jagapi.createfunction.html" class="tsd-kind-icon">Create<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_handler_d_.findfunction.html" class="tsd-kind-icon">Find<wbr>Function</a>
+						<a href="jagapi.deletefunction.html" class="tsd-kind-icon">Delete<wbr>Function</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_handler_d_.handlercallback.html" class="tsd-kind-icon">Handler<wbr>Callback</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi.findfunction.html" class="tsd-kind-icon">Find<wbr>Function</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_handler_d_.jsonapierror.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Error</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="jagapi.handlercallback.html" class="tsd-kind-icon">Handler<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi.jsonapierror.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi.jsonapirequest.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Request</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_handler_d_.jsonapirequest.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Request</a>
+						<a href="jagapi.metricsdata.html" class="tsd-kind-icon">Metrics<wbr>Data</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_handler_d_.jsonapirequest.html#cookies" class="tsd-kind-icon">cookies</a>
+								<a href="jagapi.metricsdata.html#duration" class="tsd-kind-icon">duration</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_handler_d_.jsonapirequest.html#express" class="tsd-kind-icon">express</a>
+								<a href="jagapi.metricsdata.html#error" class="tsd-kind-icon">error</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_handler_d_.jsonapirequest.html#headers" class="tsd-kind-icon">headers</a>
+								<a href="jagapi.metricsdata.html#httpcode" class="tsd-kind-icon">http<wbr>Code</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_handler_d_.jsonapirequest.html#originalurl" class="tsd-kind-icon">original<wbr>Url</a>
+								<a href="jagapi.metricsdata.html#route" class="tsd-kind-icon">route</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_handler_d_.jsonapirequest.html#params" class="tsd-kind-icon">params</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_handler_d_.jsonapirequest.html#route" class="tsd-kind-icon">route</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_handler_d_.jsonapirequest.html#safeheaders" class="tsd-kind-icon">safe<wbr>Headers</a>
+								<a href="jagapi.metricsdata.html#verb" class="tsd-kind-icon">verb</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_handler_d_.searchfunction.html" class="tsd-kind-icon">Search<wbr>Function</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="jagapi.metricslistener.html" class="tsd-kind-icon">Metrics<wbr>Listener</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="jagapi.resourceconfig.html" class="tsd-kind-icon">Resource<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_handler_d_.updatefunction.html" class="tsd-kind-icon">Update<wbr>Function</a>
+						<a href="jagapi.searchfunction.html" class="tsd-kind-icon">Search<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi.updatefunction.html" class="tsd-kind-icon">Update<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#basetype" class="tsd-kind-icon">Base<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_handler_d_.html#httpverbs" class="tsd-kind-icon">Http<wbr>Verbs</a>
+						<a href="../modules/jagapi.html#httpverbs" class="tsd-kind-icon">Http<wbr>Verbs</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/jagapi.html#jsonapiprotocols" class="tsd-kind-icon">Json<wbr>Api<wbr>Protocols</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/jagapi.html#metricseventname" class="tsd-kind-icon">Metrics<wbr>Event<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/jagapi.html#resourceattributes" class="tsd-kind-icon">Resource<wbr>Attributes</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#chainhandler" class="tsd-kind-icon">Chain<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#joi" class="tsd-kind-icon">Joi</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#memoryhandler" class="tsd-kind-icon">Memory<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#metrics-1" class="tsd-kind-icon">metrics</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#authenticate" class="tsd-kind-icon">authenticate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#close" class="tsd-kind-icon">close</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/jagapi.html#define" class="tsd-kind-icon">define</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#getexpressserver" class="tsd-kind-icon">get<wbr>Express<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#onuncaughtexception" class="tsd-kind-icon">on<wbr>Uncaught<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#setconfig" class="tsd-kind-icon">set<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/jagapi.html#start" class="tsd-kind-icon">start</a>
 					</li>
 				</ul>
 			</nav>

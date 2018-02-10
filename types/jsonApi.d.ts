@@ -1,3 +1,6 @@
+/**
+ * @module jagapi
+ */
 import {Application, Request} from 'express'
 import {Schema} from 'joi'
 import OurJoi = require('./ourJoi')
@@ -5,15 +8,14 @@ import ChainHandlerType = require('./ChainHandler')
 import MemoryHandlerType = require('./MemoryHandler')
 import {ResourceConfig} from './ResourceConfig'
 import {Metrics} from './metrics'
-export * from './metrics'
-export * from './ResourceConfig'
-export * from './Handler'
+import * as RC from './ResourceConfig'
+import * as H from './Handler'
 
+type JsonApiProtocols = 'http' | 'https'
+export import Handler = H.Handler
+export import BaseType = RC.BaseType
 
-export type JsonApiProtocols = 'http' | 'https'
-
-
-export interface ApiConfig {
+interface ApiConfig {
   graphiql?: boolean
   jsonapi?: boolean
   protocol: JsonApiProtocols
@@ -23,12 +25,6 @@ export interface ApiConfig {
   meta: any
   swagger?: any
 }
-export type ExampleObject = {
-  type: string
-  id?: string
-  [x: string]: any
-}
-
 /**
  * Our modified Joi instance
  */

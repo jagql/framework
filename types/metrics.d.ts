@@ -1,4 +1,6 @@
-
+/**
+ * @module jagapi
+ */
 import {EventEmitter} from 'events'
 import {HttpVerbs} from './Handler'
 
