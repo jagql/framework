@@ -1,3 +1,4 @@
+
 import {PathParams} from 'express-serve-static-core'
 import {Request, Response} from 'express'
 import {ResourceConfig} from './ResourceConfig'
@@ -55,6 +56,9 @@ interface UpdateFunction {
   (request: JsonApiRequest, newPartialResource: any, callback: HandlerCallback<any>): void
 }
 
+/**
+ * [[include:handlers.md]]
+ */
 export declare class Handler {
   constructor(o?: any)
   initialise(resConfig: ResourceConfig<any>): any

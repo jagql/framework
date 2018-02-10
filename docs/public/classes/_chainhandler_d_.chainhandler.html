@@ -1,0 +1,782 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ChainHandler | JagAPI Server</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">JagAPI Server</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_chainhandler_d_.html">&quot;ChainHandler.d&quot;</a>
+				</li>
+				<li>
+					<a href="_chainhandler_d_.chainhandler.html">ChainHandler</a>
+				</li>
+			</ul>
+			<h1>Class ChainHandler</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<h3 id="chaining-handlers-together-with-the-chainhandler">Chaining handlers together with the ChainHandler</h3>
+						<p>This project ships with a handler called the <code>ChainHandler</code>. It&#39;s purpose is to make it easier to wrap the functionality of one handler with additional functionality. For example using the relational data store may be ideal for storing resources, but what if we want to add an authentication layer on top of those resources? An authentication handler shouldn&#39;t know or care about the storage of the underlying resource, it should only deal with authentication - we need an abstraction layer to help us glue all of this together.</p>
+						<p>To get started with the ChainHandler, go ahead and instantiate one:</p>
+						<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> jsonApi = <span class="hljs-built_in">require</span>(<span class="hljs-string">"jsonapi-server"</span>);
+<span class="hljs-keyword">var</span> testChainHandler = <span class="hljs-keyword">new</span> jsonApi.ChainHandler();
+</code></pre>
+						<p>From there it&#39;s a simple case of attaching new function handlers to <code>testChainHandler</code>, following the naming convention of <code>(&quot;before&quot;|&quot;after&quot;)+function</code> - eg <code>beforeSearch</code>, <code>beforeCreate</code>, <code>afterDelete</code>.</p>
+						<p>These new functions need to match the signatures of the functions they&#39;re overriding and need to pass the data onwards via a callback. For example, here are two valid functions that don&#39;t add any functionality. Notice how the callback values match the function signatures:</p>
+						<pre><code>testChainHandler.beforeSearch = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(request, callback)</span> </span>{
+  <span class="hljs-keyword">return</span> callback(<span class="hljs-literal">null</span>, request);
+};
+
+testChainHandler.afterSearch = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(request, results, pagination, callback)</span> </span>{
+  <span class="hljs-keyword">return</span> callback(<span class="hljs-literal">null</span>, results, pagination);
+};
+</code></pre><p><em>NOTE</em> The only exception to the above is that all <code>after</code> function signatures are also passed the original <code>request</code> object in addition to the other objects. This enables us to implement clever features on a per-request basis by providing a mechanism to push state between <code>before</code> and <code>after</code> functions.</p>
+						<p>With a new ChainHandler ready to go, this is how we can stack them up:</p>
+						<pre><code class="lang-javascript">jsonApi.define({
+  <span class="hljs-attr">resource</span>: <span class="hljs-string">"articles"</span>,
+  <span class="hljs-attr">handlers</span>: chainHandler1.chain(chainHandler2).chain(memoryHandler),
+});
+</code></pre>
+						<p>The call stack when chaining multiple <code>ChainHandler</code>s together looks like this:</p>
+						<pre><code>chainHandler1<span class="hljs-selector-class">.beforeSearch</span>
+  chainHandler2<span class="hljs-selector-class">.beforeSearch</span>
+    MemoryHandler<span class="hljs-selector-class">.search</span>
+  chainHandler2<span class="hljs-selector-class">.afterSearch</span>
+chainHandler1.afterSearch
+</code></pre>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_handler_d_.handler.html" class="tsd-signature-type">Handler</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ChainHandler</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_chainhandler_d_.chainhandler.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#create" class="tsd-kind-icon">create</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#delete" class="tsd-kind-icon">delete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#find" class="tsd-kind-icon">find</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#handlesfilter" class="tsd-kind-icon">handles<wbr>Filter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#handlessort" class="tsd-kind-icon">handles<wbr>Sort</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#ready" class="tsd-kind-icon">ready</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#search" class="tsd-kind-icon">search</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#update" class="tsd-kind-icon">update</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#afterclose" class="tsd-kind-icon">after<wbr>Close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#aftercreate" class="tsd-kind-icon">after<wbr>Create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#afterdelete" class="tsd-kind-icon">after<wbr>Delete</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#afterfind" class="tsd-kind-icon">after<wbr>Find</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#afterinitialise" class="tsd-kind-icon">after<wbr>Initialise</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#aftersearch" class="tsd-kind-icon">after<wbr>Search</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#afterupdate" class="tsd-kind-icon">after<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#beforecreate" class="tsd-kind-icon">before<wbr>Create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#beforedelete" class="tsd-kind-icon">before<wbr>Delete</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#beforefind" class="tsd-kind-icon">before<wbr>Find</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#beforeinitialise" class="tsd-kind-icon">before<wbr>Initialise</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#beforesearch" class="tsd-kind-icon">before<wbr>Search</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#beforeupdate" class="tsd-kind-icon">before<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_chainhandler_d_.chainhandler.html#chain" class="tsd-kind-icon">chain</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_chainhandler_d_.chainhandler.html#initialise" class="tsd-kind-icon">initialise</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Chain<wbr>Handler<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_chainhandler_d_.chainhandler.html" class="tsd-signature-type">ChainHandler</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L6">ChainHandler.d.ts:6</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="_chainhandler_d_.chainhandler.html" class="tsd-signature-type">ChainHandler</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="close" class="tsd-anchor"></a>
+					<h3>close</h3>
+					<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#close">close</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L70">Handler.d.ts:70</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="create" class="tsd-anchor"></a>
+					<h3>create</h3>
+					<div class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_handler_d_.createfunction.html" class="tsd-signature-type">CreateFunction</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#create">create</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L65">Handler.d.ts:65</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="delete" class="tsd-anchor"></a>
+					<h3>delete</h3>
+					<div class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_handler_d_.deletefunction.html" class="tsd-signature-type">DeleteFunction</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#delete">delete</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L69">Handler.d.ts:69</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="find" class="tsd-anchor"></a>
+					<h3>find</h3>
+					<div class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_handler_d_.findfunction.html" class="tsd-signature-type">FindFunction</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#find">find</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L67">Handler.d.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="handlesfilter" class="tsd-anchor"></a>
+					<h3>handles<wbr>Filter</h3>
+					<div class="tsd-signature tsd-kind-icon">handles<wbr>Filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#handlesfilter">handlesFilter</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L73">Handler.d.ts:73</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="handlessort" class="tsd-anchor"></a>
+					<h3>handles<wbr>Sort</h3>
+					<div class="tsd-signature tsd-kind-icon">handles<wbr>Sort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#handlessort">handlesSort</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L72">Handler.d.ts:72</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="ready" class="tsd-anchor"></a>
+					<h3>ready</h3>
+					<div class="tsd-signature tsd-kind-icon">ready<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#ready">ready</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L71">Handler.d.ts:71</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="search" class="tsd-anchor"></a>
+					<h3>search</h3>
+					<div class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_handler_d_.searchfunction.html" class="tsd-signature-type">SearchFunction</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#search">search</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L66">Handler.d.ts:66</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="update" class="tsd-anchor"></a>
+					<h3>update</h3>
+					<div class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_handler_d_.updatefunction.html" class="tsd-signature-type">UpdateFunction</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#update">update</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L68">Handler.d.ts:68</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="afterclose" class="tsd-anchor"></a>
+					<h3>after<wbr>Close</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L12">ChainHandler.d.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="aftercreate" class="tsd-anchor"></a>
+					<h3>after<wbr>Create</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L18">ChainHandler.d.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="afterdelete" class="tsd-anchor"></a>
+					<h3>after<wbr>Delete</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Delete<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L22">ChainHandler.d.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="afterfind" class="tsd-anchor"></a>
+					<h3>after<wbr>Find</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Find<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L16">ChainHandler.d.ts:16</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="afterinitialise" class="tsd-anchor"></a>
+					<h3>after<wbr>Initialise</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Initialise<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L10">ChainHandler.d.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="aftersearch" class="tsd-anchor"></a>
+					<h3>after<wbr>Search</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Search<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L14">ChainHandler.d.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="afterupdate" class="tsd-anchor"></a>
+					<h3>after<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">after<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L20">ChainHandler.d.ts:20</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforeclose" class="tsd-anchor"></a>
+					<h3>before<wbr>Close</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L11">ChainHandler.d.ts:11</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforecreate" class="tsd-anchor"></a>
+					<h3>before<wbr>Create</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L17">ChainHandler.d.ts:17</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforedelete" class="tsd-anchor"></a>
+					<h3>before<wbr>Delete</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Delete<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L21">ChainHandler.d.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforefind" class="tsd-anchor"></a>
+					<h3>before<wbr>Find</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Find<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L15">ChainHandler.d.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforeinitialise" class="tsd-anchor"></a>
+					<h3>before<wbr>Initialise</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Initialise<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L9">ChainHandler.d.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforesearch" class="tsd-anchor"></a>
+					<h3>before<wbr>Search</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Search<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L13">ChainHandler.d.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="beforeupdate" class="tsd-anchor"></a>
+					<h3>before<wbr>Update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">before<wbr>Update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L19">ChainHandler.d.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="chain" class="tsd-anchor"></a>
+					<h3>chain</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">chain<span class="tsd-signature-symbol">(</span>nextHandler<span class="tsd-signature-symbol">: </span><a href="_handler_d_.handler.html" class="tsd-signature-type">Handler</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_chainhandler_d_.chainhandler.html" class="tsd-signature-type">ChainHandler</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/ChainHandler.d.ts#L8">ChainHandler.d.ts:8</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nextHandler: <a href="_handler_d_.handler.html" class="tsd-signature-type">Handler</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_chainhandler_d_.chainhandler.html" class="tsd-signature-type">ChainHandler</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="initialise" class="tsd-anchor"></a>
+					<h3>initialise</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">initialise<span class="tsd-signature-symbol">(</span>resConfig<span class="tsd-signature-symbol">: </span><a href="../interfaces/_resourceconfig_d_.resourceconfig.html" class="tsd-signature-type">ResourceConfig</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_handler_d_.handler.html">Handler</a>.<a href="_handler_d_.handler.html#initialise">initialise</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/ea9e087/types/Handler.d.ts#L64">Handler.d.ts:64</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resConfig: <a href="../interfaces/_resourceconfig_d_.resourceconfig.html" class="tsd-signature-type">ResourceConfig</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_chainhandler_d_.html">"<wbr>Chain<wbr>Handler.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_handler_d_.html">"<wbr>Handler.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_memoryhandler_d_.html">"<wbr>Memory<wbr>Handler.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_resourceconfig_d_.html">"<wbr>Resource<wbr>Config.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_jsonapi_d_.html">"json<wbr>Api.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_metrics_d_.html">"metrics.d"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_ourjoi_d_.html">"our<wbr>Joi.d"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_chainhandler_d_.chainhandler.html" class="tsd-kind-icon">Chain<wbr>Handler</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_chainhandler_d_.chainhandler.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#close" class="tsd-kind-icon">close</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#create" class="tsd-kind-icon">create</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#delete" class="tsd-kind-icon">delete</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#find" class="tsd-kind-icon">find</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#handlesfilter" class="tsd-kind-icon">handles<wbr>Filter</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#handlessort" class="tsd-kind-icon">handles<wbr>Sort</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#ready" class="tsd-kind-icon">ready</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#search" class="tsd-kind-icon">search</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#update" class="tsd-kind-icon">update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#afterclose" class="tsd-kind-icon">after<wbr>Close</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#aftercreate" class="tsd-kind-icon">after<wbr>Create</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#afterdelete" class="tsd-kind-icon">after<wbr>Delete</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#afterfind" class="tsd-kind-icon">after<wbr>Find</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#afterinitialise" class="tsd-kind-icon">after<wbr>Initialise</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#aftersearch" class="tsd-kind-icon">after<wbr>Search</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#afterupdate" class="tsd-kind-icon">after<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#beforeclose" class="tsd-kind-icon">before<wbr>Close</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#beforecreate" class="tsd-kind-icon">before<wbr>Create</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#beforedelete" class="tsd-kind-icon">before<wbr>Delete</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#beforefind" class="tsd-kind-icon">before<wbr>Find</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#beforeinitialise" class="tsd-kind-icon">before<wbr>Initialise</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#beforesearch" class="tsd-kind-icon">before<wbr>Search</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#beforeupdate" class="tsd-kind-icon">before<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_chainhandler_d_.chainhandler.html#chain" class="tsd-kind-icon">chain</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_chainhandler_d_.chainhandler.html#initialise" class="tsd-kind-icon">initialise</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

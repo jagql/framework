@@ -1,5 +1,8 @@
 import {Handler} from './Handler'
 
+/**
+ * [[include:chain-handler.md]]
+ */
 declare class ChainHandler extends Handler{
   constructor()
   chain(nextHandler: Handler): ChainHandler

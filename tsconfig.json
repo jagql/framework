@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "noEmit": true
+  },
+  "files": ["types"],
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
+  "typedocOptions": {
+    "includes": "docs/guides",
+    "out": "docs/public",
+    "name": "JagAPI Server",
+    "includeDeclarations": true,
+    "excludeExternals": true,
+    "mode": "modules"
+  }
+}

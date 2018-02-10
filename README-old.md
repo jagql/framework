@@ -32,7 +32,7 @@ Ultimately, the only things you as a user of this framework need to care about a
 
 We've created `handler`s to automatically map our config over to database solutions help people get off the ground:
  * [jsonapi-store-memoryhandler](https://github.com/holidayextras/jsonapi-server/blob/master/lib/MemoryHandler.js) - an in-memory data store to enable rapid prototyping. This ships as a part of `jsonapi-server` and powers the core test suite.
- * [jsonapi-handler-chain](https://github.com/holidayextras/jsonapi-server/blob/master/lib/ChainHandler.js) - a handler to chain custom behaviour around an existing handler. This ships as a part of `jsonapi-server`. More info can be found [here](https://github.com/holidayextras/jsonapi-server/blob/master/documentation/chain-handler.md)
+ * [jsonapi-handler-chain](https://github.com/holidayextras/jsonapi-server/blob/master/lib/ChainHandler.js) - a handler to chain custom behaviour around an existing handler. This ships as a part of `jsonapi-server`. More info can be found [here](https://github.com/holidayextras/jsonapi-server/blob/master/docs/guides/chain-handler.md)
  * [jsonapi-store-relationaldb](https://github.com/holidayextras/jsonapi-store-relationaldb) - using `sequelize` to support PostgreSQL, MySQL, MSSQL, MariaDB and SQLite.
  * [jsonapi-store-mongodb](https://github.com/holidayextras/jsonapi-store-mongodb) - for MongoDB.
  * [jsonapi-store-elasticsearch](https://github.com/holidayextras/jsonapi-store-elasticsearch) - for Elasticsearch.
@@ -44,17 +44,17 @@ We've also written a library to ease the consumption of a json:api compliant ser
 
 ### Full documentation
 
-- [Suggested Project Structure](documentation/suggested-project-structure.md)
-- [Configuring jsonapi-server](documentation/configuring.md)
-- [Automatic Swagger Generation](documentation/swagger.md)
-- [Defining Resources](documentation/resources.md)
-- [Debugging](documentation/debugging.md)
-- [Foreign Key Relations](documentation/foreign-relations.md)
-- [Chaining handlers together](documentation/chain-handler.md)
-- [Custom Handlers](documentation/handlers.md)
-- [Post Processing Examples](documentation/post-processing.md)
-- [Migrating from an existing express server](documentation/api-migration.md)
-- [Application metrics](documentation/metrics.md)
+- [Suggested Project Structure](docs/guides/suggested-project-structure.md)
+- [Configuring jsonapi-server](docs/guides/configuring.md)
+- [Automatic Swagger Generation](docs/guides/swagger.md)
+- [Defining Resources](docs/guides/resources.md)
+- [Debugging](docs/guides/debugging.md)
+- [Foreign Key Relations](docs/guides/foreign-relations.md)
+- [Chaining handlers together](docs/guides/chain-handler.md)
+- [Custom Handlers](docs/guides/handlers.md)
+- [Post Processing Examples](docs/guides/post-processing.md)
+- [Migrating from an existing express server](docs/guides/api-migration.md)
+- [Application metrics](docs/guides/metrics.md)
 
 ### The tl;dr
 

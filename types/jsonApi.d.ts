@@ -29,8 +29,21 @@ export type ExampleObject = {
   [x: string]: any
 }
 
+/**
+ * Our modified Joi instance
+ */
 export const Joi: OurJoi
+
+/**
+ * [[include:configuring.md]]
+ * @param {ApiConfig} apiConfig
+ */
 export function setConfig(apiConfig: ApiConfig): void
+
+/**
+ * [[include:resources.md]]
+ * @param {ResourceConfig<T>} resConfig
+ */
 export function define<T>(resConfig: ResourceConfig<T>): void
 export function authenticate(authenticator: (req: Request, cb: () => void ) => void): void
 export const metrics: Metrics

@@ -64,6 +64,7 @@
     "mocha-performance": "0.1.1",
     "nyc": "11.3.0",
     "swagger-tools": "0.10.3",
+    "typedoc": "^0.10.0",
     "v8-profiler": "5.7.0"
   },
   "scripts": {
@@ -74,6 +75,8 @@
     "performance": "node --allow-natives-syntax --harmony ./node_modules/mocha/bin/_mocha -S --reporter mocha-performance ./test/*.js",
     "lint": "eslint ./example ./lib ./test --quiet && echo '✔ All good!'",
     "jscpd": "jscpd --blame -p ./lib/ || echo 'Finished!'",
-    "ci": "npm run jscpd && npm run lint && npm run test"
+    "ci": "npm run jscpd && npm run lint && npm run test",
+    "predocs": "rimraf docs/public/*",
+    "docs": "typedoc types"
   }
 }

@@ -1,3 +1,4 @@
+
 import {EventEmitter} from 'events'
 import {HttpVerbs} from './Handler'
 
@@ -13,7 +14,11 @@ export interface MetricsListener {
   (data: MetricsData): void
 }
 
+type MetricsEventName = 'data'
 
+/**
+ * [[include:metrics.md]]
+ */
 export declare class Metrics extends EventEmitter {
-  on(event: 'data', listener: MetricsListener): this
+  on(event: MetricsEventName, listener: MetricsListener): this
 }
