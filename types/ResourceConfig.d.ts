@@ -14,7 +14,7 @@ export type ResourceAttributes<Item> = {
 
 
 export interface ResourceConfig<Item> {
-  namespace: string,
+  namespace?: string,
   resource: string,
   handlers: Handler
   primaryKey: string,

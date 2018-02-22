@@ -29,6 +29,9 @@ jsonApi.define({
       as: 'photographer'
     })
   },
+  actions: {
+    login: (params) => params
+  },
   examples: [
     {
       id: 'cc5cca2e-0dd8-4b95-8cfc-a11230e73116',
