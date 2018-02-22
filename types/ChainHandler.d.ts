@@ -1,5 +1,5 @@
 /**
- * @module jagapi/lib/ChainHandler
+ * @module jagapi/lib/handlers/ChainHandler
  */
 import {
   CreateFunction, DeleteFunction, FindFunction, Handler, HandlerCallback, JsonApiError, JsonApiRequest, SearchFunction,

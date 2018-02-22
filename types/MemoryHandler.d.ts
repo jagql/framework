@@ -1,5 +1,5 @@
 /**
- * @module jagapi/lib/MemoryHandler
+ * @module jagapi/lib/handlers/MemoryHandler
  */
 import {Handler} from './Handler'
 
