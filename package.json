@@ -1,6 +1,6 @@
 {
   "name": "jagapi",
-  "version": "5.5.6",
+  "version": "5.6.0",
   "description": "A config driven NodeJS framework implementing json:api",
   "keywords": [
     "jsonapi",
