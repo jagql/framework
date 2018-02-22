@@ -1,6 +1,7 @@
 /**
  * @module jagapi/lib/ourJoi
  */
+/// <reference types="joi" />
 import {AnySchema, JoiObject, Schema} from 'joi'
 import Joi = require('joi')
 

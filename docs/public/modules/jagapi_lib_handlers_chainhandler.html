@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JsonApiError | JagAPI Server</title>
+	<title>jagapi/lib/handlers/ChainHandler | JagAPI Server</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,82 +54,98 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/jagapi.html">jagapi</a>
-				</li>
-				<li>
-					<a href="jagapi.jsonapierror.html">JsonApiError</a>
+					<a href="jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/ChainHandler</a>
 				</li>
 			</ul>
-			<h1>Interface JsonApiError</h1>
+			<h1>External module jagapi/lib/handlers/ChainHandler</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">JsonApiError</span>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Properties</h3>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#code" class="tsd-kind-icon">code</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#detail" class="tsd-kind-icon">detail</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#status" class="tsd-kind-icon">status</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter"><a href="../classes/jagapi_lib_handlers_chainhandler.chainhandler.html" class="tsd-kind-icon">Chain<wbr>Handler</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="../interfaces/jagapi_lib_handlers_chainhandler.aftercreatefunction.html" class="tsd-kind-icon">After<wbr>Create<wbr>Function</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported"><a href="../interfaces/jagapi_lib_handlers_chainhandler.afterdeletefunction.html" class="tsd-kind-icon">After<wbr>Delete<wbr>Function</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="../interfaces/jagapi_lib_handlers_chainhandler.afterfindfunction.html" class="tsd-kind-icon">After<wbr>Find<wbr>Function</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="../interfaces/jagapi_lib_handlers_chainhandler.aftersearchfunction.html" class="tsd-kind-icon">After<wbr>Search<wbr>Function</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="../interfaces/jagapi_lib_handlers_chainhandler.afterupdatefunction.html" class="tsd-kind-icon">After<wbr>Update<wbr>Function</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="jagapi_lib_handlers_chainhandler.html#beforecreatefunction" class="tsd-kind-icon">Before<wbr>Create<wbr>Function</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="jagapi_lib_handlers_chainhandler.html#beforedeletefunction" class="tsd-kind-icon">Before<wbr>Delete<wbr>Function</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="jagapi_lib_handlers_chainhandler.html#beforefindfunction" class="tsd-kind-icon">Before<wbr>Find<wbr>Function</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="jagapi_lib_handlers_chainhandler.html#beforesearchfunction" class="tsd-kind-icon">Before<wbr>Search<wbr>Function</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="jagapi_lib_handlers_chainhandler.html#beforeupdatefunction" class="tsd-kind-icon">Before<wbr>Update<wbr>Function</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="code" class="tsd-anchor"></a>
-					<h3>code</h3>
-					<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="beforecreatefunction" class="tsd-anchor"></a>
+					<h3>Before<wbr>Create<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Before<wbr>Create<wbr>Function<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.createfunction.html" class="tsd-signature-type">CreateFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L32">Handler.d.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/ChainHandler.d.ts#L12">ChainHandler.d.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="detail" class="tsd-anchor"></a>
-					<h3>detail</h3>
-					<div class="tsd-signature tsd-kind-icon">detail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="beforedeletefunction" class="tsd-anchor"></a>
+					<h3>Before<wbr>Delete<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Before<wbr>Delete<wbr>Function<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.deletefunction.html" class="tsd-signature-type">DeleteFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L34">Handler.d.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/ChainHandler.d.ts#L13">ChainHandler.d.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="status" class="tsd-anchor"></a>
-					<h3>status</h3>
-					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="beforefindfunction" class="tsd-anchor"></a>
+					<h3>Before<wbr>Find<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Before<wbr>Find<wbr>Function<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.findfunction.html" class="tsd-signature-type">FindFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L31">Handler.d.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/ChainHandler.d.ts#L11">ChainHandler.d.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="beforesearchfunction" class="tsd-anchor"></a>
+					<h3>Before<wbr>Search<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Before<wbr>Search<wbr>Function<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.searchfunction.html" class="tsd-signature-type">SearchFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L33">Handler.d.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/ChainHandler.d.ts#L10">ChainHandler.d.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="beforeupdatefunction" class="tsd-anchor"></a>
+					<h3>Before<wbr>Update<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Before<wbr>Update<wbr>Function<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.updatefunction.html" class="tsd-signature-type">UpdateFunction</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/ChainHandler.d.ts#L14">ChainHandler.d.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -141,129 +157,54 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="jagapi.html">jagapi</a>
+					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/jagapi.html">jagapi</a>
+						<a href="jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/<wbr>Chain<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/<wbr>Chain<wbr>Handler</a>
+						<a href="jagapi_lib_handlers_memoryhandler.html">jagapi/lib/handlers/<wbr>Memory<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_handlers_memoryhandler.html">jagapi/lib/handlers/<wbr>Memory<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_ourjoi.html">jagapi/lib/our<wbr>Joi</a>
+						<a href="jagapi_lib_ourjoi.html">jagapi/lib/our<wbr>Joi</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../classes/jagapi.handler.html" class="tsd-kind-icon">Handler</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/jagapi_lib_handlers_chainhandler.chainhandler.html" class="tsd-kind-icon">Chain<wbr>Handler</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/jagapi.metrics.html" class="tsd-kind-icon">Metrics</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../interfaces/jagapi_lib_handlers_chainhandler.aftercreatefunction.html" class="tsd-kind-icon">After<wbr>Create<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.apiconfig.html" class="tsd-kind-icon">Api<wbr>Config</a>
+						<a href="../interfaces/jagapi_lib_handlers_chainhandler.afterdeletefunction.html" class="tsd-kind-icon">After<wbr>Delete<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.createfunction.html" class="tsd-kind-icon">Create<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.deletefunction.html" class="tsd-kind-icon">Delete<wbr>Function</a>
+						<a href="../interfaces/jagapi_lib_handlers_chainhandler.afterfindfunction.html" class="tsd-kind-icon">After<wbr>Find<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.findfunction.html" class="tsd-kind-icon">Find<wbr>Function</a>
+						<a href="../interfaces/jagapi_lib_handlers_chainhandler.aftersearchfunction.html" class="tsd-kind-icon">After<wbr>Search<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.handlercallback.html" class="tsd-kind-icon">Handler<wbr>Callback</a>
-					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.jsonapierror.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Error</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#code" class="tsd-kind-icon">code</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#detail" class="tsd-kind-icon">detail</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#status" class="tsd-kind-icon">status</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#title" class="tsd-kind-icon">title</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.jsonapirequest.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Request</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="jagapi.metricsdata.html" class="tsd-kind-icon">Metrics<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="jagapi.metricslistener.html" class="tsd-kind-icon">Metrics<wbr>Listener</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="jagapi.resourceconfig.html" class="tsd-kind-icon">Resource<wbr>Config</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.searchfunction.html" class="tsd-kind-icon">Search<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.updatefunction.html" class="tsd-kind-icon">Update<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#basetype" class="tsd-kind-icon">Base<wbr>Type</a>
+						<a href="../interfaces/jagapi_lib_handlers_chainhandler.afterupdatefunction.html" class="tsd-kind-icon">After<wbr>Update<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi.html#httpverbs" class="tsd-kind-icon">Http<wbr>Verbs</a>
+						<a href="jagapi_lib_handlers_chainhandler.html#beforecreatefunction" class="tsd-kind-icon">Before<wbr>Create<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi.html#jsonapiprotocols" class="tsd-kind-icon">Json<wbr>Api<wbr>Protocols</a>
+						<a href="jagapi_lib_handlers_chainhandler.html#beforedeletefunction" class="tsd-kind-icon">Before<wbr>Delete<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi.html#metricseventname" class="tsd-kind-icon">Metrics<wbr>Event<wbr>Name</a>
+						<a href="jagapi_lib_handlers_chainhandler.html#beforefindfunction" class="tsd-kind-icon">Before<wbr>Find<wbr>Function</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../modules/jagapi.html#resourceattributes" class="tsd-kind-icon">Resource<wbr>Attributes</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi_lib_handlers_chainhandler.html#beforesearchfunction" class="tsd-kind-icon">Before<wbr>Search<wbr>Function</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#chainhandler" class="tsd-kind-icon">Chain<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#joi" class="tsd-kind-icon">Joi</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#memoryhandler" class="tsd-kind-icon">Memory<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#metrics-1" class="tsd-kind-icon">metrics</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#authenticate" class="tsd-kind-icon">authenticate</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#close" class="tsd-kind-icon">close</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../modules/jagapi.html#define" class="tsd-kind-icon">define</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#getexpressserver" class="tsd-kind-icon">get<wbr>Express<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#onuncaughtexception" class="tsd-kind-icon">on<wbr>Uncaught<wbr>Exception</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#setconfig" class="tsd-kind-icon">set<wbr>Config</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#start" class="tsd-kind-icon">start</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi_lib_handlers_chainhandler.html#beforeupdatefunction" class="tsd-kind-icon">Before<wbr>Update<wbr>Function</a>
 					</li>
 				</ul>
 			</nav>

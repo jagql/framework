@@ -1,6 +1,9 @@
 /**
  * @module jagapi
  */
+
+/// <reference types="express" />
+
 import {Application, Request} from 'express'
 import {Schema} from 'joi'
 import OurJoi = require('./ourJoi')
