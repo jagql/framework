@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/coding-blocks/jsonapi-server.svg?branch=master)](https://travis-ci.org/coding-blocks/jsonapi-server)
 [![Coverage Status](https://coveralls.io/repos/github/coding-blocks/jsonapi-server/badge.svg?branch=master)](https://coveralls.io/github/coding-blocks/jsonapi-server?branch=master)
-[![npm version](https://badge.fury.io/js/%40coding-blocks%2Fjsonapi-server.svg)](https://badge.fury.io/js/%40coding-blocks%2Fjsonapi-server)
+[![npm version](https://badge.fury.io/js/jagapi.svg)](https://badge.fury.io/js/jagapi)
 [![Dependencies Status](https://david-dm.org/coding-blocks/jsonapi-server.svg)](https://david-dm.org/coding-blocks/jsonapi-server)
 
 # JaG API (`jagapi`)
