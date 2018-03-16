@@ -63,16 +63,22 @@ interface UpdateFunction<R=any> {
  * [[include:handlers.md]]
  * @param R type of resource (if unspecified, `any`)
  */
-export declare class Handler<R=any> {
+declare class Handler<R=any> {
   constructor(o?: any)
   initialise(resConfig: ResourceConfig<R>): any
-  create: CreateFunction
-  search: SearchFunction
-  find: FindFunction
-  update: UpdateFunction
+  create: CreateFunction<R>
+  search: SearchFunction<R>
+  find: FindFunction<R>
+  update: UpdateFunction<R>
   delete: DeleteFunction
   close: () => any
   ready: boolean
   handlesSort: boolean
   handlesFilter: boolean
+}
+
+declare module 'jagapi/lib/handlers/Handler' {
+  export {
+    Handler
+  }
 }
