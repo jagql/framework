@@ -1,13 +1,18 @@
+# CHANGELOG (`jsonapi-server`)
+
+- 2018-03-16 - v5.6.0
+- 2018-03-16 - handlers using ES6 classes
 - 2018-02-06 - v5.4.5
 - 2018-02-06 - Typescript definitions
 - 2018-02-05 - DEFAULT for autoincrement fixed
+- 2018-01-30 - if resource with id not present, return 404
 - 2018-01-30 - v5.4.2
 - 2018-01-30 - bubble up handlesSort and handlesFilter to root handler
-- 2018-01-30 - fix pagniation in resource relations
+- 2018-01-30 - [pr-311] fix pagniation in resource relations
 - 2018-01-27 - v5.4.0
 - 2018-01-27 - [pr-275] handlesSort & handlesFilter support
 - 2018-01-27 - [pr-277] run validation within setImmediate (async)
-- 2018-01-27 - expose express req res to handlers
+- 2018-01-27 - [pr-274] expose express req res to handlers
 - 2018-01-27 - [pr-367] fix crud operation detection
 - 2018-01-27 - [pr-366] add bodyParserOptions
 - 2018-01-27 - v5.3.0
@@ -20,6 +25,13 @@
 - 2017-11-03 - [pr-311] add pagination count to relations
 - 2017-11-03 - v5.0.0
 - 2017-11-03 - use node >= 8
+
+- - - - - -
+
+ . . . . . . . . . . . . F O R K . . . . . . . . . . . . .
+
+- - - - - -
+
 - 2017-12-11 - v4.1.2
 - 2017-12-11 - Fix broken response test resource to enable integration with data store handlers.
 - 2017-11-15 - v4.1.1
