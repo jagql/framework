@@ -1,5 +1,6 @@
 # CHANGELOG (`jsonapi-server`)
 
+- 2018-03-29 - fix GraphQLObjectType resolving
 - 2018-03-16 - v5.6.0
 - 2018-03-16 - handlers using ES6 classes
 - 2018-02-06 - v5.4.5
