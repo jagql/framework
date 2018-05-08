@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="resources/images/jagql.svg" width=200>
+<img src="https://github.com/jagql/framework/raw/master/resources/images/jagql.svg?sanitize=true" width=200>
 <br>
 jagql
 </h1>

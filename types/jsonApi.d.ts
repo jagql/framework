@@ -44,7 +44,11 @@ export function setConfig(apiConfig: ApiConfig): void
  * @param {ResourceConfig<T>} resConfig
  */
 export function define<T>(resConfig: ResourceConfig<T>): void
-export function authenticate(authenticator: (req: Request, cb: () => void ) => void): void
+export function authenticate(authenticator: (req: Request, cb: () => void) => void): void
+
+/**
+ * [[include:metrics.md]]
+ */
 export const metrics: Metrics
 export function getExpressServer(): Application
 export const ChainHandler: typeof ChainHandlerType

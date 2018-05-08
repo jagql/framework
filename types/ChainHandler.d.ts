@@ -6,7 +6,6 @@ import {
   UpdateFunction
 } from './Handler'
 
-
 type BeforeSearchFunction = SearchFunction
 type BeforeFindFunction = FindFunction
 type BeforeCreateFunction = CreateFunction

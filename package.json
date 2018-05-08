@@ -72,7 +72,8 @@
     "lint": "eslint ./example ./lib ./test --quiet && echo '✔ All good!'",
     "jscpd": "jscpd --blame -p ./lib/ || echo 'Finished!'",
     "ci": "npm run jscpd && npm run lint && npm run cover",
-    "predocs": "rimraf docs/*",
-    "docs": "typedoc types"
+    "predocs": "rimraf docs && mkdir -p docs",
+    "docs": "typedoc types",
+    "postdocs": "touch docs/.nojekyll"
   }
 }
