@@ -5,7 +5,7 @@ jagql
 </h1>
 
 [![Build Status](https://travis-ci.org/jagql/framework.svg?branch=master)](https://travis-ci.org/jagql/framework)
-[![Coverage Status](https://coveralls.io/repos/github/jagql/framework/badge.svg?branch=master)](https://coveralls.io/github/jagql/framework?branch=master)
+[![codecov](https://codecov.io/gh/jagql/framework/branch/master/graph/badge.svg)](https://codecov.io/gh/jagql/framework)
 [![npm version](https://badge.fury.io/js/jagapi.svg)](https://badge.fury.io/js/jagapi)
 [![Dependencies Status](https://david-dm.org/jagql/framework.svg)](https://david-dm.org/jagql/framework)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jagql/framework.svg)](https://greenkeeper.io/)
