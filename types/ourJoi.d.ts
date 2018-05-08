@@ -1,5 +1,5 @@
 /**
- * @module jagapi/lib/ourJoi
+ * @module @jagql/framework/lib/ourJoi
  */
 /// <reference types="joi" />
 import {AnySchema, JoiObject, Schema, FunctionSchema} from 'joi'

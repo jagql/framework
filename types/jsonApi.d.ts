@@ -1,5 +1,5 @@
 /**
- * @module jagapi
+ * @module @jagql/framework
  */
 
 /// <reference types="express" />

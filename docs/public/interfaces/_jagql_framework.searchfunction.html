@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AfterSearchFunction | JagAPI Server</title>
+	<title>SearchFunction | JagAPI Server</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/ChainHandler</a>
+					<a href="../modules/_jagql_framework.html">@jagql/framework</a>
 				</li>
 				<li>
-					<a href="jagapi_lib_handlers_chainhandler.aftersearchfunction.html">AfterSearchFunction</a>
+					<a href="_jagql_framework.searchfunction.html">SearchFunction</a>
 				</li>
 			</ul>
-			<h1>Interface AfterSearchFunction&lt;R&gt;</h1>
+			<h1>Interface SearchFunction&lt;R&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -79,35 +79,29 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AfterSearchFunction</span>
+						<span class="target">SearchFunction</span>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
 				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="jagapi.jsonapirequest.html" class="tsd-signature-type">JsonApiRequest</a>, results<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span>, count<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><a href="jagapi.handlercallback.html" class="tsd-signature-type">HandlerCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="_jagql_framework.jsonapirequest.html" class="tsd-signature-type">JsonApiRequest</a>, callback<span class="tsd-signature-symbol">: </span><a href="_jagql_framework.handlercallback.html" class="tsd-signature-type">HandlerCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/ChainHandler.d.ts#L16">ChainHandler.d.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/Handler.d.ts#L43">Handler.d.ts:43</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>request: <a href="jagapi.jsonapirequest.html" class="tsd-signature-type">JsonApiRequest</a></h5>
+								<h5>request: <a href="_jagql_framework.jsonapirequest.html" class="tsd-signature-type">JsonApiRequest</a></h5>
 							</li>
 							<li>
-								<h5>results: <span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span></h5>
-							</li>
-							<li>
-								<h5>count: <span class="tsd-signature-type">number</span></h5>
-							</li>
-							<li>
-								<h5>callback: <a href="jagapi.handlercallback.html" class="tsd-signature-type">HandlerCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								<h5>callback: <a href="_jagql_framework.handlercallback.html" class="tsd-signature-type">HandlerCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -121,58 +115,115 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi.html">jagapi</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/<wbr>Chain<wbr>Handler</a>
+						<a href="../modules/_jagql_framework.html">@jagql/framework</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_handlers_memoryhandler.html">jagapi/lib/handlers/<wbr>Memory<wbr>Handler</a>
+						<a href="../modules/_jagql_framework_lib_handlers_chainhandler.html">@jagql/framework/lib/handlers/<wbr>Chain<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_ourjoi.html">jagapi/lib/our<wbr>Joi</a>
+						<a href="../modules/_jagql_framework_lib_handlers_memoryhandler.html">@jagql/framework/lib/handlers/<wbr>Memory<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_jagql_framework_lib_ourjoi.html">@jagql/framework/lib/our<wbr>Joi</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../classes/jagapi_lib_handlers_chainhandler.chainhandler.html" class="tsd-kind-icon">Chain<wbr>Handler</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="../classes/_jagql_framework.handler.html" class="tsd-kind-icon">Handler</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi_lib_handlers_chainhandler.aftercreatefunction.html" class="tsd-kind-icon">After<wbr>Create<wbr>Function</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_jagql_framework.metrics.html" class="tsd-kind-icon">Metrics</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi_lib_handlers_chainhandler.afterdeletefunction.html" class="tsd-kind-icon">After<wbr>Delete<wbr>Function</a>
+						<a href="_jagql_framework.apiconfig.html" class="tsd-kind-icon">Api<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi_lib_handlers_chainhandler.afterfindfunction.html" class="tsd-kind-icon">After<wbr>Find<wbr>Function</a>
+						<a href="_jagql_framework.createfunction.html" class="tsd-kind-icon">Create<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_jagql_framework.deletefunction.html" class="tsd-kind-icon">Delete<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_jagql_framework.findfunction.html" class="tsd-kind-icon">Find<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_jagql_framework.handlercallback.html" class="tsd-kind-icon">Handler<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_jagql_framework.jsonapierror.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_jagql_framework.jsonapirequest.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_jagql_framework.metricsdata.html" class="tsd-kind-icon">Metrics<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_jagql_framework.metricslistener.html" class="tsd-kind-icon">Metrics<wbr>Listener</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_jagql_framework.resourceconfig.html" class="tsd-kind-icon">Resource<wbr>Config</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi_lib_handlers_chainhandler.aftersearchfunction.html" class="tsd-kind-icon">After<wbr>Search<wbr>Function</a>
+						<a href="_jagql_framework.searchfunction.html" class="tsd-kind-icon">Search<wbr>Function</a>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi_lib_handlers_chainhandler.afterupdatefunction.html" class="tsd-kind-icon">After<wbr>Update<wbr>Function</a>
+						<a href="_jagql_framework.updatefunction.html" class="tsd-kind-icon">Update<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#basetype" class="tsd-kind-icon">Base<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html#beforecreatefunction" class="tsd-kind-icon">Before<wbr>Create<wbr>Function</a>
+						<a href="../modules/_jagql_framework.html#httpverbs" class="tsd-kind-icon">Http<wbr>Verbs</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html#beforedeletefunction" class="tsd-kind-icon">Before<wbr>Delete<wbr>Function</a>
+						<a href="../modules/_jagql_framework.html#jsonapiprotocols" class="tsd-kind-icon">Json<wbr>Api<wbr>Protocols</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html#beforefindfunction" class="tsd-kind-icon">Before<wbr>Find<wbr>Function</a>
+						<a href="../modules/_jagql_framework.html#metricseventname" class="tsd-kind-icon">Metrics<wbr>Event<wbr>Name</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html#beforesearchfunction" class="tsd-kind-icon">Before<wbr>Search<wbr>Function</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_jagql_framework.html#resourceattributes" class="tsd-kind-icon">Resource<wbr>Attributes</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html#beforeupdatefunction" class="tsd-kind-icon">Before<wbr>Update<wbr>Function</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#chainhandler" class="tsd-kind-icon">Chain<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#joi" class="tsd-kind-icon">Joi</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#memoryhandler" class="tsd-kind-icon">Memory<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#metrics-1" class="tsd-kind-icon">metrics</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#authenticate" class="tsd-kind-icon">authenticate</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#close" class="tsd-kind-icon">close</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_jagql_framework.html#define" class="tsd-kind-icon">define</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#getexpressserver" class="tsd-kind-icon">get<wbr>Express<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#onuncaughtexception" class="tsd-kind-icon">on<wbr>Uncaught<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#setconfig" class="tsd-kind-icon">set<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_jagql_framework.html#start" class="tsd-kind-icon">start</a>
 					</li>
 				</ul>
 			</nav>

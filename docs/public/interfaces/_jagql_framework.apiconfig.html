@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JsonApiError | JagAPI Server</title>
+	<title>ApiConfig | JagAPI Server</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,13 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/jagapi.html">jagapi</a>
+					<a href="../modules/_jagql_framework.html">@jagql/framework</a>
 				</li>
 				<li>
-					<a href="jagapi.jsonapierror.html">JsonApiError</a>
+					<a href="_jagql_framework.apiconfig.html">ApiConfig</a>
 				</li>
 			</ul>
-			<h1>Interface JsonApiError</h1>
+			<h1>Interface ApiConfig</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">JsonApiError</span>
+						<span class="target">ApiConfig</span>
 					</li>
 				</ul>
 			</section>
@@ -82,10 +82,14 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#code" class="tsd-kind-icon">code</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#detail" class="tsd-kind-icon">detail</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#status" class="tsd-kind-icon">status</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi.jsonapierror.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#base" class="tsd-kind-icon">base</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#graphiql" class="tsd-kind-icon">graphiql</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#hostname" class="tsd-kind-icon">hostname</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#jsonapi" class="tsd-kind-icon">jsonapi</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#meta" class="tsd-kind-icon">meta</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#port" class="tsd-kind-icon">port</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#protocol" class="tsd-kind-icon">protocol</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_jagql_framework.apiconfig.html#swagger" class="tsd-kind-icon">swagger</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,42 +98,82 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="code" class="tsd-anchor"></a>
-					<h3>code</h3>
-					<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="base" class="tsd-anchor"></a>
+					<h3>base</h3>
+					<div class="tsd-signature tsd-kind-icon">base<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L32">Handler.d.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L27">jsonApi.d.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="detail" class="tsd-anchor"></a>
-					<h3>detail</h3>
-					<div class="tsd-signature tsd-kind-icon">detail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="graphiql" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> graphiql</h3>
+					<div class="tsd-signature tsd-kind-icon">graphiql<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L34">Handler.d.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L22">jsonApi.d.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="status" class="tsd-anchor"></a>
-					<h3>status</h3>
-					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="hostname" class="tsd-anchor"></a>
+					<h3>hostname</h3>
+					<div class="tsd-signature tsd-kind-icon">hostname<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L31">Handler.d.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L25">jsonApi.d.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="jsonapi" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> jsonapi</h3>
+					<div class="tsd-signature tsd-kind-icon">jsonapi<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L33">Handler.d.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L23">jsonApi.d.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="meta" class="tsd-anchor"></a>
+					<h3>meta</h3>
+					<div class="tsd-signature tsd-kind-icon">meta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L28">jsonApi.d.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="port" class="tsd-anchor"></a>
+					<h3>port</h3>
+					<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L26">jsonApi.d.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="protocol" class="tsd-anchor"></a>
+					<h3>protocol</h3>
+					<div class="tsd-signature tsd-kind-icon">protocol<span class="tsd-signature-symbol">:</span> <a href="../modules/_jagql_framework.html#jsonapiprotocols" class="tsd-signature-type">JsonApiProtocols</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L24">jsonApi.d.ts:24</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="swagger" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> swagger</h3>
+					<div class="tsd-signature tsd-kind-icon">swagger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/329761b/types/jsonApi.d.ts#L29">jsonApi.d.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -142,128 +186,140 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/jagapi.html">jagapi</a>
+						<a href="../modules/_jagql_framework.html">@jagql/framework</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/<wbr>Chain<wbr>Handler</a>
+						<a href="../modules/_jagql_framework_lib_handlers_chainhandler.html">@jagql/framework/lib/handlers/<wbr>Chain<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_handlers_memoryhandler.html">jagapi/lib/handlers/<wbr>Memory<wbr>Handler</a>
+						<a href="../modules/_jagql_framework_lib_handlers_memoryhandler.html">@jagql/framework/lib/handlers/<wbr>Memory<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/jagapi_lib_ourjoi.html">jagapi/lib/our<wbr>Joi</a>
+						<a href="../modules/_jagql_framework_lib_ourjoi.html">@jagql/framework/lib/our<wbr>Joi</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../classes/jagapi.handler.html" class="tsd-kind-icon">Handler</a>
+						<a href="../classes/_jagql_framework.handler.html" class="tsd-kind-icon">Handler</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/jagapi.metrics.html" class="tsd-kind-icon">Metrics</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.apiconfig.html" class="tsd-kind-icon">Api<wbr>Config</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.createfunction.html" class="tsd-kind-icon">Create<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.deletefunction.html" class="tsd-kind-icon">Delete<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.findfunction.html" class="tsd-kind-icon">Find<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.handlercallback.html" class="tsd-kind-icon">Handler<wbr>Callback</a>
+						<a href="../classes/_jagql_framework.metrics.html" class="tsd-kind-icon">Metrics</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.jsonapierror.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Error</a>
+						<a href="_jagql_framework.apiconfig.html" class="tsd-kind-icon">Api<wbr>Config</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#code" class="tsd-kind-icon">code</a>
+								<a href="_jagql_framework.apiconfig.html#base" class="tsd-kind-icon">base</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#detail" class="tsd-kind-icon">detail</a>
+								<a href="_jagql_framework.apiconfig.html#graphiql" class="tsd-kind-icon">graphiql</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#status" class="tsd-kind-icon">status</a>
+								<a href="_jagql_framework.apiconfig.html#hostname" class="tsd-kind-icon">hostname</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="jagapi.jsonapierror.html#title" class="tsd-kind-icon">title</a>
+								<a href="_jagql_framework.apiconfig.html#jsonapi" class="tsd-kind-icon">jsonapi</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_jagql_framework.apiconfig.html#meta" class="tsd-kind-icon">meta</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_jagql_framework.apiconfig.html#port" class="tsd-kind-icon">port</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_jagql_framework.apiconfig.html#protocol" class="tsd-kind-icon">protocol</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_jagql_framework.apiconfig.html#swagger" class="tsd-kind-icon">swagger</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_jagql_framework.createfunction.html" class="tsd-kind-icon">Create<wbr>Function</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="jagapi.jsonapirequest.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Request</a>
+						<a href="_jagql_framework.deletefunction.html" class="tsd-kind-icon">Delete<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_jagql_framework.findfunction.html" class="tsd-kind-icon">Find<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_jagql_framework.handlercallback.html" class="tsd-kind-icon">Handler<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_jagql_framework.jsonapierror.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_jagql_framework.jsonapirequest.html" class="tsd-kind-icon">Json<wbr>Api<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="jagapi.metricsdata.html" class="tsd-kind-icon">Metrics<wbr>Data</a>
+						<a href="_jagql_framework.metricsdata.html" class="tsd-kind-icon">Metrics<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="jagapi.metricslistener.html" class="tsd-kind-icon">Metrics<wbr>Listener</a>
+						<a href="_jagql_framework.metricslistener.html" class="tsd-kind-icon">Metrics<wbr>Listener</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="jagapi.resourceconfig.html" class="tsd-kind-icon">Resource<wbr>Config</a>
+						<a href="_jagql_framework.resourceconfig.html" class="tsd-kind-icon">Resource<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.searchfunction.html" class="tsd-kind-icon">Search<wbr>Function</a>
+						<a href="_jagql_framework.searchfunction.html" class="tsd-kind-icon">Search<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="jagapi.updatefunction.html" class="tsd-kind-icon">Update<wbr>Function</a>
+						<a href="_jagql_framework.updatefunction.html" class="tsd-kind-icon">Update<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#basetype" class="tsd-kind-icon">Base<wbr>Type</a>
+						<a href="../modules/_jagql_framework.html#basetype" class="tsd-kind-icon">Base<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi.html#httpverbs" class="tsd-kind-icon">Http<wbr>Verbs</a>
+						<a href="../modules/_jagql_framework.html#httpverbs" class="tsd-kind-icon">Http<wbr>Verbs</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi.html#jsonapiprotocols" class="tsd-kind-icon">Json<wbr>Api<wbr>Protocols</a>
+						<a href="../modules/_jagql_framework.html#jsonapiprotocols" class="tsd-kind-icon">Json<wbr>Api<wbr>Protocols</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/jagapi.html#metricseventname" class="tsd-kind-icon">Metrics<wbr>Event<wbr>Name</a>
+						<a href="../modules/_jagql_framework.html#metricseventname" class="tsd-kind-icon">Metrics<wbr>Event<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../modules/jagapi.html#resourceattributes" class="tsd-kind-icon">Resource<wbr>Attributes</a>
+						<a href="../modules/_jagql_framework.html#resourceattributes" class="tsd-kind-icon">Resource<wbr>Attributes</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#chainhandler" class="tsd-kind-icon">Chain<wbr>Handler</a>
+						<a href="../modules/_jagql_framework.html#chainhandler" class="tsd-kind-icon">Chain<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#joi" class="tsd-kind-icon">Joi</a>
+						<a href="../modules/_jagql_framework.html#joi" class="tsd-kind-icon">Joi</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#memoryhandler" class="tsd-kind-icon">Memory<wbr>Handler</a>
+						<a href="../modules/_jagql_framework.html#memoryhandler" class="tsd-kind-icon">Memory<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#metrics-1" class="tsd-kind-icon">metrics</a>
+						<a href="../modules/_jagql_framework.html#metrics-1" class="tsd-kind-icon">metrics</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#authenticate" class="tsd-kind-icon">authenticate</a>
+						<a href="../modules/_jagql_framework.html#authenticate" class="tsd-kind-icon">authenticate</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#close" class="tsd-kind-icon">close</a>
+						<a href="../modules/_jagql_framework.html#close" class="tsd-kind-icon">close</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../modules/jagapi.html#define" class="tsd-kind-icon">define</a>
+						<a href="../modules/_jagql_framework.html#define" class="tsd-kind-icon">define</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#getexpressserver" class="tsd-kind-icon">get<wbr>Express<wbr>Server</a>
+						<a href="../modules/_jagql_framework.html#getexpressserver" class="tsd-kind-icon">get<wbr>Express<wbr>Server</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#onuncaughtexception" class="tsd-kind-icon">on<wbr>Uncaught<wbr>Exception</a>
+						<a href="../modules/_jagql_framework.html#onuncaughtexception" class="tsd-kind-icon">on<wbr>Uncaught<wbr>Exception</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#setconfig" class="tsd-kind-icon">set<wbr>Config</a>
+						<a href="../modules/_jagql_framework.html#setconfig" class="tsd-kind-icon">set<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/jagapi.html#start" class="tsd-kind-icon">start</a>
+						<a href="../modules/_jagql_framework.html#start" class="tsd-kind-icon">start</a>
 					</li>
 				</ul>
 			</nav>

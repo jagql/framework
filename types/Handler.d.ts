@@ -1,5 +1,5 @@
 /**
- * @module jagapi
+ * @module @jagql/framework
  */
 import {PathParams} from 'express-serve-static-core'
 import {Request, Response} from 'express'
@@ -77,7 +77,7 @@ declare class Handler<R=any> {
   handlesFilter: boolean
 }
 
-declare module 'jagapi/lib/handlers/Handler' {
+declare module '@jagql/framework/lib/handlers/Handler' {
   export {
     Handler
   }

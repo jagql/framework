@@ -1,5 +1,5 @@
 /**
- * @module jagapi
+ * @module @jagql/framework
  */
 import {Schema} from 'joi'
 import {Handler} from './Handler'

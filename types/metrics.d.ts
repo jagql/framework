@@ -1,5 +1,5 @@
 /**
- * @module jagapi
+ * @module @jagql/framework
  */
 import {EventEmitter} from 'events'
 import {HttpVerbs} from './Handler'
