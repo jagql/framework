@@ -1,11 +1,11 @@
-[![Build Status](https://travis-ci.org/coding-blocks/jsonapi-server.svg?branch=master)](https://travis-ci.org/coding-blocks/jsonapi-server)
-[![Coverage Status](https://coveralls.io/repos/github/coding-blocks/jsonapi-server/badge.svg?branch=master)](https://coveralls.io/github/coding-blocks/jsonapi-server?branch=master)
+[![Build Status](https://travis-ci.org/jagql/framework.svg?branch=master)](https://travis-ci.org/jagql/framework)
+[![Coverage Status](https://coveralls.io/repos/github/jagql/framework/badge.svg?branch=master)](https://coveralls.io/github/jagql/framework?branch=master)
 [![npm version](https://badge.fury.io/js/jagapi.svg)](https://badge.fury.io/js/jagapi)
-[![Dependencies Status](https://david-dm.org/coding-blocks/jsonapi-server.svg)](https://david-dm.org/coding-blocks/jsonapi-server)
+[![Dependencies Status](https://david-dm.org/jagql/framework.svg)](https://david-dm.org/jagql/framework)
 
 # JaG API (`jagapi`)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/coding-blocks/jsonapi-server.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jagql/framework.svg)](https://greenkeeper.io/)
 
 
 ## About this Fork
