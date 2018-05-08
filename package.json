@@ -23,12 +23,6 @@
     "npm": ">=5",
     "yarn": ">=1"
   },
-  "greenkeeper": {
-    "ignore": [
-      "express-graphql",
-      "graphql"
-    ]
-  },
   "dependencies": {
     "@types/express": "^4.11.1",
     "@types/joi": "^13.0.5",
