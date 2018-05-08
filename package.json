@@ -67,7 +67,7 @@
     "start": "node example/server.js",
     "test": "mocha",
     "cover": "nyc mocha",
-    "report:travis": "nyc report --reporter=html,lcov",
+    "report": "nyc report --reporter=html --reporter=lcov",
     "performance": "node --allow-natives-syntax --harmony ./node_modules/mocha/bin/_mocha -S --reporter mocha-performance ./test/*.js",
     "lint": "eslint ./example ./lib ./test --quiet && echo '✔ All good!'",
     "jscpd": "jscpd --blame -p ./lib/ || echo 'Finished!'",

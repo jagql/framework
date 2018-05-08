@@ -10,6 +10,7 @@ before_script: greenkeeper-lockfile-update
 script: npm run ci
 after_script: greenkeeper-lockfile-upload
 after_success:
+  - npm run report
   - "bash <(curl -s https://codecov.io/bash)"  
 notifications:
   email: false
