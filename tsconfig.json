@@ -11,9 +11,9 @@
     "lib"
   ],
   "typedocOptions": {
-    "includes": "docs/guides",
-    "out": "docs/public",
-    "name": "JagAPI Server",
+    "includes": "resources/guides",
+    "out": "docs",
+    "name": "jagql",
     "includeDeclarations": true,
     "excludeExternals": true,
     "mode": "modules"

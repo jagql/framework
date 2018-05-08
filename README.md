@@ -2,10 +2,16 @@
 [![Coverage Status](https://coveralls.io/repos/github/jagql/framework/badge.svg?branch=master)](https://coveralls.io/github/jagql/framework?branch=master)
 [![npm version](https://badge.fury.io/js/jagapi.svg)](https://badge.fury.io/js/jagapi)
 [![Dependencies Status](https://david-dm.org/jagql/framework.svg)](https://david-dm.org/jagql/framework)
-
-# JaG API (`jagapi`)
-
 [![Greenkeeper badge](https://badges.greenkeeper.io/jagql/framework.svg)](https://greenkeeper.io/)
+- - - - - - 
+<center>
+<img src="resources/images/jagql.svg" width=200>
+
+# jagql
+</center>
+
+A resource driven framework to set up a {json:api} + GraphQL endpoint in record time. 
+
 
 
 ## About this Fork

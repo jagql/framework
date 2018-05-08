@@ -73,7 +73,7 @@
     "lint": "eslint ./example ./lib ./test --quiet && echo '✔ All good!'",
     "jscpd": "jscpd --blame -p ./lib/ || echo 'Finished!'",
     "ci": "npm run jscpd && npm run lint && npm run test",
-    "predocs": "rimraf docs/public/*",
+    "predocs": "rimraf docs/*",
     "docs": "typedoc types"
   }
 }

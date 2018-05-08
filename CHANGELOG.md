@@ -1,4 +1,4 @@
-# CHANGELOG (`jsonapi-server`)
+# CHANGELOG (`@jagql/framework`)
 
 - 2018-03-29 - fix GraphQLObjectType resolving
 - 2018-03-16 - v5.6.0
