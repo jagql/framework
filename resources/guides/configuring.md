@@ -1,5 +1,5 @@
 
-### Configuring jsonapi-server
+### Configuring @jagql/framework
 
 ```javascript
 jsonApi.setConfig({
@@ -92,7 +92,7 @@ jsonApi.authenticate(function(request, callback) {
 });
 ```
 
-#### Starting jsonapi-server
+#### Starting @jagql/framework
 
 Note: You should only start the server once you've called `setConfig` as per the example above. Resources can be defined before OR after the server has been started.
 
@@ -100,7 +100,7 @@ Note: You should only start the server once you've called `setConfig` as per the
 jsonApi.start();
 ```
 
-#### Stopping jsonapi-server
+#### Stopping @jagql/framework
 
 To gracefully shutdown the service, you can call `.close()`. This will inform all handlers that the server is shutting down, they'll have an opportunity to close any open files or connections, then the HTTP server will stop listening.
 
@@ -110,7 +110,7 @@ jsonApi.close();
 
 #### Gaining access to the Express server
 
-Whilst interfering with the routing layer of jsonapi-server is not recommended (any modifications you make will go against the specification) I can appreciate the needs of businesses and the need to get stuff done. There is therefore an accessor to enable a consumer of jsonapi-server to inject their own custom routes / middleware BEFORE the json:api routes and middleware are applied.
+Whilst interfering with the routing layer of @jagql/framework is not recommended (any modifications you make will go against the specification) I can appreciate the needs of businesses and the need to get stuff done. There is therefore an accessor to enable a consumer of @jagql/framework to inject their own custom routes / middleware BEFORE the json:api routes and middleware are applied.
 
 ```javascript
 var app = jsonApi.getExpressServer();

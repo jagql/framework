@@ -5,7 +5,7 @@ Handlers represent the mechanism that backs a resource. Each handler is an objec
 * a constructor with an option parameter that can be used to inject any required handler specific configuration.
 * a `ready` property indicating the handler is ready to process requests.
 * some of the following methods:
- * `initialise` - when jsonapi-server loads, this is invoked once for every resource using this handler. Its an opportunity to allocate memory, connect to databases, etc.
+ * `initialise` - when @jagql/framework loads, this is invoked once for every resource using this handler. Its an opportunity to allocate memory, connect to databases, etc.
  * `close` - for cleaning up upon `jsonApi.close()` (optional)
  * `search` - for searching for resources that match some vague parameters.
  * `find` - for finding a specific resource by id.
@@ -27,7 +27,7 @@ All data stored behind handlers should be stored in a developer-friendly format 
   photographer: { type: "people", id: "ad3aa89e-9c5b-4ac9-a652-6670f9f27587" }
 }
 ```
-In the above example the `photographer` attribute is defined as relation to a resource of type `people`. jsonapi-server will deal with shuffling around and separating those attributes and relations when it needs to. Keep It Simple.
+In the above example the `photographer` attribute is defined as relation to a resource of type `people`. @jagql/framework will deal with shuffling around and separating those attributes and relations when it needs to. Keep It Simple.
 
 #### The `request` Format
 

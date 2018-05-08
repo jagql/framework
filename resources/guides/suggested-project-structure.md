@@ -22,10 +22,10 @@
 
 #### Example server.js
 
-This is the main entry point for your API. The goal is to configure jsonapi-server and load all the resources.
+This is the main entry point for your API. The goal is to configure @jagql/framework and load all the resources.
 
 ```javascript
-var jsonApi = require("jsonapi-server");
+var jsonApi = require("@jagql/framework");
 var fs = require("fs");
 var path = require("path");
 

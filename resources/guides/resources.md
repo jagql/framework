@@ -12,7 +12,7 @@ jsonApi.define({
 
 #### Handlers
 
-jsonapi-server ships with an example barebones implementation of an in-memory handler. It can be found at `jsonApi.MemoryHandler`. You can use it as a reference for writing new handlers.
+@jagql/framework ships with an example barebones implementation of an in-memory handler. It can be found at `jsonApi.MemoryHandler`. You can use it as a reference for writing new handlers.
 
 Documentation for creating your own handlers can be found [here](handlers.md).
 
@@ -50,18 +50,18 @@ jsonApi.define({
 
 `searchParams` controls which parameters will be accepted when searching for resources via a `GET` request to the `/:resource/?` route.
 
-A resource's `searchParams` should be declared using the version of `Joi` bundled with `jsonapi-server`:
+A resource's `searchParams` should be declared using the version of `Joi` bundled with `@jagql/framework`:
 ```javascript
 searchParams: {
   query: jsonApi.Joi.string()
 }
 ```
 
-In addition to the fields declared in the `searchParams` object, jsonapi-server will also accept the `sort`, `include`, `fields`, `filter` and `relationships` parameters.
+In addition to the fields declared in the `searchParams` object, @jagql/framework will also accept the `sort`, `include`, `fields`, `filter` and `relationships` parameters.
 
 ### Attributes
 
-`attributes` defines the properties declared on the given resource. A resource's `attributes` should be declared using the version of `Joi` bundled with `jsonapi-server`:
+`attributes` defines the properties declared on the given resource. A resource's `attributes` should be declared using the version of `Joi` bundled with `@jagql/framework`:
 ```javascript
 attributes: {
   url: jsonApi.Joi.string().uri()

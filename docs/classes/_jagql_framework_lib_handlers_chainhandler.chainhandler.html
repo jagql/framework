@@ -73,7 +73,7 @@
 						<h3 id="chaining-handlers-together-with-the-chainhandler">Chaining handlers together with the ChainHandler</h3>
 						<p>This project ships with a handler called the <code>ChainHandler</code>. It&#39;s purpose is to make it easier to wrap the functionality of one handler with additional functionality. For example using the relational data store may be ideal for storing resources, but what if we want to add an authentication layer on top of those resources? An authentication handler shouldn&#39;t know or care about the storage of the underlying resource, it should only deal with authentication - we need an abstraction layer to help us glue all of this together.</p>
 						<p>To get started with the ChainHandler, go ahead and instantiate one:</p>
-						<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> jsonApi = <span class="hljs-built_in">require</span>(<span class="hljs-string">"jsonapi-server"</span>);
+						<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> jsonApi = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@jagql/framework"</span>);
 <span class="hljs-keyword">var</span> testChainHandler = <span class="hljs-keyword">new</span> jsonApi.ChainHandler();
 </code></pre>
 						<p>From there it&#39;s a simple case of attaching new function handlers to <code>testChainHandler</code>, following the naming convention of <code>(&quot;before&quot;|&quot;after&quot;)+function</code> - eg <code>beforeSearch</code>, <code>beforeCreate</code>, <code>afterDelete</code>.</p>
@@ -184,7 +184,7 @@ chainHandler1.afterSearch
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L37">ChainHandler.d.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L37">ChainHandler.d.ts:37</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_jagql_framework_lib_handlers_chainhandler.chainhandler.html" class="tsd-signature-type">ChainHandler</a></h4>
@@ -200,7 +200,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">after<wbr>Create<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_jagql_framework_lib_handlers_chainhandler.aftercreatefunction.html" class="tsd-signature-type">AfterCreateFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L49">ChainHandler.d.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L49">ChainHandler.d.ts:49</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -210,7 +210,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">after<wbr>Delete<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_jagql_framework_lib_handlers_chainhandler.afterdeletefunction.html" class="tsd-signature-type">AfterDeleteFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L53">ChainHandler.d.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L53">ChainHandler.d.ts:53</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -220,7 +220,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">after<wbr>Find<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_jagql_framework_lib_handlers_chainhandler.afterfindfunction.html" class="tsd-signature-type">AfterFindFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L47">ChainHandler.d.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L47">ChainHandler.d.ts:47</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -230,7 +230,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">after<wbr>Search<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_jagql_framework_lib_handlers_chainhandler.aftersearchfunction.html" class="tsd-signature-type">AfterSearchFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L45">ChainHandler.d.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L45">ChainHandler.d.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -240,7 +240,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">after<wbr>Update<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_jagql_framework_lib_handlers_chainhandler.afterupdatefunction.html" class="tsd-signature-type">AfterUpdateFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L51">ChainHandler.d.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L51">ChainHandler.d.ts:51</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -250,7 +250,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Create<span class="tsd-signature-symbol">:</span> <a href="../modules/_jagql_framework_lib_handlers_chainhandler.html#beforecreatefunction" class="tsd-signature-type">BeforeCreateFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L48">ChainHandler.d.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L48">ChainHandler.d.ts:48</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -260,7 +260,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Delete<span class="tsd-signature-symbol">:</span> <a href="../modules/_jagql_framework_lib_handlers_chainhandler.html#beforedeletefunction" class="tsd-signature-type">BeforeDeleteFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L52">ChainHandler.d.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L52">ChainHandler.d.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -270,7 +270,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Find<span class="tsd-signature-symbol">:</span> <a href="../modules/_jagql_framework_lib_handlers_chainhandler.html#beforefindfunction" class="tsd-signature-type">BeforeFindFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L46">ChainHandler.d.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L46">ChainHandler.d.ts:46</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -280,7 +280,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Search<span class="tsd-signature-symbol">:</span> <a href="../modules/_jagql_framework_lib_handlers_chainhandler.html#beforesearchfunction" class="tsd-signature-type">BeforeSearchFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L44">ChainHandler.d.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L44">ChainHandler.d.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -290,7 +290,7 @@ chainHandler1.afterSearch
 					<div class="tsd-signature tsd-kind-icon">before<wbr>Update<span class="tsd-signature-symbol">:</span> <a href="../modules/_jagql_framework_lib_handlers_chainhandler.html#beforeupdatefunction" class="tsd-signature-type">BeforeUpdateFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L50">ChainHandler.d.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L50">ChainHandler.d.ts:50</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -301,7 +301,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#close">close</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L74">Handler.d.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L74">Handler.d.ts:74</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -327,7 +327,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#create">create</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L69">Handler.d.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L69">Handler.d.ts:69</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -338,7 +338,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#delete">delete</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L73">Handler.d.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L73">Handler.d.ts:73</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -349,7 +349,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#find">find</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L71">Handler.d.ts:71</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L71">Handler.d.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -360,7 +360,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#handlesfilter">handlesFilter</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L77">Handler.d.ts:77</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L77">Handler.d.ts:77</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -371,7 +371,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#handlessort">handlesSort</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L76">Handler.d.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L76">Handler.d.ts:76</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -382,7 +382,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#ready">ready</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L75">Handler.d.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L75">Handler.d.ts:75</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -393,7 +393,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#search">search</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L70">Handler.d.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L70">Handler.d.ts:70</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -404,7 +404,7 @@ chainHandler1.afterSearch
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#update">update</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L72">Handler.d.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L72">Handler.d.ts:72</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -421,7 +421,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L43">ChainHandler.d.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L43">ChainHandler.d.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -444,7 +444,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L41">ChainHandler.d.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L41">ChainHandler.d.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -467,7 +467,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L42">ChainHandler.d.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L42">ChainHandler.d.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -490,7 +490,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L40">ChainHandler.d.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L40">ChainHandler.d.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -513,7 +513,7 @@ chainHandler1.afterSearch
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/ChainHandler.d.ts#L39">ChainHandler.d.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/ChainHandler.d.ts#L39">ChainHandler.d.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -537,7 +537,7 @@ chainHandler1.afterSearch
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_jagql_framework.handler.html">Handler</a>.<a href="_jagql_framework.handler.html#initialise">initialise</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/ecf6338/types/Handler.d.ts#L68">Handler.d.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/8e49d4f/types/Handler.d.ts#L68">Handler.d.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

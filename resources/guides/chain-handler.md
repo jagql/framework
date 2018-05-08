@@ -5,7 +5,7 @@ This project ships with a handler called the `ChainHandler`. It's purpose is to 
 
 To get started with the ChainHandler, go ahead and instantiate one:
 ```javascript
-var jsonApi = require("jsonapi-server");
+var jsonApi = require("@jagql/framework");
 var testChainHandler = new jsonApi.ChainHandler();
 ```
 From there it's a simple case of attaching new function handlers to `testChainHandler`, following the naming convention of `("before"|"after")+function` - eg `beforeSearch`, `beforeCreate`, `afterDelete`.
