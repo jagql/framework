@@ -16,7 +16,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coding-blocks/jsonapi-server"
+    "url": "https://github.com/jagql/framework"
   },
   "engines": {
     "node": ">=8",
