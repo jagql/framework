@@ -74,7 +74,7 @@ jsonApi.metrics.on('data', data => {
 // wait for the tests to call .start();
 if (typeof describe === 'undefined') {
   jsonApi.start(() => {
-    console.log('Server running')
+    console.log('Server running on http://localhost:16006')
   })
 }
 server.start = jsonApi.start

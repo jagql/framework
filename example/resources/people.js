@@ -29,6 +29,19 @@ jsonApi.define({
       as: 'photographer'
     })
   },
+  actions: {
+    login: jsonApi.Joi.action({
+      params: {
+        username: jsonApi.Joi.string(),
+        password: jsonApi.Joi.string()},
+      get () {
+        return {}
+      },
+      post () {
+        return {}
+      }
+    })
+  },
   examples: [
     {
       id: 'cc5cca2e-0dd8-4b95-8cfc-a11230e73116',

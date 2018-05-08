@@ -17,9 +17,9 @@
     "url": "https://github.com/coding-blocks/jsonapi-server"
   },
   "engines": {
-    "node": "8",
-    "npm": "5",
-    "yarn": "1"
+    "node": ">=8",
+    "npm": ">=5",
+    "yarn": ">=1"
   },
   "greenkeeper": {
     "ignore": [
