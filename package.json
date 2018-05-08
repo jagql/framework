@@ -46,7 +46,6 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "coveralls": "3.0.1",
     "eslint": "4.19.1",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-import": "2.11.0",
@@ -68,11 +67,11 @@
     "start": "node example/server.js",
     "test": "mocha",
     "cover": "nyc mocha",
-    "coverage": "[ -n \"$TRAVIS\" ] && nyc report --reporter=text-lcov | coveralls || nyc report --reporter=html",
+    "report:travis": "nyc report --reporter=html,lcov",
     "performance": "node --allow-natives-syntax --harmony ./node_modules/mocha/bin/_mocha -S --reporter mocha-performance ./test/*.js",
     "lint": "eslint ./example ./lib ./test --quiet && echo '✔ All good!'",
     "jscpd": "jscpd --blame -p ./lib/ || echo 'Finished!'",
-    "ci": "npm run jscpd && npm run lint && npm run test",
+    "ci": "npm run jscpd && npm run lint && npm run cover",
     "predocs": "rimraf docs/*",
     "docs": "typedoc types"
   }
