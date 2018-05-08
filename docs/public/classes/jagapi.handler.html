@@ -140,7 +140,7 @@
 						<p>The handler object constructor can, depending on the handler&#39;s requirements, expect a object parameter which will contain any properties required for configuring the handler. For example if the handler uses a database for persistence the configuration object will contain the properties required to connect to the database.</p>
 						<h4 id="ready">ready</h4>
 						<p>The <code>ready</code> property should be set to a <em>truthy</em> value once the handler is ready to process requests (which will usually happen at the end of <code>initialise</code>). If the handler is temporarily unable to process requests this property should be set to a <em>falsy</em> value during the down period.</p>
-						<h4 id="handles-sort-filter-">handles<Sort|Filter></h4>
+						<h4 id="handlessort-filter">handles&lt;Sort|Filter&gt;</h4>
 						<p>Some post-process steps can be handled within the handler itself.  For instance, some handlers may be capable of
 							returning data that is already sorted in the correct order.  If the <code>handlesSort</code> or <code>handlesFilter</code> property is set to
 						a <em>truthy</em> value on the custom handler instance, then the corresponding post-processing step will be skipped.</p>
@@ -262,7 +262,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L66">Handler.d.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L66">Handler.d.ts:66</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -284,7 +284,7 @@
 					<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L74">Handler.d.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L74">Handler.d.ts:74</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -309,7 +309,7 @@
 					<div class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.createfunction.html" class="tsd-signature-type">CreateFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L69">Handler.d.ts:69</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L69">Handler.d.ts:69</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -319,7 +319,7 @@
 					<div class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.deletefunction.html" class="tsd-signature-type">DeleteFunction</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L73">Handler.d.ts:73</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L73">Handler.d.ts:73</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -329,7 +329,7 @@
 					<div class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.findfunction.html" class="tsd-signature-type">FindFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L71">Handler.d.ts:71</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L71">Handler.d.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -339,7 +339,7 @@
 					<div class="tsd-signature tsd-kind-icon">handles<wbr>Filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L77">Handler.d.ts:77</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L77">Handler.d.ts:77</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -349,7 +349,7 @@
 					<div class="tsd-signature tsd-kind-icon">handles<wbr>Sort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L76">Handler.d.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L76">Handler.d.ts:76</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -359,7 +359,7 @@
 					<div class="tsd-signature tsd-kind-icon">ready<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L75">Handler.d.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L75">Handler.d.ts:75</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -369,7 +369,7 @@
 					<div class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.searchfunction.html" class="tsd-signature-type">SearchFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L70">Handler.d.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L70">Handler.d.ts:70</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -379,7 +379,7 @@
 					<div class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">:</span> <a href="../interfaces/jagapi.updatefunction.html" class="tsd-signature-type">UpdateFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">R</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L72">Handler.d.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L72">Handler.d.ts:72</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -396,7 +396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/coding-blocks/jsonapi-server/blob/1e3f6e0/types/Handler.d.ts#L68">Handler.d.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/Handler.d.ts#L68">Handler.d.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

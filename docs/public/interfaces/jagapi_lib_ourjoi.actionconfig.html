@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JagAPI Server</title>
+	<title>ActionConfig | JagAPI Server</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">JagAPI Server</a>
+					<a href="../index.html" class="title">JagAPI Server</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,74 +51,158 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/jagapi_lib_ourjoi.html">jagapi/lib/ourJoi</a>
+				</li>
+				<li>
+					<a href="jagapi_lib_ourjoi.actionconfig.html">ActionConfig</a>
 				</li>
 			</ul>
-			<h1> JagAPI Server</h1>
+			<h1>Interface ActionConfig</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<p><a href="https://travis-ci.org/jagql/framework"><img src="https://travis-ci.org/jagql/framework.svg?branch=master" alt="Build Status"></a>
-					<a href="https://coveralls.io/github/jagql/framework?branch=master"><img src="https://coveralls.io/repos/github/jagql/framework/badge.svg?branch=master" alt="Coverage Status"></a>
-					<a href="https://badge.fury.io/js/jagapi"><img src="https://badge.fury.io/js/jagapi.svg" alt="npm version"></a>
-				<a href="https://david-dm.org/jagql/framework"><img src="https://david-dm.org/jagql/framework.svg" alt="Dependencies Status"></a></p>
-				<h1 id="jag-api-jagapi-">JaG API (<code>jagapi</code>)</h1>
-				<p><a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/jagql/framework.svg" alt="Greenkeeper badge"></a></p>
-				<h2 id="about-this-fork">About this Fork</h2>
-				<p><strong>NOTE: This is a fork of holidayextra&#39;s <a href="https://github.com/holidayextras/jsonapi-server">jsonapi-server</a>
-						We have merged a lot of pending PRs on the original repo that we felt we would gain advantage from. The original project
-				was coing a bit too slowly for our needs.</strong></p>
-				<h3 id="differences-from-upstream">Differences from upstream</h3>
-				<h4 id="primarykey-is-configurable"><code>primaryKey</code> is configurable</h4>
-				<p>In upstream, keys are by default <code>uuid</code> and are taken from DB, if <code>generateId</code> = <code>true</code>
-				We instead use a different property <code>primaryKey</code>, whose possible values are</p>
-				<ul>
-					<li><code>uuid</code> : Uses UUID v4 (generated from the client)</li>
-					<li><code>autoincrement</code> : Uses AUTOINCREMENT integers</li>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ActionConfig</span>
+					</li>
 				</ul>
-				<p>*In future there might be other types of primaryKeys if required.</p>
-				<h4 id="relationship-key-type-is-configurable">relationship key type is configurable</h4>
-				<p>When creating a field, you can state how to relate it</p>
-				<pre><code class="lang-javascript">jsonApi.define({
-  ... 
-  attributes: {
-    ... 
-    author: jsonApi.Joi.one(<span class="hljs-string">'people'</span>).uidType(<span class="hljs-string">'uuid'</span>)
-    ...
-  }
-})
-</code></pre>
-				<p><em><strong>You&#39;d want to use our version of jsonapi-store-[*] plugins with this
-				as the original versions will not be compatible with this</strong></em></p>
-				<p><em>The old readme <a href="README-old.md">here</a> is verbatim copy of the original project</em></p>
-			</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi_lib_ourjoi.actionconfig.html#params" class="tsd-kind-icon">params</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi_lib_ourjoi.actionconfig.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="jagapi_lib_ourjoi.actionconfig.html#post" class="tsd-kind-icon">post</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="params" class="tsd-anchor"></a>
+					<h3>params</h3>
+					<div class="tsd-signature tsd-kind-icon">params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/ourJoi.d.ts#L14">ourJoi.d.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">Schema</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="get" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/ourJoi.d.ts#L17">ourJoi.d.ts:17</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="post" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> post</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">post<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/jagql/framework/blob/9408266/types/ourJoi.d.ts#L18">ourJoi.d.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/jagapi.html">jagapi</a>
+						<a href="../modules/jagapi.html">jagapi</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/<wbr>Chain<wbr>Handler</a>
+						<a href="../modules/jagapi_lib_handlers_chainhandler.html">jagapi/lib/handlers/<wbr>Chain<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/jagapi_lib_handlers_memoryhandler.html">jagapi/lib/handlers/<wbr>Memory<wbr>Handler</a>
+						<a href="../modules/jagapi_lib_handlers_memoryhandler.html">jagapi/lib/handlers/<wbr>Memory<wbr>Handler</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/jagapi_lib_ourjoi.html">jagapi/lib/our<wbr>Joi</a>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/jagapi_lib_ourjoi.html">jagapi/lib/our<wbr>Joi</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi_lib_ourjoi.actionconfig.html" class="tsd-kind-icon">Action<wbr>Config</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jagapi_lib_ourjoi.actionconfig.html#params" class="tsd-kind-icon">params</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jagapi_lib_ourjoi.actionconfig.html#get" class="tsd-kind-icon">get</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="jagapi_lib_ourjoi.actionconfig.html#post" class="tsd-kind-icon">post</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="jagapi_lib_ourjoi.ourjoi.html" class="tsd-kind-icon">Our<wbr>Joi</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="jagapi_lib_ourjoi.ourjoischema.html" class="tsd-kind-icon">Our<wbr>Joi<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/jagapi_lib_ourjoi.html#uidtype" class="tsd-kind-icon">Uid<wbr>Type</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -187,7 +271,7 @@
 	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
