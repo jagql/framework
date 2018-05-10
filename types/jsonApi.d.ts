@@ -12,7 +12,7 @@ import MemoryHandlerType = require('./MemoryHandler')
 import {ResourceConfig} from './ResourceConfig'
 import {Metrics} from './metrics'
 import * as RC from './ResourceConfig'
-import * as H from '@jagql/framework/lib/handlers/Handler'
+import * as H from './Handler'
 
 export import ResourceConfig = RC.ResourceConfig
 
@@ -33,7 +33,7 @@ interface ApiConfig {
 /**
  * Our modified Joi instance
  */
-export const Joi: OurJoi
+export const Joi: typeof OurJoi.Joi
 
 /**
  * [[include:configuring.md]]

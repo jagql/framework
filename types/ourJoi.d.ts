@@ -1,9 +1,9 @@
+/// <reference types="joi" />
 /**
  * @module @jagql/framework/lib/ourJoi
  */
-/// <reference types="joi" />
 import {AnySchema, JoiObject, Schema, FunctionSchema} from 'joi'
-import Joi = require('joi')
+import BaseJoi = require('joi')
 
 type UidType = 'uuid' | 'autoincrement'
 
@@ -17,7 +17,7 @@ interface ActionConfig {
   get?()
   post?()
 }
-interface OurJoi extends Joi.Root {
+interface OurJoi extends BaseJoi.Root {
   one(...model: string[]): OurJoiSchema
   many(...model: string[]): OurJoiSchema
   belongsToOne(model: string): OurJoiSchema
@@ -25,4 +25,4 @@ interface OurJoi extends Joi.Root {
   action(config: ActionConfig): FunctionSchema
 }
 
-export = OurJoi
+export const Joi: OurJoi

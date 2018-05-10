@@ -4,7 +4,7 @@
 import {
   CreateFunction, DeleteFunction, FindFunction, Handler, HandlerCallback, JsonApiError, JsonApiRequest, SearchFunction,
   UpdateFunction
-} from '@jagql/framework/lib/handlers/Handler'
+} from './Handler'
 
 type BeforeSearchFunction = SearchFunction
 type BeforeFindFunction = FindFunction
@@ -52,5 +52,3 @@ declare class ChainHandler<R=any> extends Handler<R>{
   beforeDelete: BeforeDeleteFunction
   afterDelete: AfterDeleteFunction
 }
-
-export = ChainHandler

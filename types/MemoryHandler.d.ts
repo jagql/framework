@@ -1,7 +1,7 @@
 /**
  * @module @jagql/framework/lib/handlers/MemoryHandler
  */
-import {Handler} from '@jagql/framework/lib/handlers/Handler'
+import {Handler} from './Handler'
 
 declare class MemoryHandler extends Handler {
   constructor()

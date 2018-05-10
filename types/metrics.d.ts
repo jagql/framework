@@ -2,7 +2,7 @@
  * @module @jagql/framework
  */
 import {EventEmitter} from 'events'
-import {HttpVerbs} from '@jagql/framework/lib/handlers/Handler'
+import {HttpVerbs} from './Handler'
 
 export interface MetricsData {
   route: string
