@@ -17,11 +17,15 @@ interface ActionConfig {
   get?()
   post?()
 }
+interface ModelOptions {
+  resource: string
+  as: string
+}
 interface OurJoi extends BaseJoi.Root {
   one(...model: string[]): OurJoiSchema
   many(...model: string[]): OurJoiSchema
-  belongsToOne(model: string): OurJoiSchema
-  belongsToMany(model: string): OurJoiSchema
+  belongsToOne(modelOpts: ModelOptions): OurJoiSchema
+  belongsToMany(modelOpts: ModelOptions): OurJoiSchema
   action(config: ActionConfig): FunctionSchema
 }
 
