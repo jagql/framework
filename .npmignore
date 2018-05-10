@@ -7,5 +7,4 @@ jsonapi-server.cpuprofile
 /.idea
 /.nyc_output
 /docs
-/example
 /resources
