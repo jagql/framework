@@ -1,0 +1,219 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>jagql</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">jagql</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> jagql</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 align="center">
+					<img src="https://github.com/jagql/framework/raw/master/resources/images/jagql.svg?sanitize=true" width=200>
+					<br>
+					jagql
+				</h1>
+				<p><a href="https://travis-ci.org/jagql/framework"><img src="https://travis-ci.org/jagql/framework.svg?branch=master" alt="Build Status"></a>
+					<a href="https://codecov.io/gh/jagql/framework"><img src="https://codecov.io/gh/jagql/framework/branch/master/graph/badge.svg" alt="codecov"></a>
+					<a href="https://npmjs.com/@jagql/framework"><img src="https://img.shields.io/npm/v/@jagql/framework.svg?colorB=cb3837" alt="npm (scoped)"></a>
+					<a href="https://david-dm.org/jagql/framework"><img src="https://david-dm.org/jagql/framework.svg" alt="Dependencies Status"></a>
+				<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/jagql/framework.svg" alt="Greenkeeper badge"></a></p>
+				<p align="center">
+					<a href="https://jagql.github.io/framework/">
+						<img src="https://img.shields.io/badge/DOCS-API_REFERENCE-6699ff.svg?longCache=true&style=for-the-badge">
+					</a>
+				</p>
+				<hr>
+				<p>A resource driven framework to set up a {json:api} + GraphQL endpoint in record time. </p>
+				<h2 id="motivation">Motivation</h2>
+				<p>Let us look at these great articles written by some very experiences developers - </p>
+				<ol>
+					<li><a href="https://blog.runscope.com/posts/you-might-not-need-graphql">Phil Sturgeon says if you use json:api you do not need GraphQL</a></li>
+					<li><a href="https://nordicapis.com/the-benefits-of-using-json-api/">Bill Doerrfeld writes about the benefits of json:api</a></li>
+					<li><a href="https://react-etc.net/entry/json-api-is-a-simple-alternative-to-graphql-and-rest">Jorge says json:api is a simple alternative to GraphQL</a></li>
+					<li><a href="https://jeremywsherman.com/blog/2016/07/23/why-im-meh-about-json-api/">Jeremy Sherman says he is not impressed by json:api and GraphQL is better</a></li>
+					<li><a href="https://brandur.org/api-paradigms">Brandur says GraphQL is the next frontier in Web Developement</a></li>
+				</ol>
+				<p>If you ask me, I&#39;d say -<br><img src="https://thumbs.gfycat.com/AmazingDamagedAmericanquarterhorse-max-1mb.gif" alt=""></p>
+				<p>And in fact, some of the most used public APIs like Github have both REST and GraphQL.</p>
+				<p><strong>jagql</strong> lets you build a backend with both <code>{json:api}</code> and <em>GraphQL</em> support really really fast. </p>
+				<h2 id="about-this-fork">About this Fork</h2>
+				<p><strong>NOTE: This is a fork of holidayextra&#39;s <a href="https://github.com/holidayextras/jsonapi-server">jsonapi-server</a>
+						We have merged a lot of pending PRs on the original repo that we felt we would gain advantage from. The original project
+				was coing a bit too slowly for our needs.</strong></p>
+				<h3 id="differences-from-upstream">Differences from upstream</h3>
+				<h4 id="primarykey-is-configurable"><code>primaryKey</code> is configurable</h4>
+				<p>In upstream, keys are by default <code>uuid</code> and are taken from DB, if <code>generateId</code> = <code>true</code>
+				We instead use a different property <code>primaryKey</code>, whose possible values are</p>
+				<ul>
+					<li><code>uuid</code> : Uses UUID v4 (generated from the client)</li>
+					<li><code>autoincrement</code> : Uses AUTOINCREMENT integers</li>
+				</ul>
+				<p>*In future there might be other types of primaryKeys if required.</p>
+				<h4 id="relationship-key-type-is-configurable">relationship key type is configurable</h4>
+				<p>When creating a field, you can state how to relate it</p>
+				<pre><code class="lang-javascript">jsonApi.define({
+  ... 
+  attributes: {
+    ... 
+    author: jsonApi.Joi.one(<span class="hljs-string">'people'</span>).uidType(<span class="hljs-string">'uuid'</span>)
+    ...
+  }
+})
+</code></pre>
+				<p><em><strong>You&#39;d want to use our version of jsonapi-store-[*] plugins with this
+				as the original versions will not be compatible with this</strong></em></p>
+				<p><em>The old readme <a href="README-old.md">here</a> is verbatim copy of the original project</em></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_jagql_framework.html">@jagql/framework</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_jagql_framework_lib_handlers_chainhandler.html">@jagql/framework/lib/handlers/<wbr>Chain<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_jagql_framework_lib_handlers_handler.html">@jagql/framework/lib/handlers/<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_jagql_framework_lib_handlers_memoryhandler.html">@jagql/framework/lib/handlers/<wbr>Memory<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_jagql_framework_lib_ourjoi.html">@jagql/framework/lib/our<wbr>Joi</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
