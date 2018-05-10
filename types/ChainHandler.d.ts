@@ -4,7 +4,7 @@
 import {
   CreateFunction, DeleteFunction, FindFunction, Handler, HandlerCallback, JsonApiError, JsonApiRequest, SearchFunction,
   UpdateFunction
-} from './Handler'
+} from '@jagql/framework/lib/handlers/Handler'
 
 type BeforeSearchFunction = SearchFunction
 type BeforeFindFunction = FindFunction

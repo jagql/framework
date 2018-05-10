@@ -12,7 +12,9 @@ import MemoryHandlerType = require('./MemoryHandler')
 import {ResourceConfig} from './ResourceConfig'
 import {Metrics} from './metrics'
 import * as RC from './ResourceConfig'
-import * as H from './Handler'
+import * as H from '@jagql/framework/lib/handlers/Handler'
+
+export import ResourceConfig = RC.ResourceConfig
 
 type JsonApiProtocols = 'http' | 'https'
 export import Handler = H.Handler

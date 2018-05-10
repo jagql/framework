@@ -2,7 +2,7 @@
  * @module @jagql/framework
  */
 import {Schema} from 'joi'
-import {Handler} from './Handler'
+import {Handler} from '@jagql/framework/lib/handlers/Handler'
 
 export type BaseType = {
   id?: string
