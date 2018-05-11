@@ -12,12 +12,13 @@ export type ResourceAttributes<Item> = {
   [x in keyof Item]: Schema
   }
 
+type PrimaryKeyType ='uuid' | 'autoincrement' | 'string'
 
 export interface ResourceConfig<Item> {
   namespace?: string,
   resource: string,
   handlers: Handler
-  primaryKey: string,
+  primaryKey: PrimaryKeyType,
   attributes: ResourceAttributes<Item>
   examples: (BaseType & Item)[]
 }
