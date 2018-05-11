@@ -34,6 +34,7 @@
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.1",
     "joi": "^13.1.1",
+    "joi-date-extensions": "^1.2.0",
     "lodash.assign": "4.2.0",
     "lodash.isequal": "4.5.0",
     "lodash.omit": "4.5.0",

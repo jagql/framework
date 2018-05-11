@@ -1,5 +1,6 @@
 # CHANGELOG (`@jagql/framework`)
 
+- 2018-05-11 - add `joi-date-extensions` for date formatting
 - 2018-03-29 - fix GraphQLObjectType resolving
 - 2018-03-16 - v5.6.0
 - 2018-03-16 - handlers using ES6 classes
