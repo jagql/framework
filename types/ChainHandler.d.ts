@@ -52,3 +52,5 @@ declare class ChainHandler<R=any> extends Handler<R>{
   beforeDelete: BeforeDeleteFunction
   afterDelete: AfterDeleteFunction
 }
+
+export = ChainHandler
