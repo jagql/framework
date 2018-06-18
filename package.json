@@ -53,7 +53,7 @@
     "eslint-plugin-node": "6.0.1",
     "eslint-plugin-promise": "3.8.0",
     "eslint-plugin-standard": "3.1.0",
-    "jscpd": "0.6.18",
+    "jscpd": "0.6.22",
     "lokka": "1.7.0",
     "lokka-transport-http": "1.6.1",
     "mocha": "5.2.0",
