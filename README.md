@@ -11,6 +11,10 @@ jagql
 [![Greenkeeper badge](https://badges.greenkeeper.io/jagql/framework.svg)](https://greenkeeper.io/)
 
 <p align="center">
+  <a href="https://jagql.github.io/docs/">
+    <img src="https://img.shields.io/badge/USAGE-GUIDE-5599dd.svg?longCache=true&style=for-the-badge">
+  </a>
+  <br>
   <a href="https://jagql.github.io/framework/">
     <img src="https://img.shields.io/badge/DOCS-API_REFERENCE-6699ff.svg?longCache=true&style=for-the-badge">
   </a>
