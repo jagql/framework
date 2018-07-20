@@ -59,7 +59,7 @@
     "mocha": "5.2.0",
     "mocha-performance": "0.1.1",
     "nyc": "11.8.0",
-    "swagger-tools": "0.10.3",
+    "swagger-tools": "0.10.4",
     "typedoc": "^0.11.0",
     "typedoc-plugin-external-module-name": "^1.1.1",
     "v8-profiler": "5.7.0"
