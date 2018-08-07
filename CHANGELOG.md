@@ -1,5 +1,6 @@
 # CHANGELOG (`@jagql/framework`)
 
+- 2018-08-07 - [pr-413](https://github.com/holidayextras/jsonapi-server/pull/413) support arrays properly in swagger
 - 2018-05-11 - add `joi-date-extensions` for date formatting
 - 2018-03-29 - fix GraphQLObjectType resolving
 - 2018-03-16 - v5.6.0
@@ -10,13 +11,13 @@
 - 2018-01-30 - if resource with id not present, return 404
 - 2018-01-30 - v5.4.2
 - 2018-01-30 - bubble up handlesSort and handlesFilter to root handler
-- 2018-01-30 - [pr-311] fix pagniation in resource relations
+- 2018-01-30 - [pr-311](https://github.com/holidayextras/jsonapi-server/pull/311) fix pagniation in resource relations
 - 2018-01-27 - v5.4.0
-- 2018-01-27 - [pr-275] handlesSort & handlesFilter support
-- 2018-01-27 - [pr-277] run validation within setImmediate (async)
-- 2018-01-27 - [pr-274] expose express req res to handlers
-- 2018-01-27 - [pr-367] fix crud operation detection
-- 2018-01-27 - [pr-366] add bodyParserOptions
+- 2018-01-27 - [pr-275](https://github.com/holidayextras/jsonapi-server/pull/275) handlesSort & handlesFilter support
+- 2018-01-27 - [pr-277](https://github.com/holidayextras/jsonapi-server/pull/277) run validation within setImmediate (async)
+- 2018-01-27 - [pr-274](https://github.com/holidayextras/jsonapi-server/pull/274) expose express req res to handlers
+- 2018-01-27 - [pr-367](https://github.com/holidayextras/jsonapi-server/pull/367) fix crud operation detection
+- 2018-01-27 - [pr-366](https://github.com/holidayextras/jsonapi-server/pull/366) add bodyParserOptions
 - 2018-01-27 - v5.3.0
 - 2018-01-27 - updated joi to v13
 - 2018-01-27 - let user state foreign key type
