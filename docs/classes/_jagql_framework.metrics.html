@@ -70,22 +70,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<h3 id="generating-application-metrics">Generating Application Metrics</h3>
-						<p>Application metrics are generated and exposed via an event emitter interface. Whenever a request has been processed and it about to be returned to the customer, a <code>data</code> event will be emitted:</p>
-						<pre><code class="lang-javascript">jsonApi.metrics.on(<span class="hljs-string">"data"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+						<p>Application metrics are generated and exposed via an event emitter interface.
+							Whenever a request has been processed and it about to be returned to the customer,
+						a <code>data</code> event will be emitted:</p>
+					</div>
+					<pre><code class="lang-javascript">jsonApi.metrics.on(<span class="hljs-string">"data"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
   <span class="hljs-comment">// send data to your metrics stack</span>
 });
 </code></pre>
-						<p>This is the data made available via this interface:</p>
-						<pre><code class="lang-javascript">{
-  <span class="hljs-attr">route</span>: <span class="hljs-string">"people/:id/parent"</span>,
-  <span class="hljs-attr">verb</span>: <span class="hljs-string">"GET"</span>,
-  <span class="hljs-attr">httpCode</span>: <span class="hljs-number">200</span>,
-  <span class="hljs-attr">error</span>: <span class="hljs-string">"Optional error message"</span>,
-  <span class="hljs-attr">duration</span>: <span class="hljs-number">123</span>
-}
-</code></pre>
-					</div>
+					<p>For details read - <a href="https://jagql.github.io/docs/pages/debugging/metrics.html">https://jagql.github.io/docs/pages/debugging/metrics.html</a></p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -120,6 +113,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_jagql_framework.metrics.html#getmaxlisteners" class="tsd-kind-icon">get<wbr>Max<wbr>Listeners</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_jagql_framework.metrics.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_jagql_framework.metrics.html#listeners" class="tsd-kind-icon">listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_jagql_framework.metrics.html#off" class="tsd-kind-icon">off</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_jagql_framework.metrics.html#on" class="tsd-kind-icon">on</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_jagql_framework.metrics.html#once" class="tsd-kind-icon">once</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_jagql_framework.metrics.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a></li>
@@ -143,7 +137,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from EventEmitter.defaultMaxListeners</p>
 						<ul>
-							<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1007</li>
+							<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1024</li>
 						</ul>
 					</aside>
 				</section>
@@ -162,7 +156,7 @@
 								<p>Inherited from EventEmitter.addListener</p>
 								<p>Overrides EventEmitter.addListener</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1009</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1026</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -208,7 +202,7 @@
 								<p>Inherited from EventEmitter.emit</p>
 								<p>Overrides EventEmitter.emit</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1020</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1038</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -236,7 +230,7 @@
 								<p>Inherited from EventEmitter.eventNames</p>
 								<p>Overrides EventEmitter.eventNames</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1021</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1039</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -255,7 +249,7 @@
 								<p>Inherited from EventEmitter.getMaxListeners</p>
 								<p>Overrides EventEmitter.getMaxListeners</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1017</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1035</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -274,7 +268,7 @@
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<p>Overrides EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1022</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1040</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -299,7 +293,7 @@
 								<p>Inherited from EventEmitter.listeners</p>
 								<p>Overrides EventEmitter.listeners</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1018</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1036</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -309,6 +303,52 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="off" class="tsd-anchor"></a>
+					<h3>off</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventEmitter.off</p>
+								<p>Overrides EventEmitter.off</p>
+								<ul>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1032</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -323,7 +363,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides EventEmitter.on</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/jagql/framework/blob/7b3c46a/types/metrics.d.ts#L25">metrics.d.ts:25</a></li>
+									<li>Defined in metrics.d.ts:35</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -351,7 +391,7 @@
 								<p>Inherited from EventEmitter.once</p>
 								<p>Overrides EventEmitter.once</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1011</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1028</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -397,7 +437,7 @@
 								<p>Inherited from EventEmitter.prependListener</p>
 								<p>Overrides EventEmitter.prependListener</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1012</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1029</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -443,7 +483,7 @@
 								<p>Inherited from EventEmitter.prependOnceListener</p>
 								<p>Overrides EventEmitter.prependOnceListener</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1013</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1030</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -489,7 +529,7 @@
 								<p>Inherited from EventEmitter.rawListeners</p>
 								<p>Overrides EventEmitter.rawListeners</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1019</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1037</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -514,7 +554,7 @@
 								<p>Inherited from EventEmitter.removeAllListeners</p>
 								<p>Overrides EventEmitter.removeAllListeners</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1015</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1033</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -539,7 +579,7 @@
 								<p>Inherited from EventEmitter.removeListener</p>
 								<p>Overrides EventEmitter.removeListener</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1014</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1031</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -585,7 +625,7 @@
 								<p>Inherited from EventEmitter.setMaxListeners</p>
 								<p>Overrides EventEmitter.setMaxListeners</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1016</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1034</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -609,9 +649,16 @@
 							<aside class="tsd-sources">
 								<p>Inherited from EventEmitter.listenerCount</p>
 								<ul>
-									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1006</li>
+									<li>Defined in /Users/championswimmer/Development/jagql/framework/node_modules/@types/node/index.d.ts:1023</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>since v4.0.0</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -678,6 +725,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="_jagql_framework.metrics.html#listeners" class="tsd-kind-icon">listeners</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="_jagql_framework.metrics.html#off" class="tsd-kind-icon">off</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_jagql_framework.metrics.html#on" class="tsd-kind-icon">on</a>
 							</li>
@@ -729,6 +779,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="../modules/_jagql_framework.html#metricseventname" class="tsd-kind-icon">Metrics<wbr>Event<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_jagql_framework.html#primarykeytype" class="tsd-kind-icon">Primary<wbr>Key<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="../modules/_jagql_framework.html#resourceattributes" class="tsd-kind-icon">Resource<wbr>Attributes</a>
