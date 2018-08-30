@@ -13,9 +13,9 @@ describe('Testing jsonapi-server', () => {
         url: 'http://localhost:16006/rest/foobar/someId'
       }
       request(data, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         helpers.validateError(json)
-        assert.equal(res.statusCode, '404', 'Expecting 404')
+        assert.strictEqual(res.statusCode, 404, 'Expecting 404')
 
         done()
       })
@@ -27,9 +27,9 @@ describe('Testing jsonapi-server', () => {
         url: 'http://localhost:16006/rest/comments/foobar'
       }
       request(data, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         helpers.validateError(json)
-        assert.equal(res.statusCode, '404', 'Expecting 404')
+        assert.strictEqual(res.statusCode, 404, 'Expecting 404')
 
         done()
       })
@@ -42,11 +42,11 @@ describe('Testing jsonapi-server', () => {
           url: 'http://localhost:16006/rest/comments/6b017640-827c-4d50-8dcc-79d766abb408'
         }
         request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = JSON.parse(json)
           const keys = Object.keys(json)
           assert.deepEqual(keys, [ 'meta' ], 'Should only have a meta block')
-          assert.equal(res.statusCode, '200', 'Expecting 200')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
 
           done()
         })
@@ -58,9 +58,9 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateError(json)
-          assert.equal(res.statusCode, '404', 'Expecting 404')
+          assert.strictEqual(res.statusCode, 404, 'Expecting 404')
 
           done()
         })

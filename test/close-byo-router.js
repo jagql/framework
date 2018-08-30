@@ -15,15 +15,15 @@ describe('Testing jsonapi-server with bring-your-own router', () => {
 
   it('"exit" event, no "error" event', (done) => {
     setTimeout(() => {
-      assert.equal(isExitEmitted, true)
-      assert.equal(isErrorEmitted, false)
+      assert.strictEqual(isExitEmitted, true)
+      assert.strictEqual(isErrorEmitted, false)
       done()
     }, 1000)
   })
 
   it('exit code is 0 (success)', () => {
-    assert.equal(exitCode, 0)
-    assert.equal(exitSignal, null)
+    assert.strictEqual(exitCode, 0)
+    assert.strictEqual(exitSignal, null)
   })
 
   before((done) => {

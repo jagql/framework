@@ -18,12 +18,12 @@ describe('Testing jsonapi-server', () => {
         method: 'GET',
         url
       }, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         json = helpers.validateJson(json)
 
-        assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-        assert.equal(json.data.length, 2, 'Should be 2 main resources')
-        assert.equal(json.included.length, 4, 'Should be 4 included resources')
+        assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+        assert.strictEqual(json.data.length, 2, 'Should be 2 main resources')
+        assert.strictEqual(json.included.length, 4, 'Should be 4 included resources')
 
         done()
       })
@@ -36,11 +36,11 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-          assert.equal(json.included.length, 6, 'Should be no included resources')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+          assert.strictEqual(json.included.length, 6, 'Should be no included resources')
 
           const markExists = json.included.filter(resource => {
             return resource.attributes.firstname === 'Mark'
@@ -57,11 +57,11 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-          assert.equal(json.included.length, 6, 'Should be no included resources')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+          assert.strictEqual(json.included.length, 6, 'Should be no included resources')
 
           const pedroExists = json.included.filter(resource => {
             return resource.attributes.firstname === 'Pedro'
@@ -78,11 +78,11 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-          assert.equal(json.included.length, 7, 'Should be no included resources')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+          assert.strictEqual(json.included.length, 7, 'Should be no included resources')
 
           const markExists = json.included.filter(resource => {
             return resource.attributes.firstname === 'Mark'

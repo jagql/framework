@@ -13,10 +13,10 @@ describe('Testing jsonapi-server', () => {
         url: 'http://localhost:16006/rest/photos/14'
       }
       request(data, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         json = helpers.validateError(json)
-        assert.equal(res.statusCode, '403', 'Expecting 403')
-        assert.equal(json.errors[0].detail, "The requested resource 'photos' does not support 'delete'")
+        assert.strictEqual(res.statusCode, 403, 'Expecting 403')
+        assert.strictEqual(json.errors[0].detail, "The requested resource 'photos' does not support 'delete'")
 
         done()
       })

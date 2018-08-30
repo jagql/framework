@@ -31,13 +31,13 @@ describe('Testing jsonapi-server', () => {
           })
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(json.data.id, id)
-          assert.equal(res.headers.location, `http://localhost:16006/rest/people/${json.data.id}`)
-          assert.equal(res.statusCode, '201', 'Expecting 201')
-          assert.equal(json.data.type, 'people', 'Should be a people resource')
+          assert.strictEqual(json.data.id, id)
+          assert.strictEqual(res.headers.location, `http://localhost:16006/rest/people/${json.data.id}`)
+          assert.strictEqual(res.statusCode, 201, 'Expecting 201')
+          assert.strictEqual(json.data.type, 'people', 'Should be a people resource')
 
           done()
         })
@@ -49,11 +49,11 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-          assert.equal(json.included.length, 0, 'Should be no included resources')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+          assert.strictEqual(json.included.length, 0, 'Should be no included resources')
 
           done()
         })
@@ -65,11 +65,11 @@ describe('Testing jsonapi-server', () => {
           url: 'http://localhost:16006/rest/people/' + id
         }
         request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = JSON.parse(json)
           const keys = Object.keys(json)
           assert.deepEqual(keys, [ 'meta' ], 'Should only have a meta block')
-          assert.equal(res.statusCode, '200', 'Expecting 200')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
 
           done()
         })

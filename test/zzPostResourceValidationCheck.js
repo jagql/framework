@@ -18,9 +18,9 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
-          assert.equal(json.data.length, resource.count, `Expected ${resource.count} resources`)
+          assert.strictEqual(json.data.length, resource.count, `Expected ${resource.count} resources`)
           done()
         })
       })

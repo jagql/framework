@@ -16,8 +16,8 @@ describe('Testing jsonapi-server', () => {
         }
       }
       request(data, (err, res, json) => {
-        assert.equal(err, null)
-        assert.equal(res.statusCode, '401', 'Expecting 401')
+        assert.strictEqual(err, null)
+        assert.strictEqual(res.statusCode, 401, 'Expecting 401')
         helpers.validateError(json)
         done()
       })
@@ -32,8 +32,8 @@ describe('Testing jsonapi-server', () => {
         }
       }
       request(data, (err, res, json) => {
-        assert.equal(err, null)
-        assert.equal(res.statusCode, '401', 'Expecting 401')
+        assert.strictEqual(err, null)
+        assert.strictEqual(res.statusCode, 401, 'Expecting 401')
         helpers.validateError(json)
         done()
       })

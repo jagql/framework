@@ -90,9 +90,9 @@ describe('Testing jsonapi-server graphql', () => {
         }
       }
     `).then(result => {
-      assert.equal(result.createTags.name, 'test1')
-      assert.equal(result.createTags.parent.id, '7541a4de-4986-4597-81b9-cf31b6762486')
-      assert.equal(result.createTags.parent.name, 'live')
+      assert.strictEqual(result.createTags.name, 'test1')
+      assert.strictEqual(result.createTags.parent.id, '7541a4de-4986-4597-81b9-cf31b6762486')
+      assert.strictEqual(result.createTags.parent.name, 'live')
       tagId = result.createTags.id
     }))
 

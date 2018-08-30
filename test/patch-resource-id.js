@@ -14,9 +14,9 @@ describe('Testing jsonapi-server', () => {
           url: 'http://localhost:16006/rest/foobar/someId'
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateError(json)
-          assert.equal(res.statusCode, '404', 'Expecting 404')
+          assert.strictEqual(res.statusCode, 404, 'Expecting 404')
 
           done()
         })
@@ -36,9 +36,9 @@ describe('Testing jsonapi-server', () => {
           })
         }
         request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateError(json)
-          assert.equal(res.statusCode, '404', 'Expecting 404')
+          assert.strictEqual(res.statusCode, 404, 'Expecting 404')
 
           done()
         })
@@ -62,9 +62,9 @@ describe('Testing jsonapi-server', () => {
           })
         }
         request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateError(json)
-          assert.equal(res.statusCode, '403', 'Expecting 403')
+          assert.strictEqual(res.statusCode, 403, 'Expecting 403')
 
           done()
         })
@@ -88,9 +88,9 @@ describe('Testing jsonapi-server', () => {
           })
         }
         request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateError(json)
-          assert.equal(res.statusCode, '403', 'Expecting 403')
+          assert.strictEqual(res.statusCode, 403, 'Expecting 403')
 
           done()
         })
@@ -114,9 +114,9 @@ describe('Testing jsonapi-server', () => {
           })
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateError(json)
-          assert.equal(res.statusCode, '403', 'Expecting 403')
+          assert.strictEqual(res.statusCode, 403, 'Expecting 403')
 
           done()
         })
@@ -140,9 +140,9 @@ describe('Testing jsonapi-server', () => {
           })
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateError(json)
-          assert.equal(res.statusCode, '403', 'Expecting 403')
+          assert.strictEqual(res.statusCode, 403, 'Expecting 403')
 
           done()
         })
@@ -166,10 +166,10 @@ describe('Testing jsonapi-server', () => {
         })
       }
       request(data, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         helpers.validateJson(json)
 
-        assert.equal(res.statusCode, '200', 'Expecting 200')
+        assert.strictEqual(res.statusCode, 200, 'Expecting 200')
 
         done()
       })
@@ -200,10 +200,10 @@ describe('Testing jsonapi-server', () => {
           })
         }
         request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
 
           done()
         })
@@ -215,10 +215,10 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
 
           assert.deepEqual(json.data, {
             'type': 'comments',
@@ -292,10 +292,10 @@ describe('Testing jsonapi-server', () => {
           })
         }
         request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
 
           done()
         })
@@ -307,10 +307,10 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
 
           assert.deepEqual(json.data, {
             'type': 'comments',

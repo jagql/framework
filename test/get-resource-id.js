@@ -13,9 +13,9 @@ describe('Testing jsonapi-server', () => {
         method: 'GET',
         url
       }, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         helpers.validateError(json)
-        assert.equal(res.statusCode, '404', 'Expecting 404')
+        assert.strictEqual(res.statusCode, 404, 'Expecting 404')
         done()
       })
     })
@@ -26,13 +26,13 @@ describe('Testing jsonapi-server', () => {
         method: 'GET',
         url
       }, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         helpers.validateError(json)
         const errors = JSON.parse(json).errors
-        assert.equal(res.statusCode, '500', 'Expecting 500')
-        assert.equal(errors.length, 1)
-        assert.equal(errors[0].code, 'EINVALIDITEM')
-        assert.equal(errors[0].detail.error, 'child "boolean" fails because ["boolean" must be a boolean]')
+        assert.strictEqual(res.statusCode, 500, 'Expecting 500')
+        assert.strictEqual(errors.length, 1)
+        assert.strictEqual(errors[0].code, 'EINVALIDITEM')
+        assert.strictEqual(errors[0].detail.error, 'child "boolean" fails because ["boolean" must be a boolean]')
         done()
       })
     })
@@ -43,11 +43,11 @@ describe('Testing jsonapi-server', () => {
         method: 'GET',
         url
       }, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         json = helpers.validateJson(json)
 
-        assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-        assert.equal(json.included.length, 0, 'Should be no included resources')
+        assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+        assert.strictEqual(json.included.length, 0, 'Should be no included resources')
         helpers.validateResource(json.data)
 
         done()
@@ -60,10 +60,10 @@ describe('Testing jsonapi-server', () => {
         method: 'GET',
         url
       }, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         json = helpers.validateJson(json)
 
-        assert.equal(res.statusCode, '200', 'Expecting 200 OK')
+        assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
         helpers.validateResource(json.data)
         const keys = Object.keys(json.data.attributes)
         assert.deepEqual(keys, [ 'title' ], 'Should only contain title attribute')
@@ -78,10 +78,10 @@ describe('Testing jsonapi-server', () => {
         method: 'GET',
         url
       }, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         json = helpers.validateError(json)
 
-        assert.equal(res.statusCode, '404', 'Expecting 404 NOT FOUND')
+        assert.strictEqual(res.statusCode, 404, 'Expecting 404 NOT FOUND')
         // assert.deepEqual(json.data, null)
 
         done()
@@ -95,14 +95,14 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-          assert.equal(json.included.length, 1, 'Should be 1 included resource')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+          assert.strictEqual(json.included.length, 1, 'Should be 1 included resource')
 
           const people = json.included.filter(resource => resource.type === 'people')
-          assert.equal(people.length, 1, 'Should be 1 included people resource')
+          assert.strictEqual(people.length, 1, 'Should be 1 included people resource')
 
           done()
         })
@@ -114,11 +114,11 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-          assert.equal(json.included.length, 0, 'Should be 0 included resources')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+          assert.strictEqual(json.included.length, 0, 'Should be 0 included resources')
           done()
         })
       })
@@ -131,12 +131,12 @@ describe('Testing jsonapi-server', () => {
           method: 'GET',
           url
         }, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200 OK')
-          assert.equal(json.included.length, 5, 'Should be 5 included resources')
-          assert.equal(json.included[4].type, 'articles', 'Last include should be an article')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200 OK')
+          assert.strictEqual(json.included.length, 5, 'Should be 5 included resources')
+          assert.strictEqual(json.included[4].type, 'articles', 'Last include should be an article')
           done()
         })
       })

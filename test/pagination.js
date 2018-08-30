@@ -15,8 +15,8 @@ describe('Testing jsonapi-server', () => {
         url: 'http://localhost:16006/rest/articles?page[size]=10'
       }
       helpers.request(data, (err, res) => {
-        assert.equal(err, null)
-        assert.equal(res.statusCode, '403', 'Expecting 403')
+        assert.strictEqual(err, null)
+        assert.strictEqual(res.statusCode, 403, 'Expecting 403')
 
         done()
       })
@@ -29,15 +29,15 @@ describe('Testing jsonapi-server', () => {
           url: 'http://localhost:16006/rest/articles?page[offset]=0&page[limit]=1&sort=title'
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
-          assert.equal(json.meta.page.offset, 0, 'should be at offset 0')
-          assert.equal(json.meta.page.limit, 1, 'should have a limit of 1 record')
-          assert.equal(json.meta.page.total, 4, 'should have a total of 4 records')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
+          assert.strictEqual(json.meta.page.offset, 0, 'should be at offset 0')
+          assert.strictEqual(json.meta.page.limit, 1, 'should have a limit of 1 record')
+          assert.strictEqual(json.meta.page.total, 4, 'should have a total of 4 records')
 
-          assert.equal(json.data[0].attributes.title, 'How to AWS', 'should be on the first article')
+          assert.strictEqual(json.data[0].attributes.title, 'How to AWS', 'should be on the first article')
 
           assert.ok(Object.keys(json.links).length, 3, 'should have 3x links')
           assert.ok(json.links.last.match(/page%5Boffset%5D=3&page%5Blimit%5D=1/), 'last should target offset-3 limit-1')
@@ -54,15 +54,15 @@ describe('Testing jsonapi-server', () => {
           url: pageLinks.next
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
-          assert.equal(json.meta.page.offset, 1, 'should be at offset 0')
-          assert.equal(json.meta.page.limit, 1, 'should have a limit of 1 record')
-          assert.equal(json.meta.page.total, 4, 'should have a total of 4 records')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
+          assert.strictEqual(json.meta.page.offset, 1, 'should be at offset 0')
+          assert.strictEqual(json.meta.page.limit, 1, 'should have a limit of 1 record')
+          assert.strictEqual(json.meta.page.total, 4, 'should have a total of 4 records')
 
-          assert.equal(json.data[0].attributes.title, 'Linux Rocks', 'should be on the second article')
+          assert.strictEqual(json.data[0].attributes.title, 'Linux Rocks', 'should be on the second article')
 
           assert.ok(Object.keys(json.links).length, 5, 'should have 5x links')
           assert.ok(json.links.first.match(/page%5Boffset%5D=0&page%5Blimit%5D=1/), 'first should target offset-0 limit-1')
@@ -81,15 +81,15 @@ describe('Testing jsonapi-server', () => {
           url: pageLinks.next
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
-          assert.equal(json.meta.page.offset, 2, 'should be at offset 0')
-          assert.equal(json.meta.page.limit, 1, 'should have a limit of 1 record')
-          assert.equal(json.meta.page.total, 4, 'should have a total of 4 records')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
+          assert.strictEqual(json.meta.page.offset, 2, 'should be at offset 0')
+          assert.strictEqual(json.meta.page.limit, 1, 'should have a limit of 1 record')
+          assert.strictEqual(json.meta.page.total, 4, 'should have a total of 4 records')
 
-          assert.equal(json.data[0].attributes.title, 'NodeJS Best Practices', 'should be on the first article')
+          assert.strictEqual(json.data[0].attributes.title, 'NodeJS Best Practices', 'should be on the first article')
 
           assert.ok(Object.keys(json.links).length, 5, 'should have 5x links')
           assert.ok(json.links.first.match(/page%5Boffset%5D=0&page%5Blimit%5D=1/), 'first should target offset-0 limit-1')
@@ -108,15 +108,15 @@ describe('Testing jsonapi-server', () => {
           url: pageLinks.next
         }
         helpers.request(data, (err, res, json) => {
-          assert.equal(err, null)
+          assert.strictEqual(err, null)
           json = helpers.validateJson(json)
 
-          assert.equal(res.statusCode, '200', 'Expecting 200')
-          assert.equal(json.meta.page.offset, 3, 'should be at offset 0')
-          assert.equal(json.meta.page.limit, 1, 'should have a limit of 1 record')
-          assert.equal(json.meta.page.total, 4, 'should have a total of 4 records')
+          assert.strictEqual(res.statusCode, 200, 'Expecting 200')
+          assert.strictEqual(json.meta.page.offset, 3, 'should be at offset 0')
+          assert.strictEqual(json.meta.page.limit, 1, 'should have a limit of 1 record')
+          assert.strictEqual(json.meta.page.total, 4, 'should have a total of 4 records')
 
-          assert.equal(json.data[0].attributes.title, 'Tea for Beginners', 'should be on the fourth article')
+          assert.strictEqual(json.data[0].attributes.title, 'Tea for Beginners', 'should be on the fourth article')
 
           assert.ok(Object.keys(json.links).length, 3, 'should have 3x links')
           assert.ok(json.links.first.match(/page%5Boffset%5D=0&page%5Blimit%5D=1/), 'first should target offset-0 limit-1')

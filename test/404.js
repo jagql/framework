@@ -15,7 +15,7 @@ describe('Testing jsonapi-server', () => {
       request(data, (err, res, json) => {
         assert.equal(err, null)
         helpers.validateError(json)
-        assert.equal(res.statusCode, '404', 'Expecting 404')
+        assert.strictEqual(res.statusCode, 404, 'Expecting 404')
 
         done()
       })
@@ -27,9 +27,9 @@ describe('Testing jsonapi-server', () => {
         url: 'http://localhost:16006/rest/a/b/c/d/e'
       }
       request(data, (err, res, json) => {
-        assert.equal(err, null)
+        assert.strictEqual(err, null)
         helpers.validateError(json)
-        assert.equal(res.statusCode, '404', 'Expecting 404')
+        assert.strictEqual(res.statusCode, 404, 'Expecting 404')
 
         done()
       })
