@@ -36,7 +36,12 @@ interface ApiConfig {
 export const Joi: typeof OurJoi.Joi
 
 /**
- * [[include:configuring.md]]
+ * Configure things like - 
+ *  - http/https
+ *  - host, port
+ *  - enable/disable graphql and swagger
+ * 
+ * For detailed info please check https://jagql.github.io/docs/pages/configuration.html 
  * @param {ApiConfig} apiConfig
  */
 export function setConfig(apiConfig: ApiConfig): void
@@ -49,7 +54,17 @@ export function define<T>(resConfig: ResourceConfig<T>): void
 export function authenticate(authenticator: (req: Request, cb: () => void) => void): void
 
 /**
- * [[include:metrics.md]]
+ * Application metrics are generated and exposed via an event emitter interface. 
+ * Whenever a request has been processed and it about to be returned to the customer, 
+ * a `data` event will be emitted:
+ * 
+ * ```javascript
+ * jsonApi.metrics.on("data", function(data) {
+ *   // send data to your metrics stack
+ * });
+ * ```
+ * 
+ * For details read - https://jagql.github.io/docs/pages/debugging/metrics.html
  */
 export const metrics: Metrics
 export function getExpressServer(): Application
