@@ -1,6 +1,6 @@
 {
   "name": "@jagql/framework",
-  "version": "5.6.12",
+  "version": "5.6.13",
   "description": "A config driven NodeJS framework implementing json:api",
   "keywords": [
     "jsonapi",
