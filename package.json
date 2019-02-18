@@ -55,7 +55,7 @@
     "jscpd": "0.6.22",
     "lokka": "1.7.0",
     "lokka-transport-http": "1.6.1",
-    "mocha": "5.2.0",
+    "mocha": "6.0.0",
     "mocha-performance": "0.1.1",
     "nyc": "11.8.0",
     "swagger-tools": "0.10.4",
