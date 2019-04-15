@@ -60,7 +60,7 @@ We instead use a different property `primaryKey`, whose possible values are
 \*In future there might be other types of primaryKeys if required.
 
 #### relationship key type is configurable
-When creating a field, you can state how to relate it
+When creating a field, you can state how to relate it. Supported are `uuid`, `autoincrement` and `string`
 
 ```javascript
 jsonApi.define({

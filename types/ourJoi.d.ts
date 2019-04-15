@@ -5,7 +5,7 @@
 import {AnySchema, JoiObject, Schema, FunctionSchema} from 'joi'
 import BaseJoi = require('joi')
 
-type UidType = 'uuid' | 'autoincrement'
+type UidType = 'uuid' | 'autoincrement' | 'string'
 
 interface OurJoiSchema extends AnySchema {
   uidType(type: UidType): this
