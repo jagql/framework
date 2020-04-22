@@ -4,13 +4,13 @@
 
 /// <reference types="express" />
 
-import { Application, Request, Router } from 'express'
-import { Schema } from 'joi'
+import {Application, Request, Router} from 'express'
+import {Schema} from 'joi'
 import OurJoi = require('./ourJoi')
 import ChainHandlerType = require('./ChainHandler')
 import MemoryHandlerType = require('./MemoryHandler')
-import { ResourceConfig } from './ResourceConfig'
-import { Metrics } from './metrics'
+import {ResourceConfig} from './ResourceConfig'
+import {Metrics} from './metrics'
 import * as RC from './ResourceConfig'
 import * as H from './Handler'
 
@@ -47,14 +47,14 @@ export const Joi: typeof OurJoi.Joi
  * For detailed info please check https://jagql.github.io/docs/pages/configuration.html
  * @param {ApiConfig} apiConfig
  */
-export function setConfig (apiConfig: ApiConfig): void
+export function setConfig(apiConfig: ApiConfig): void
 
 /**
  * [[include:resources.md]]
  * @param {ResourceConfig<T>} resConfig
  */
-export function define<T> (resConfig: ResourceConfig<T>): void
-export function authenticate (authenticator: (req: Request, cb: () => void) => void): void
+export function define<T>(resConfig: ResourceConfig<T>): void
+export function authenticate(authenticator: (req: Request, cb: () => void) => void): void
 
 /**
  * Application metrics are generated and exposed via an event emitter interface.
@@ -70,9 +70,9 @@ export function authenticate (authenticator: (req: Request, cb: () => void) => v
  * For details read - https://jagql.github.io/docs/pages/debugging/metrics.html
  */
 export const metrics: Metrics
-export function getExpressServer (): Application
+export function getExpressServer(): Application
 export const ChainHandler: typeof ChainHandlerType
 export const MemoryHandler: typeof MemoryHandlerType
-export function onUncaughtException (err: Error): void
-export function start (callback: Function): void
-export function close (): void
+export function onUncaughtException(err: Error): void
+export function start(callback: Function): void
+export function close(): void
