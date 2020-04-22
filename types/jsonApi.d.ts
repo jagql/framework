@@ -23,12 +23,12 @@ export import BaseType = RC.BaseType
 interface ApiConfig {
   graphiql?: boolean
   jsonapi?: boolean
-  protocol?: JsonApiProtocols
+  protocol: JsonApiProtocols
   urlPrefixAlias?: string
-  hostname?: string
+  hostname: string
   port: number
-  base?: string,
-  meta?: any
+  base: string,
+  meta: any
   swagger?: any
   router?: Router
   bodyParserJsonOpts?: any
