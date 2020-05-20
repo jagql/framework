@@ -43,7 +43,7 @@
     "qs": "6.5.2",
     "request": "2.88.0",
     "use-strict": "1.0.1",
-    "uuid": "^7.0.0"
+    "uuid": "^8.1.0"
   },
   "devDependencies": {
     "eslint": "5.0.1",
