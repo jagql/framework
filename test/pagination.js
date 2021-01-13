@@ -4,7 +4,6 @@ const assert = require('assert')
 const helpers = require('./helpers.js')
 const jsonApiTestServer = require('../example/server.js')
 const pagination = require('../lib/pagination.js')
-const { json } = require('express')
 
 let pageLinks
 
