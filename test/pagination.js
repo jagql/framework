@@ -4,6 +4,7 @@ const assert = require('assert')
 const helpers = require('./helpers.js')
 const jsonApiTestServer = require('../example/server.js')
 const pagination = require('../lib/pagination.js')
+const { json } = require('express')
 
 let pageLinks
 
@@ -167,5 +168,51 @@ describe('Testing jsonapi-server', () => {
   })
   after(() => {
     jsonApiTestServer.close()
+  })
+})
+
+describe('Testing configurable pagination', () => {
+  after(() => {
+    jsonApiTestServer.close()
+  })
+
+  it('Setting page defaults will set offset and limit', done => {
+    jsonApiTestServer.setupTestServer({ page: { offset: 1, limit: 3 }})
+
+    const data = {
+      method: 'get',
+      url: 'http://localhost:16006/rest/tags'
+    }
+    helpers.request(data, (err, res, json) => {
+      assert.strictEqual(err, null)
+      json = helpers.validateJson(json)
+
+      assert.strictEqual(res.statusCode, 200, 'Expecting 200')
+      assert.strictEqual(json.meta.page.offset, 1, 'should be at offset 0')
+      assert.strictEqual(json.meta.page.limit, 3, 'should have a limit of 3 record')
+      assert.strictEqual(json.meta.page.total, 5, 'should have a total of 5 records')
+
+      done()
+    })
+  })
+
+  it('Setting no page defaults will use the jagql defaults', done => {
+    jsonApiTestServer.setupTestServer()
+
+    const data = {
+      method: 'get',
+      url: 'http://localhost:16006/rest/tags'
+    }
+    helpers.request(data, (err, res, json) => {
+      assert.strictEqual(err, null)
+      json = helpers.validateJson(json)
+
+      assert.strictEqual(res.statusCode, 200, 'Expecting 200')
+      assert.strictEqual(json.meta.page.offset, 0, 'should be at offset 0')
+      assert.strictEqual(json.meta.page.limit, 50, 'should have a limit of 50 record')
+      assert.strictEqual(json.meta.page.total, 5, 'should have a total of 5 records')
+
+      done()
+    })
   })
 })
