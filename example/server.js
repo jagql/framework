@@ -7,7 +7,7 @@ const fs = require('fs')
 const path = require('path')
 const debug = require('debug')
 
-jsonApi.setConfig({
+const config = {
   graphiql: true,
   swagger: {
     title: 'Example JSON:API Server',
@@ -43,7 +43,9 @@ jsonApi.setConfig({
   meta: {
     description: 'This block shows up in the root node of every payload'
   }
-})
+}
+
+jsonApi.setConfig(config)
 
 jsonApi.authenticate((request, callback) => {
   // If a "blockMe" header is provided, block access.
@@ -79,4 +81,5 @@ if (typeof describe === 'undefined') {
 }
 server.start = jsonApi.start
 server.close = jsonApi.close
+server.setupTestServer = opts => (jsonApi.setConfig({...config, ...opts}), jsonApi.start())
 server.getExpressServer = jsonApi.getExpressServer
