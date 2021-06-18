@@ -68,6 +68,22 @@ describe('Testing jsonapi-server graphql', () => {
         ]
       })
     }))
+
+    it('filters with variables', () => client.query(`
+      query People($firstname: String!) {
+        people(firstname: $firstname) {
+          lastname
+        }
+      }
+    `, { firstname: 'Rahul' }).then(result => {
+      assert.deepEqual(result, {
+        'people': [
+          {
+            'lastname': 'Patel'
+          }
+        ]
+      })
+    }))
   })
 
   describe('write operations', () => {
